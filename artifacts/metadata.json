@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "snapshot_date": null,
+  "source_versions": {
+    "thousand_genomes": null,
+    "pharmgkb": null,
+    "cpic": null
+  },
+  "populations": {},
+  "total_variants_analyzed": null,
+  "pipeline_run_id": null,
+  "_note": "Populated after first successful pipeline run via export_artifacts Lambda"
+}

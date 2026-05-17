@@ -1,0 +1,395 @@
+{
+  "Comment": "pgx-latam-atlas pipeline: ingest → bronze → silver → gold → export",
+  "StartAt": "IngestAllSources",
+  "States": {
+    "IngestAllSources": {
+      "Type": "Parallel",
+      "Comment": "Ingest all three data sources in parallel",
+      "Branches": [
+        {
+          "StartAt": "IngestGenomes",
+          "States": {
+            "IngestGenomes": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::glue:startJobRun.sync",
+              "Parameters": {
+                "JobName": "pgx-ingest-genomes-bronze",
+                "Arguments": {
+                  "--ingest_date.$": "$$.Execution.StartTime"
+                }
+              },
+              "Retry": [
+                {
+                  "ErrorEquals": ["States.TaskFailed"],
+                  "IntervalSeconds": 30,
+                  "MaxAttempts": 3,
+                  "BackoffRate": 2.0
+                }
+              ],
+              "Next": "ValidateGenomesBronze"
+            },
+            "ValidateGenomesBronze": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "Parameters": {
+                "FunctionName": "${ValidateBronzeLambdaArn}",
+                "Payload": {
+                  "table": "bronze_pgx.genomes_variants_raw",
+                  "min_row_count": 1000
+                }
+              },
+              "Retry": [
+                {
+                  "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException"],
+                  "IntervalSeconds": 5,
+                  "MaxAttempts": 3,
+                  "BackoffRate": 2.0
+                }
+              ],
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "IngestPharmGKB",
+          "States": {
+            "IngestPharmGKB": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "Parameters": {
+                "FunctionName": "${IngestPharmGKBLambdaArn}",
+                "Payload": {
+                  "ingest_date.$": "$$.Execution.StartTime"
+                }
+              },
+              "Retry": [
+                {
+                  "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException"],
+                  "IntervalSeconds": 30,
+                  "MaxAttempts": 3,
+                  "BackoffRate": 2.0
+                }
+              ],
+              "Next": "ValidatePharmGKBBronze"
+            },
+            "ValidatePharmGKBBronze": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "Parameters": {
+                "FunctionName": "${ValidateBronzeLambdaArn}",
+                "Payload": {
+                  "table": "bronze_pgx.pharmgkb_clinical_annotations_raw",
+                  "min_row_count": 100
+                }
+              },
+              "Retry": [
+                {
+                  "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException"],
+                  "IntervalSeconds": 5,
+                  "MaxAttempts": 3,
+                  "BackoffRate": 2.0
+                }
+              ],
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "IngestCPIC",
+          "States": {
+            "IngestCPIC": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "Parameters": {
+                "FunctionName": "${IngestCPICLambdaArn}",
+                "Payload": {
+                  "ingest_date.$": "$$.Execution.StartTime"
+                }
+              },
+              "Retry": [
+                {
+                  "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException"],
+                  "IntervalSeconds": 30,
+                  "MaxAttempts": 3,
+                  "BackoffRate": 2.0
+                }
+              ],
+              "Next": "ValidateCPICBronze"
+            },
+            "ValidateCPICBronze": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "Parameters": {
+                "FunctionName": "${ValidateBronzeLambdaArn}",
+                "Payload": {
+                  "table": "bronze_pgx.cpic_guidelines_raw",
+                  "min_row_count": 10
+                }
+              },
+              "Retry": [
+                {
+                  "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException"],
+                  "IntervalSeconds": 5,
+                  "MaxAttempts": 3,
+                  "BackoffRate": 2.0
+                }
+              ],
+              "End": true
+            }
+          }
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": ["States.ALL"],
+          "Next": "NotifyFailure"
+        }
+      ],
+      "Next": "BuildSilverInParallel"
+    },
+    "BuildSilverInParallel": {
+      "Type": "Parallel",
+      "Comment": "Build silver/variants (PySpark Glue) and silver/clinical (Athena CTAS) in parallel",
+      "Branches": [
+        {
+          "StartAt": "BuildSilverVariants",
+          "States": {
+            "BuildSilverVariants": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::glue:startJobRun.sync",
+              "Parameters": {
+                "JobName": "pgx-build-silver-variants"
+              },
+              "Retry": [
+                {
+                  "ErrorEquals": ["States.TaskFailed"],
+                  "IntervalSeconds": 60,
+                  "MaxAttempts": 2,
+                  "BackoffRate": 2.0
+                }
+              ],
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "BuildSilverClinical",
+          "States": {
+            "BuildSilverClinical": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "Parameters": {
+                "FunctionName": "${BuildSilverClinicalLambdaArn}"
+              },
+              "Retry": [
+                {
+                  "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException"],
+                  "IntervalSeconds": 30,
+                  "MaxAttempts": 3,
+                  "BackoffRate": 2.0
+                }
+              ],
+              "End": true
+            }
+          }
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": ["States.ALL"],
+          "Next": "NotifyFailure"
+        }
+      ],
+      "Next": "BuildSilverPopulations"
+    },
+    "BuildSilverPopulations": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "${BuildSilverPopulationsLambdaArn}"
+      },
+      "Retry": [
+        {
+          "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException"],
+          "IntervalSeconds": 15,
+          "MaxAttempts": 3,
+          "BackoffRate": 2.0
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": ["States.ALL"],
+          "Next": "NotifyFailure"
+        }
+      ],
+      "Next": "BuildGoldFrequenciesAndPhenotypes"
+    },
+    "BuildGoldFrequenciesAndPhenotypes": {
+      "Type": "Parallel",
+      "Comment": "Build gold allele frequencies and phenotype distribution in parallel",
+      "Branches": [
+        {
+          "StartAt": "BuildGoldAlleleFrequencies",
+          "States": {
+            "BuildGoldAlleleFrequencies": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "Parameters": {
+                "FunctionName": "${BuildGoldFrequenciesLambdaArn}"
+              },
+              "Retry": [
+                {
+                  "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException"],
+                  "IntervalSeconds": 30,
+                  "MaxAttempts": 3,
+                  "BackoffRate": 2.0
+                }
+              ],
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "BuildGoldPhenotypeDistribution",
+          "States": {
+            "BuildGoldPhenotypeDistribution": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "Parameters": {
+                "FunctionName": "${BuildGoldPhenotypeLambdaArn}"
+              },
+              "Retry": [
+                {
+                  "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException"],
+                  "IntervalSeconds": 30,
+                  "MaxAttempts": 3,
+                  "BackoffRate": 2.0
+                }
+              ],
+              "End": true
+            }
+          }
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": ["States.ALL"],
+          "Next": "NotifyFailure"
+        }
+      ],
+      "Next": "BuildGoldDrugImpact"
+    },
+    "BuildGoldDrugImpact": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "${BuildGoldDrugImpactLambdaArn}"
+      },
+      "Retry": [
+        {
+          "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException"],
+          "IntervalSeconds": 30,
+          "MaxAttempts": 3,
+          "BackoffRate": 2.0
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": ["States.ALL"],
+          "Next": "NotifyFailure"
+        }
+      ],
+      "Next": "BuildGoldActionabilityRanking"
+    },
+    "BuildGoldActionabilityRanking": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "${BuildGoldRankingLambdaArn}"
+      },
+      "Retry": [
+        {
+          "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException"],
+          "IntervalSeconds": 30,
+          "MaxAttempts": 3,
+          "BackoffRate": 2.0
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": ["States.ALL"],
+          "Next": "NotifyFailure"
+        }
+      ],
+      "Next": "ExportAndSync"
+    },
+    "ExportAndSync": {
+      "Type": "Parallel",
+      "Comment": "Export artifacts to GitHub and sync knowledge base (KB sync is a future-phase placeholder)",
+      "Branches": [
+        {
+          "StartAt": "ExportArtifacts",
+          "States": {
+            "ExportArtifacts": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::lambda:invoke",
+              "Parameters": {
+                "FunctionName": "${ExportArtifactsLambdaArn}"
+              },
+              "Retry": [
+                {
+                  "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException"],
+                  "IntervalSeconds": 30,
+                  "MaxAttempts": 3,
+                  "BackoffRate": 2.0
+                }
+              ],
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "UpdateBedrockKB",
+          "States": {
+            "UpdateBedrockKB": {
+              "Type": "Pass",
+              "Comment": "TODO: replace with Bedrock KB sync in next phase",
+              "Result": {
+                "status": "skipped",
+                "reason": "Bedrock KB integration deferred to future phase"
+              },
+              "End": true
+            }
+          }
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": ["States.ALL"],
+          "Next": "NotifyFailure"
+        }
+      ],
+      "Next": "PipelineSucceeded"
+    },
+    "PipelineSucceeded": {
+      "Type": "Succeed"
+    },
+    "NotifyFailure": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sns:publish",
+      "Parameters": {
+        "TopicArn": "${PipelineFailureSNSTopicArn}",
+        "Message": {
+          "Input.$": "States.JsonToString($)"
+        },
+        "Subject": "pgx-latam-atlas pipeline FAILED"
+      },
+      "Next": "PipelineFailed"
+    },
+    "PipelineFailed": {
+      "Type": "Fail",
+      "Error": "PipelineError",
+      "Cause": "One or more pipeline stages failed. See SNS notification for details."
+    }
+  }
+}

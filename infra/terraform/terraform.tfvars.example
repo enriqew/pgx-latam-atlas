@@ -1,0 +1,7 @@
+aws_region                   = "us-east-1"
+environment                  = "dev"
+lake_bucket_name             = "pgx-latam-lake-<your-account-id>"
+athena_workgroup_name        = "pgx-latam-workgroup"
+athena_data_scanned_limit_gb = 100
+pipeline_failure_email       = "your-email@example.com"
+github_repo                  = "your-github-username/pgx-latam-atlas"

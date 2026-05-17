@@ -1,0 +1,52 @@
+# Secrets
+.env
+.env.local
+*.pem
+*.key
+credentials
+aws-config
+
+# Terraform state — NEVER commit state files
+infra/terraform/.terraform/
+infra/terraform/*.tfstate
+infra/terraform/*.tfstate.backup
+infra/terraform/*.tfvars
+!infra/terraform/*.tfvars.example
+infra/terraform/.terraform.lock.hcl
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+notebooks/*.html
+notebooks/_local_outputs/
+
+# Local dev data (official artifacts are committed, intermediates are not)
+data/
+*.parquet
+*.csv
+!artifacts/*.json
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Claude Code
+.claude/
+
+# Coverage
+.coverage
+coverage.xml
+htmlcov/
