@@ -18,6 +18,9 @@ install-dev: ## Install all dependencies including dev extras
 	$(UV) pip install -e ".[dev,spark]"
 	pre-commit install
 
+install-vcf: ## Install VCF processing deps — requires Linux/macOS/WSL2 (pysam)
+	$(UV) pip install -e ".[vcf]"
+
 # ── Code quality ──────────────────────────────────────────────────────────────
 lint: ## Run ruff linter
 	ruff check src tests

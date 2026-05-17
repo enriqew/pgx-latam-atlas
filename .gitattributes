@@ -1,0 +1,11 @@
+# Normalize line endings to LF in the repository
+* text=auto eol=lf
+
+# Force LF for scripts even on Windows
+*.sh text eol=lf
+Makefile text eol=lf
+
+# Treat binary files as binary
+*.parquet binary
+*.gz binary
+*.zip binary

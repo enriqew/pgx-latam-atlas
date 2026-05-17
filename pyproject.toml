@@ -39,6 +39,12 @@ dependencies = [
 spark = [
     "pyspark>=3.5",
 ]
+vcf = [
+    # pysam requires Linux / macOS / WSL2 on Windows.
+    # On Linux (including AWS Glue): pip install ".[vcf]"
+    # On Windows: use Docker or WSL2 (see docs/local_dev.md)
+    "pysam>=0.22",
+]
 dev = [
     "pytest>=8.0",
     "pytest-cov>=5.0",
