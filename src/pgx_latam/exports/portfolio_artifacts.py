@@ -50,10 +50,9 @@ def _coerce_value(v: Any) -> Any:
 
 def _df_to_records(df: pd.DataFrame) -> list[dict[str, Any]]:
     """Convert DataFrame to list of dicts with JSON-safe values."""
-    records = []
-    for row in df.itertuples(index=False):
-        records.append({k: _coerce_value(v) for k, v in row._asdict().items()})
-    return records
+    return [
+        {str(k): _coerce_value(v) for k, v in row.items()} for row in df.to_dict(orient="records")
+    ]
 
 
 def _write_artifact(data: Any, path: Path) -> None:

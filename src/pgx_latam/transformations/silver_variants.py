@@ -175,12 +175,12 @@ def build_pharmacogenes(pharmgkb_genes_df: pd.DataFrame) -> pd.DataFrame:
 
 def _safe_int(value: object) -> int | None:
     try:
-        if pd.isna(value):  # type: ignore[arg-type]
+        if pd.isna(value):  # type: ignore[call-overload]
             return None
     except (TypeError, ValueError):
         pass
     try:
-        return int(value)  # type: ignore[arg-type]
+        return int(value)  # type: ignore[call-overload, no-any-return]
     except (TypeError, ValueError):
         return None
 
