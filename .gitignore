@@ -38,6 +38,10 @@ data/
 !artifacts/*.json
 .DS_Store
 
+# Tabix index files downloaded during 1000G ingestion
+*.tbi
+*.vcf.gz
+
 # IDEs
 .vscode/
 .idea/
@@ -50,3 +54,4 @@ data/
 .coverage
 coverage.xml
 htmlcov/
+/.venv-linux/

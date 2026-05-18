@@ -1,13 +1,44 @@
 {
   "schema_version": "1.0.0",
-  "snapshot_date": null,
+  "snapshot_date": "2026-05-18",
+  "pipeline_run_id": "cdc418a2-7578-49a2-9183-c67d09c316da",
   "source_versions": {
-    "thousand_genomes": null,
-    "pharmgkb": null,
-    "cpic": null
+    "thousand_genomes": "Phase 3 GRCh37 (20130502)",
+    "pharmgkb": "latest at ingest date",
+    "cpic": "v4 PostgREST API"
   },
-  "populations": {},
-  "total_variants_analyzed": null,
-  "pipeline_run_id": null,
-  "_note": "Populated after first successful pipeline run via export_artifacts Lambda"
+  "populations": {
+    "CEU": {
+      "name": "Utah Residents (CEPH) with Northern and Western European Ancestry",
+      "region": "Europe",
+      "superpopulation": "EUR",
+      "sample_size": 99
+    },
+    "CLM": {
+      "name": "Colombians in Medellín, Colombia",
+      "region": "Latin America",
+      "superpopulation": "AMR",
+      "sample_size": 94
+    },
+    "MXL": {
+      "name": "Mexican Ancestry in Los Angeles, California",
+      "region": "Latin America",
+      "superpopulation": "AMR",
+      "sample_size": 64
+    },
+    "PEL": {
+      "name": "Peruvians in Lima, Peru",
+      "region": "Latin America",
+      "superpopulation": "AMR",
+      "sample_size": 85
+    },
+    "PUR": {
+      "name": "Puerto Ricans in Puerto Rico",
+      "region": "Latin America",
+      "superpopulation": "AMR",
+      "sample_size": 104
+    }
+  },
+  "total_variants_analyzed": 179045,
+  "generated_at": "2026-05-18T01:53:14.199289Z"
 }

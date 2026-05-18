@@ -1,0 +1,93 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment
+        required: true
+        default: dev
+        type: choice
+        options: [dev, prod]
+      terraform_action:
+        description: Terraform action
+        required: true
+        default: plan
+        type: choice
+        options: [plan, apply]
+
+permissions:
+  id-token: write   # required for OIDC → AWS
+  contents: read
+
+env:
+  AWS_REGION: us-east-1
+  TF_DIR: infra/terraform
+
+jobs:
+  terraform:
+    name: Terraform ${{ inputs.terraform_action }} (${{ inputs.environment }})
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "~1.8"
+
+      - name: Terraform init
+        working-directory: ${{ env.TF_DIR }}
+        run: |
+          terraform init \
+            -backend-config="bucket=${{ secrets.TF_STATE_BUCKET }}" \
+            -backend-config="key=pgx-latam/${{ inputs.environment }}/terraform.tfstate" \
+            -backend-config="region=${{ env.AWS_REGION }}"
+
+      - name: Terraform plan
+        working-directory: ${{ env.TF_DIR }}
+        run: |
+          terraform plan \
+            -var="environment=${{ inputs.environment }}" \
+            -var="lake_bucket_name=${{ secrets.PGX_S3_LAKE_BUCKET }}" \
+            -out=tfplan
+
+      - name: Terraform apply
+        if: inputs.terraform_action == 'apply'
+        working-directory: ${{ env.TF_DIR }}
+        run: terraform apply -auto-approve tfplan
+
+  sync-glue-scripts:
+    name: Sync Glue job scripts to S3
+    runs-on: ubuntu-latest
+    needs: terraform
+    if: inputs.terraform_action == 'apply'
+    environment: ${{ inputs.environment }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Upload Glue job scripts
+        run: |
+          aws s3 sync src/glue_jobs/ \
+            s3://${{ secrets.PGX_GLUE_SCRIPTS_BUCKET }}/glue_jobs/ \
+            --delete \
+            --exclude "__pycache__/*"
+
+      - name: Upload Step Functions ASL
+        run: |
+          aws s3 cp infra/step_functions/pgx_pipeline.asl.json \
+            s3://${{ secrets.PGX_GLUE_SCRIPTS_BUCKET }}/step_functions/pgx_pipeline.asl.json
