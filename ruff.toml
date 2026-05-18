@@ -19,15 +19,17 @@ select = [
     "RUF",  # Ruff-specific rules
 ]
 ignore = [
-    "ANN101",  # missing type annotation for self
-    "ANN102",  # missing type annotation for cls
-    "S101",    # use of assert — allowed in tests
+    "ANN401",  # typing.Any allowed — necessary for pandas/boto3/dynamic dispatch
+    "TC003",   # stdlib imports used at runtime, not type-checking only
+    "TC004",   # third-party imports used at runtime
 ]
 
 [lint.per-file-ignores]
 "tests/**" = ["ANN", "S101", "T20"]
 "notebooks/**" = ["T20", "ANN", "E501"]
 "src/glue_jobs/**" = ["ANN", "T20"]
+"src/pgx_latam/**" = ["T20"]   # print() is intentional in CLI main() entry points
+"src/lambda/**" = ["ANN", "S"] # Lambda deployment artifact — different constraints
 
 [lint.isort]
 known-first-party = ["pgx_latam"]

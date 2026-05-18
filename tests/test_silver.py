@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import pandas as pd
-import pytest
 
 from pgx_latam.transformations.silver_clinical import (
     _classify_recommendation,
@@ -15,7 +14,6 @@ from pgx_latam.transformations.silver_variants import (
     build_pharmacogenes,
     build_populations,
 )
-
 
 # ── assign_gene_symbols ───────────────────────────────────────────────────────
 
@@ -157,7 +155,7 @@ class TestBuildPharmacogenes:
         df = build_pharmacogenes(self._genes_df())
         cyp2d6 = df[df["gene_symbol"] == "CYP2D6"]
         assert len(cyp2d6) == 1
-        assert cyp2d6["is_in_scope"].iloc[0] == False
+        assert not cyp2d6["is_in_scope"].iloc[0]
 
     def test_unknown_gene_excluded(self) -> None:
         df = build_pharmacogenes(self._genes_df())
@@ -166,7 +164,7 @@ class TestBuildPharmacogenes:
     def test_is_in_scope_is_true_for_cyp2c19(self) -> None:
         df = build_pharmacogenes(self._genes_df())
         cyp2c19 = df[df["gene_symbol"] == "CYP2C19"]
-        assert cyp2c19["is_in_scope"].iloc[0] == True
+        assert cyp2c19["is_in_scope"].iloc[0]
 
     def test_scope_rationale_is_not_empty(self) -> None:
         df = build_pharmacogenes(self._genes_df())
@@ -178,54 +176,54 @@ class TestBuildPharmacogenes:
 
 class TestClassifyRecommendation:
     def test_avoid_triggers_alternative_flag(self) -> None:
-        change, alt = _classify_recommendation(
+        _change, alt = _classify_recommendation(
             "Avoid use in poor metabolizers.", "Strong"
         )
-        assert alt == True
+        assert alt
 
     def test_reduce_dose_triggers_dose_change_flag(self) -> None:
-        change, alt = _classify_recommendation(
+        change, _alt = _classify_recommendation(
             "Reduce dose by 50% for intermediate metabolizers.", "Strong"
         )
-        assert change == True
+        assert change
 
     def test_no_recommendation_returns_both_false(self) -> None:
         change, alt = _classify_recommendation(
             "Reduce dose or use alternative drug.", "No recommendation"
         )
-        assert change == False
-        assert alt == False
+        assert not change
+        assert not alt
 
     def test_empty_strength_returns_both_false(self) -> None:
         change, alt = _classify_recommendation("Reduce dose.", "")
-        assert change == False
-        assert alt == False
+        assert not change
+        assert not alt
 
     def test_normal_metabolizer_no_action_needed(self) -> None:
         change, alt = _classify_recommendation(
             "Standard dosing is appropriate.", "Strong"
         )
-        assert change == False
-        assert alt == False
+        assert not change
+        assert not alt
 
     def test_both_flags_can_be_true(self) -> None:
         change, alt = _classify_recommendation(
             "If poor metabolizer: reduce dose or consider alternative therapy.", "Strong"
         )
-        assert change == True
-        assert alt == True
+        assert change
+        assert alt
 
     def test_case_insensitive_matching(self) -> None:
-        change, alt = _classify_recommendation(
+        _change, alt = _classify_recommendation(
             "AVOID USE IN POOR METABOLIZERS.", "Strong"
         )
-        assert alt == True
+        assert alt
 
     def test_titration_triggers_dose_change(self) -> None:
-        change, alt = _classify_recommendation(
+        change, _alt = _classify_recommendation(
             "Titrate carefully based on response.", "Moderate"
         )
-        assert change == True
+        assert change
 
 
 # ── build_clinical_variants ───────────────────────────────────────────────────
@@ -254,12 +252,12 @@ class TestBuildClinicalVariants:
     def test_is_actionable_for_level_1a_and_1b(self) -> None:
         df = build_clinical_variants(self._clinical_df(), pd.DataFrame())
         rs_1a = df[df["variant_rsid"] == "rs4244285"]
-        assert rs_1a["is_actionable"].iloc[0] == True
+        assert rs_1a["is_actionable"].iloc[0]
 
     def test_is_not_actionable_for_level_2b(self) -> None:
         df = build_clinical_variants(self._clinical_df(), pd.DataFrame())
         star2 = df[df["variant_rsid"] == "CYP2C19*2"]
-        assert star2["is_actionable"].iloc[0] == False
+        assert not star2["is_actionable"].iloc[0]
 
 
 # ── build_drug_recommendations ────────────────────────────────────────────────
@@ -285,13 +283,13 @@ class TestBuildDrugRecommendations:
     def test_poor_metabolizer_flagged_as_requires_alternative(self) -> None:
         df = build_drug_recommendations(self._cpic_df())
         pm = df[df["phenotype"] == "Poor Metabolizer"]
-        assert pm["requires_alternative"].iloc[0] == True
+        assert pm["requires_alternative"].iloc[0]
 
     def test_normal_metabolizer_no_flags(self) -> None:
         df = build_drug_recommendations(self._cpic_df())
         nm = df[df["phenotype"] == "Normal Metabolizer"]
-        assert nm["requires_dose_change"].iloc[0] == False
-        assert nm["requires_alternative"].iloc[0] == False
+        assert not nm["requires_dose_change"].iloc[0]
+        assert not nm["requires_alternative"].iloc[0]
 
     def test_out_of_scope_gene_excluded(self) -> None:
         extra = pd.DataFrame(

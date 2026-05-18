@@ -2,7 +2,7 @@
 
 Reads:
   bronze/pharmgkb_clinical_annotations_raw/  — clinical annotations with evidence levels
-  bronze/pharmgkb_var_drug_ann_raw/           — variant–drug literature associations
+  bronze/pharmgkb_var_drug_ann_raw/           — variant-drug literature associations
   bronze/cpic_guidelines_raw/                 — CPIC prescribing recommendations
 
 Produces:
@@ -14,7 +14,6 @@ from __future__ import annotations
 
 import logging
 import re
-from datetime import datetime
 
 import pandas as pd
 

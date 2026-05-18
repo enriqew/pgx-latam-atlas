@@ -5,7 +5,6 @@ from __future__ import annotations
 from datetime import date
 
 import pandas as pd
-import pytest
 
 from pgx_latam.transformations.gold_aggregates import (
     GENE_KEY_VARIANTS,
@@ -98,7 +97,7 @@ class TestBuildAlleleFrequencies:
     def test_delta_vs_ceu_mxl(self) -> None:
         df = build_allele_frequencies(self._variants_df(), self._clinical_df(), _SNAP)
         mxl = df[df["population_code"] == "MXL"]
-        # MXL freq 0.75 − CEU freq 0.25 = 0.50
+        # MXL freq 0.75 - CEU freq 0.25 = 0.50
         assert abs(mxl["delta_vs_ceu"].iloc[0] - 0.50) < 1e-4
 
     def test_delta_vs_ceu_is_zero_for_ceu(self) -> None:
@@ -161,7 +160,9 @@ class TestBuildPhenotypeDistribution:
 
     def test_mxl_poor_metabolizer_count(self) -> None:
         df = build_phenotype_distribution(self._variants_df(), self._populations_df(), _SNAP)
-        mxl_pm = df[(df["population_code"] == "MXL") & (df["phenotype_category"] == "Poor Metabolizer")]
+        mxl_pm = df[
+            (df["population_code"] == "MXL") & (df["phenotype_category"] == "Poor Metabolizer")
+        ]
         assert mxl_pm["individual_count"].iloc[0] == 1
 
     def test_population_total_from_populations_df(self) -> None:

@@ -8,7 +8,6 @@ approximation when proportions are near 0 or 1 — common for rare alleles.
 import math
 from typing import NamedTuple
 
-
 _Z95 = 1.96  # z-score for 95% confidence interval
 
 
@@ -27,7 +26,7 @@ def wilson_score_interval(
 
     Args:
         successes: Number of observed successes (e.g., alternate allele count).
-        trials: Total number of trials (e.g., total alleles = 2 × sample size).
+        trials: Total number of trials (e.g., total alleles = 2 x sample size).
         z: z-score for the desired confidence level. Default: 1.96 (95% CI).
 
     Returns:

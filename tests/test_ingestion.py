@@ -4,16 +4,14 @@ from __future__ import annotations
 
 import io
 import zipfile
-from datetime import date
 
 import pandas as pd
 import pytest
 
+from pgx_latam.ingestion.cpic import _flatten_recommendations
 from pgx_latam.ingestion.pharmgkb import (
     _clinical_annotations_spec,
-    _drugs_spec,
     _extract_tsv_from_zip,
-    _genes_spec,
     _map_columns,
     _parse_cross_references,
 )
@@ -22,8 +20,6 @@ from pgx_latam.ingestion.thousand_genomes import (
     _build_panel_df,
     _vcf_url,
 )
-from pgx_latam.ingestion.cpic import _flatten_recommendations
-
 
 # ── PharmGKB helpers ──────────────────────────────────────────────────────────
 
@@ -43,7 +39,7 @@ class TestExtractTsvFromZip:
 
     def test_raises_when_member_missing(self) -> None:
         zip_bytes = self._make_zip("other_file.tsv", "a\tb\n1\t2\n")
-        with pytest.raises(RuntimeError, match="clinical_annotations.tsv"):
+        with pytest.raises(RuntimeError, match=r"clinical_annotations\.tsv"):
             _extract_tsv_from_zip(zip_bytes, "clinical_annotations.tsv")
 
     def test_handles_subdirectory_prefix(self) -> None:

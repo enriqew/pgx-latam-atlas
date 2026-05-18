@@ -124,7 +124,7 @@ def write_silver_variants_partition(
     gene_symbol: str,
     population_code: str,
 ) -> Path:
-    """Write a silver/variants/ partition for one gene × population combination.
+    """Write a silver/variants/ partition for one gene x population combination.
 
     Directory layout: ``table_root/gene_symbol_part=GENE/population_part=POP/data.parquet``
 

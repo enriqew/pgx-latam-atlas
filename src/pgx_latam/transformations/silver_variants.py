@@ -6,7 +6,7 @@ Reads:
   bronze/pharmgkb_genes_raw/    — gene coordinates from PharmGKB
 
 Produces:
-  silver/variants/              — partitioned by gene_symbol_part × population_part
+  silver/variants/              — partitioned by gene_symbol_part x population_part
   silver/populations/           — population metadata with sample sizes
   silver/pharmacogenes/         — in-scope gene list with coordinates and rationale
 """
@@ -14,7 +14,6 @@ Produces:
 from __future__ import annotations
 
 import logging
-from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
@@ -26,7 +25,7 @@ from pgx_latam.utils.parquet_io import (
     write_silver_table,
     write_silver_variants_partition,
 )
-from pgx_latam.utils.star_allele_scope import IN_SCOPE_GENES, in_scope_symbols
+from pgx_latam.utils.star_allele_scope import IN_SCOPE_GENES
 
 logger = logging.getLogger(__name__)
 
@@ -194,7 +193,7 @@ def build_variants(
 ) -> int:
     """Join bronze variants with sample metadata, assign genes, write silver partitions.
 
-    Emits one Parquet file per (gene_symbol × population_code) combination.
+    Emits one Parquet file per (gene_symbol x population_code) combination.
 
     Args:
         variants_df: bronze genomes_variants_raw DataFrame.
@@ -266,7 +265,11 @@ def build_variants(
             )
             total_rows += len(pop_df)
 
-    logger.info("silver/variants/: %d rows across %d partitions", total_rows, len(list(table_root.rglob("data.parquet"))))
+    logger.info(
+        "silver/variants/: %d rows across %d partitions",
+        total_rows,
+        len(list(table_root.rglob("data.parquet"))),
+    )
     return total_rows
 
 
