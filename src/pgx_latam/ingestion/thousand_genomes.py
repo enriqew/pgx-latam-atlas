@@ -76,12 +76,12 @@ GENE_REGIONS_GRCH37: dict[str, GeneRegion] = {
 def _vcf_url(chromosome: str) -> str:
     """Return the HTTPS URL for the 1000G Phase 3 VCF for a given chromosome.
 
-    ChrX uses a slightly different filename suffix (_v5a_ instead of _v5b_).
+    ChrX uses filename suffix _v1c_ (updated 2021-03-16); autosomes use _v5b_.
     """
     if chromosome == "X":
         return (
             f"{_1000G_HTTPS_BASE}/"
-            "ALL.chrX.phase3_shapeit2_mvncall_integrated_v5a_20130502.genotypes.vcf.gz"
+            "ALL.chrX.phase3_shapeit2_mvncall_integrated_v1c.20130502.genotypes.vcf.gz"
         )
     return (
         f"{_1000G_HTTPS_BASE}/"

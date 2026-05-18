@@ -156,10 +156,10 @@ class TestVcfUrl:
         assert "v5b" in url
         assert url.endswith(".vcf.gz")
 
-    def test_chrx_uses_v5a_pattern(self) -> None:
+    def test_chrx_uses_v1c_pattern(self) -> None:
         url = _vcf_url("X")
         assert "chrX" in url
-        assert "v5a" in url
+        assert "v1c" in url
         assert "v5b" not in url
 
     def test_all_gene_chromosomes_have_url(self) -> None:

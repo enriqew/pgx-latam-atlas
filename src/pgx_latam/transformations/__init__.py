@@ -5,7 +5,7 @@ from __future__ import annotations
 import logging
 
 from pgx_latam.config import Settings, get_settings
-from pgx_latam.transformations import silver_clinical, silver_variants
+from pgx_latam.transformations import gold_aggregates, silver_clinical, silver_variants
 
 logger = logging.getLogger(__name__)
 
@@ -23,6 +23,14 @@ def run_silver(settings: Settings | None = None) -> None:
     logger.info("=== Silver transformation complete ===")
 
 
+def run_gold(settings: Settings | None = None) -> None:
+    """Run all gold aggregations."""
+    cfg = settings or get_settings()
+    logger.info("=== Gold transformation start ===")
+    gold_aggregates.run(cfg)
+    logger.info("=== Gold transformation complete ===")
+
+
 def main() -> None:
     import argparse
 
@@ -33,9 +41,9 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Run pgx-latam silver transformations.")
     parser.add_argument(
         "--layer",
-        choices=["all", "variants", "clinical"],
+        choices=["all", "variants", "clinical", "gold"],
         default="all",
-        help="Which silver table group to build (default: all)",
+        help="Which layer to build (default: all silver layers)",
     )
     args = parser.parse_args()
     cfg = get_settings()
@@ -46,3 +54,5 @@ def main() -> None:
         silver_variants.run(cfg)
     elif args.layer == "clinical":
         silver_clinical.run(cfg)
+    elif args.layer == "gold":
+        run_gold(cfg)
