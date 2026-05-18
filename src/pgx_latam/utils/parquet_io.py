@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 # ── Bronze writes ─────────────────────────────────────────────────────────────
 
+
 def write_bronze_partition(
     df: pd.DataFrame,
     table_root: Path,
@@ -45,6 +46,7 @@ def write_bronze_partition(
 
 # ── Bronze reads ──────────────────────────────────────────────────────────────
 
+
 def read_latest_bronze_partition(table_root: Path) -> pd.DataFrame:
     """Read all Parquet files from the most recent ingest_date partition.
 
@@ -61,8 +63,7 @@ def read_latest_bronze_partition(table_root: Path) -> pd.DataFrame:
     """
     if not table_root.exists():
         raise FileNotFoundError(
-            f"Bronze table not found: {table_root}\n"
-            "Run ingestion first: make ingest-local"
+            f"Bronze table not found: {table_root}\nRun ingestion first: make ingest-local"
         )
 
     date_dirs = sorted(
@@ -97,6 +98,7 @@ def read_latest_bronze_partition(table_root: Path) -> pd.DataFrame:
 
 
 # ── Silver writes ─────────────────────────────────────────────────────────────
+
 
 def write_silver_table(
     df: pd.DataFrame,
@@ -137,11 +139,7 @@ def write_silver_variants_partition(
     Returns:
         Path to the written ``.parquet`` file.
     """
-    out_dir = (
-        table_root
-        / f"gene_symbol_part={gene_symbol}"
-        / f"population_part={population_code}"
-    )
+    out_dir = table_root / f"gene_symbol_part={gene_symbol}" / f"population_part={population_code}"
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "data.parquet"
     df.to_parquet(out_path, engine="pyarrow", compression="snappy", index=False)

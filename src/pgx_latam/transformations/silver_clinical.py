@@ -62,9 +62,7 @@ _ALTERNATIVE_PATTERNS: list[re.Pattern[str]] = [
 ]
 
 
-def _classify_recommendation(
-    text: str, classification_strength: str
-) -> tuple[bool, bool]:
+def _classify_recommendation(text: str, classification_strength: str) -> tuple[bool, bool]:
     """Return (requires_dose_change, requires_alternative) for a recommendation.
 
     No flags are set for "No recommendation" or empty strength regardless of text,
@@ -88,6 +86,7 @@ def _classify_recommendation(
 
 
 # ── silver/clinical_variants/ ─────────────────────────────────────────────────
+
 
 def build_clinical_variants(
     clinical_ann_df: pd.DataFrame,
@@ -115,22 +114,28 @@ def build_clinical_variants(
         )
         return pd.DataFrame(
             columns=[
-                "variant_rsid", "gene_symbol", "drug_name",
-                "phenotype_category", "evidence_level",
-                "is_actionable", "annotation_summary",
+                "variant_rsid",
+                "gene_symbol",
+                "drug_name",
+                "phenotype_category",
+                "evidence_level",
+                "is_actionable",
+                "annotation_summary",
             ]
         )
 
     ann["is_actionable"] = ann["evidence_level"].isin(_ACTIONABLE_EVIDENCE_LEVELS)
     ann["annotation_summary"] = (
-        ann.get("annotation_text", pd.Series(dtype=str))
-        .fillna("")
-        .str[:500]
+        ann.get("annotation_text", pd.Series(dtype=str)).fillna("").str[:500]
     )
 
     # Explode drug_names (semicolon or comma separated) to one row per drug
-    ann["drug_name"] = ann["drug_names"].str.split(r"[,;]").apply(
-        lambda parts: [p.strip() for p in (parts or [])] if isinstance(parts, list) else [""]
+    ann["drug_name"] = (
+        ann["drug_names"]
+        .str.split(r"[,;]")
+        .apply(
+            lambda parts: [p.strip() for p in (parts or [])] if isinstance(parts, list) else [""]
+        )
     )
     ann = ann.explode("drug_name").reset_index(drop=True)
     ann["drug_name"] = ann["drug_name"].str.strip().str.lower()
@@ -140,14 +145,16 @@ def build_clinical_variants(
     ann["phenotype_category"] = ann.get("phenotype_categories", pd.Series(dtype=str)).fillna("")
 
     silver_cols = [
-        "variant_rsid", "gene_symbol", "drug_name",
-        "phenotype_category", "evidence_level",
-        "is_actionable", "annotation_summary",
+        "variant_rsid",
+        "gene_symbol",
+        "drug_name",
+        "phenotype_category",
+        "evidence_level",
+        "is_actionable",
+        "annotation_summary",
     ]
     available = [c for c in silver_cols if c in ann.columns]
-    result = ann[available].drop_duplicates(
-        subset=["variant_rsid", "gene_symbol", "drug_name"]
-    )
+    result = ann[available].drop_duplicates(subset=["variant_rsid", "gene_symbol", "drug_name"])
 
     logger.info(
         "silver/clinical_variants/: %d rows (%d actionable)",
@@ -158,6 +165,7 @@ def build_clinical_variants(
 
 
 # ── silver/drug_recommendations/ ──────────────────────────────────────────────
+
 
 def build_drug_recommendations(cpic_df: pd.DataFrame) -> pd.DataFrame:
     """Build silver/drug_recommendations/ from CPIC guidelines.
@@ -176,14 +184,17 @@ def build_drug_recommendations(cpic_df: pd.DataFrame) -> pd.DataFrame:
 
     if filtered.empty:
         logger.warning(
-            "No CPIC recommendations found for in-scope genes. "
-            "Check bronze/cpic_guidelines_raw/."
+            "No CPIC recommendations found for in-scope genes. Check bronze/cpic_guidelines_raw/."
         )
         return pd.DataFrame(
             columns=[
-                "gene_symbol", "drug_name", "phenotype",
-                "recommendation_text", "classification_strength",
-                "requires_dose_change", "requires_alternative",
+                "gene_symbol",
+                "drug_name",
+                "phenotype",
+                "recommendation_text",
+                "classification_strength",
+                "requires_dose_change",
+                "requires_alternative",
                 "cpic_release_version",
             ]
         )
@@ -202,15 +213,17 @@ def build_drug_recommendations(cpic_df: pd.DataFrame) -> pd.DataFrame:
     filtered["drug_name"] = filtered["drug_name"].str.strip().str.lower()
 
     silver_cols = [
-        "gene_symbol", "drug_name", "phenotype",
-        "recommendation_text", "classification_strength",
-        "requires_dose_change", "requires_alternative",
+        "gene_symbol",
+        "drug_name",
+        "phenotype",
+        "recommendation_text",
+        "classification_strength",
+        "requires_dose_change",
+        "requires_alternative",
         "cpic_release_version",
     ]
     available = [c for c in silver_cols if c in filtered.columns]
-    result = filtered[available].drop_duplicates(
-        subset=["gene_symbol", "drug_name", "phenotype"]
-    )
+    result = filtered[available].drop_duplicates(subset=["gene_symbol", "drug_name", "phenotype"])
 
     n_dose = result["requires_dose_change"].sum()
     n_alt = result["requires_alternative"].sum()
@@ -225,6 +238,7 @@ def build_drug_recommendations(cpic_df: pd.DataFrame) -> pd.DataFrame:
 
 # ── Orchestrator ──────────────────────────────────────────────────────────────
 
+
 def run(settings: Settings | None = None) -> None:
     """Build silver/clinical_variants/ and silver/drug_recommendations/ from bronze.
 
@@ -237,12 +251,8 @@ def run(settings: Settings | None = None) -> None:
     clinical_ann_df = read_latest_bronze_partition(
         cfg.bronze_root / "pharmgkb_clinical_annotations_raw"
     )
-    var_drug_ann_df = read_latest_bronze_partition(
-        cfg.bronze_root / "pharmgkb_var_drug_ann_raw"
-    )
-    cpic_df = read_latest_bronze_partition(
-        cfg.bronze_root / "cpic_guidelines_raw"
-    )
+    var_drug_ann_df = read_latest_bronze_partition(cfg.bronze_root / "pharmgkb_var_drug_ann_raw")
+    cpic_df = read_latest_bronze_partition(cfg.bronze_root / "cpic_guidelines_raw")
 
     logger.info("=== silver_clinical: building clinical_variants ===")
     clinical_df = build_clinical_variants(clinical_ann_df, var_drug_ann_df)

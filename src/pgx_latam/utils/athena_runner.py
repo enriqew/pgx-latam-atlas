@@ -62,9 +62,8 @@ def run_query(
 
         if state in _TERMINAL_STATES:
             if state != "SUCCEEDED":
-                reason = (
-                    status_response["QueryExecution"]["Status"]
-                    .get("StateChangeReason", "no reason provided")
+                reason = status_response["QueryExecution"]["Status"].get(
+                    "StateChangeReason", "no reason provided"
                 )
                 raise AthenaQueryError(
                     f"Athena query {execution_id} ended with state {state}: {reason}\n"

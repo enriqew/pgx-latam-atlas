@@ -124,12 +124,9 @@ def _flatten_recommendations(
         genes_to_emit = guideline_genes if guideline_genes else list(phenotypes.keys())
 
         for gene_symbol in genes_to_emit:
-            phenotype = phenotypes.get(gene_symbol) or phenotypes.get(
-                gene_symbol.upper(), ""
-            )
+            phenotype = phenotypes.get(gene_symbol) or phenotypes.get(gene_symbol.upper(), "")
             activity_score = str(
-                activity_scores.get(gene_symbol)
-                or activity_scores.get(gene_symbol.upper(), "")
+                activity_scores.get(gene_symbol) or activity_scores.get(gene_symbol.upper(), "")
             )
             rows.append(
                 {

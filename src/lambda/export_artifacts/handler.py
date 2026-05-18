@@ -6,7 +6,7 @@ Environment variables (set by Terraform):
     ATHENA_RESULTS_PREFIX  S3 key prefix for Athena query output (e.g. "athena-results")
     GOLD_DATABASE          Athena database for gold tables (e.g. "gold_pgx")
     SILVER_DATABASE        Athena database for silver tables (e.g. "silver_pgx")
-    GITHUB_REPO            owner/repo for artifact commits (e.g. "enrique-redonda/pgx-latam-atlas")
+    GITHUB_REPO            owner/repo for artifact commits (e.g. "enriqew/pgx-latam-atlas")
 
 Secrets Manager (IAM policy grants read):
     pgx-latam/github-pat   {"token": "<PAT>"} — contents:write scope on GITHUB_REPO
@@ -41,7 +41,7 @@ ATHENA_WORKGROUP = os.environ["ATHENA_WORKGROUP"]
 ATHENA_RESULTS_PREFIX = os.environ.get("ATHENA_RESULTS_PREFIX", "athena-results")
 GOLD_DB = os.environ.get("GOLD_DATABASE", "gold_pgx")
 SILVER_DB = os.environ.get("SILVER_DATABASE", "silver_pgx")
-GITHUB_REPO = os.environ.get("GITHUB_REPO", "enrique-redonda/pgx-latam-atlas")
+GITHUB_REPO = os.environ.get("GITHUB_REPO", "enriqew/pgx-latam-atlas")
 GITHUB_PAT_SECRET = "pgx-latam/github-pat"
 GITHUB_API_BASE = "https://api.github.com"
 
@@ -50,13 +50,17 @@ GITHUB_API_BASE = "https://api.github.com"
 # Positions confirmed present in the 1000G Phase 3 bronze layer.
 
 _KEY_POSITIONS = (
-    "chr10:96521657", "chr10:96540410",             # CYP2C19 *2 (rs4244285), *3 (rs4986893)
-    "chr10:96741053",                                # CYP2C9 *2 (rs1799853)
-    "chr12:21331546",                                # SLCO1B1 *5 (rs4149056)
-    "chr16:31093568",                                # VKORC1 -1639G>A (rs9923231)
-    "chr6:18131419",                                 # TPMT *3B (rs1800460)
-    "chr1:97981343", "chr1:97915614", "chr1:97981395",  # DPYD *2A, HapB3, *13
-    "chrX:153763492", "chrX:153764217",              # G6PD Ser188Phe, Glu202Lys
+    "chr10:96521657",
+    "chr10:96540410",  # CYP2C19 *2 (rs4244285), *3 (rs4986893)
+    "chr10:96741053",  # CYP2C9 *2 (rs1799853)
+    "chr12:21331546",  # SLCO1B1 *5 (rs4149056)
+    "chr16:31093568",  # VKORC1 -1639G>A (rs9923231)
+    "chr6:18131419",  # TPMT *3B (rs1800460)
+    "chr1:97981343",
+    "chr1:97915614",
+    "chr1:97981395",  # DPYD *2A, HapB3, *13
+    "chrX:153763492",
+    "chrX:153764217",  # G6PD Ser188Phe, Glu202Lys
 )
 
 _KEY_POSITIONS_SQL = ", ".join(f"'{p}'" for p in _KEY_POSITIONS)
@@ -88,9 +92,7 @@ def _run_athena_query(client: Any, sql: str) -> list[dict[str, Any]]:
             reason = status_response["QueryExecution"]["QueryExecutionStatus"].get(
                 "StateChangeReason", "unknown"
             )
-            raise RuntimeError(
-                f"Athena query {execution_id} {state}: {reason}\nSQL: {sql[:300]}"
-            )
+            raise RuntimeError(f"Athena query {execution_id} {state}: {reason}\nSQL: {sql[:300]}")
     else:
         timeout_s = _MAX_POLL_ATTEMPTS * _POLL_INTERVAL_SECONDS
         raise RuntimeError(f"Athena query {execution_id} timed out after {timeout_s}s")
@@ -228,6 +230,7 @@ def _cast_pop_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 # ── GitHub helpers ─────────────────────────────────────────────────────────────
 
+
 def _get_github_pat() -> str:
     sm = boto3.client("secretsmanager")
     secret = sm.get_secret_value(SecretId=GITHUB_PAT_SECRET)
@@ -271,6 +274,7 @@ def _commit_artifact(pat: str, path: str, content_bytes: bytes, run_date: str) -
 
 
 # ── Handler ───────────────────────────────────────────────────────────────────
+
 
 def handler(event: dict[str, Any], context: Any) -> dict[str, Any]:
     logger.info("ExportArtifacts started — requestId=%s", context.aws_request_id)

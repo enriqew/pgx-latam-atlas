@@ -36,6 +36,7 @@ _SCHEMA_VERSION = "1.0.0"
 
 # ── JSON serialization ────────────────────────────────────────────────────────
 
+
 def _coerce_value(v: Any) -> Any:
     """Convert numpy/pandas scalars to JSON-serializable Python types."""
     if pd.isna(v) if not isinstance(v, (list, dict)) else False:
@@ -64,6 +65,7 @@ def _write_artifact(data: Any, path: Path) -> None:
 
 # ── Per-artifact exporters ────────────────────────────────────────────────────
 
+
 def export_allele_frequencies(
     gold_root: Path,
     artifacts_root: Path,
@@ -76,12 +78,22 @@ def export_allele_frequencies(
         return 0
 
     columns = [
-        "variant_id", "gene_symbol", "chromosome", "position",
-        "reference_allele", "alternate_allele",
-        "population_code", "superpopulation",
-        "allele_count", "total_alleles", "allele_frequency",
-        "ci_lower_wilson", "ci_upper_wilson",
-        "delta_vs_ceu", "is_actionable", "snapshot_date",
+        "variant_id",
+        "gene_symbol",
+        "chromosome",
+        "position",
+        "reference_allele",
+        "alternate_allele",
+        "population_code",
+        "superpopulation",
+        "allele_count",
+        "total_alleles",
+        "allele_frequency",
+        "ci_lower_wilson",
+        "ci_upper_wilson",
+        "delta_vs_ceu",
+        "is_actionable",
+        "snapshot_date",
     ]
     available = [c for c in columns if c in df.columns]
     records = _df_to_records(df[available])
@@ -101,9 +113,15 @@ def export_phenotype_distribution(
         return 0
 
     columns = [
-        "gene_symbol", "population_code", "superpopulation",
-        "phenotype_category", "individual_count", "population_total",
-        "phenotype_percentage", "ci_lower_wilson", "ci_upper_wilson",
+        "gene_symbol",
+        "population_code",
+        "superpopulation",
+        "phenotype_category",
+        "individual_count",
+        "population_total",
+        "phenotype_percentage",
+        "ci_lower_wilson",
+        "ci_upper_wilson",
         "snapshot_date",
     ]
     available = [c for c in columns if c in df.columns]
@@ -124,10 +142,16 @@ def export_drug_impact_summary(
         return 0
 
     columns = [
-        "drug_name", "gene_symbol", "population_code", "population_total",
-        "individuals_requiring_change", "percentage_requiring_change",
-        "baseline_ceu_percentage", "delta_vs_baseline",
-        "classification_strength", "snapshot_date",
+        "drug_name",
+        "gene_symbol",
+        "population_code",
+        "population_total",
+        "individuals_requiring_change",
+        "percentage_requiring_change",
+        "baseline_ceu_percentage",
+        "delta_vs_baseline",
+        "classification_strength",
+        "snapshot_date",
     ]
     available = [c for c in columns if c in df.columns]
     records = _df_to_records(df[available])
@@ -147,9 +171,15 @@ def export_actionability_ranking(
         return 0
 
     columns = [
-        "rank_position", "drug_name", "gene_symbol", "population_code",
-        "delta_vs_baseline", "population_affected_pct",
-        "classification_strength", "clinical_implication", "snapshot_date",
+        "rank_position",
+        "drug_name",
+        "gene_symbol",
+        "population_code",
+        "delta_vs_baseline",
+        "population_affected_pct",
+        "classification_strength",
+        "clinical_implication",
+        "snapshot_date",
     ]
     available = [c for c in columns if c in df.columns]
     records = _df_to_records(df[available])
@@ -196,6 +226,7 @@ def export_metadata(
 
 # ── Orchestrator ──────────────────────────────────────────────────────────────
 
+
 def run(settings: Settings | None = None, snapshot_date: date | None = None) -> None:
     """Export all gold artifacts to artifacts/ directory.
 
@@ -224,7 +255,10 @@ def run(settings: Settings | None = None, snapshot_date: date | None = None) -> 
 
     logger.info(
         "portfolio_artifacts complete — af=%d pheno=%d impact=%d ranking=%d",
-        n_af, n_ph, n_di, n_ar,
+        n_af,
+        n_ph,
+        n_di,
+        n_ar,
     )
 
 

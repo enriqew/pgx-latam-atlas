@@ -20,6 +20,7 @@ _SNAP = date(2025, 1, 1)
 
 # ── _infer_phenotype ──────────────────────────────────────────────────────────
 
+
 class TestInferPhenotype:
     def test_standard_gene_normal_metabolizer(self) -> None:
         assert _infer_phenotype("CYP2C19", 0) == "Normal Metabolizer"
@@ -56,6 +57,7 @@ class TestInferPhenotype:
 
 
 # ── build_allele_frequencies ──────────────────────────────────────────────────
+
 
 class TestBuildAlleleFrequencies:
     def _variants_df(self) -> pd.DataFrame:
@@ -127,6 +129,7 @@ class TestBuildAlleleFrequencies:
 
 # ── build_phenotype_distribution ──────────────────────────────────────────────
 
+
 class TestBuildPhenotypeDistribution:
     def _variants_df(self) -> pd.DataFrame:
         key_rsid = GENE_KEY_VARIANTS["CYP2C19"][0]
@@ -182,9 +185,7 @@ class TestBuildPhenotypeDistribution:
         assert "ci_upper_wilson" in df.columns
 
     def test_empty_variants_returns_empty(self) -> None:
-        df = build_phenotype_distribution(
-            pd.DataFrame(), self._populations_df(), _SNAP
-        )
+        df = build_phenotype_distribution(pd.DataFrame(), self._populations_df(), _SNAP)
         assert df.empty
 
     def test_gene_without_key_variants_skipped(self) -> None:
@@ -204,6 +205,7 @@ class TestBuildPhenotypeDistribution:
 
 # ── build_drug_impact_summary ─────────────────────────────────────────────────
 
+
 class TestBuildDrugImpactSummary:
     def _pheno_df(self) -> pd.DataFrame:
         return pd.DataFrame(
@@ -212,8 +214,10 @@ class TestBuildDrugImpactSummary:
                 "population_code": ["MXL", "MXL", "CEU", "CEU"],
                 "superpopulation": ["AMR", "AMR", "EUR", "EUR"],
                 "phenotype_category": [
-                    "Poor Metabolizer", "Normal Metabolizer",
-                    "Poor Metabolizer", "Normal Metabolizer",
+                    "Poor Metabolizer",
+                    "Normal Metabolizer",
+                    "Poor Metabolizer",
+                    "Normal Metabolizer",
                 ],
                 "individual_count": [10, 40, 5, 45],
                 "population_total": [50, 50, 50, 50],
@@ -272,6 +276,7 @@ class TestBuildDrugImpactSummary:
 
 
 # ── build_actionability_ranking ───────────────────────────────────────────────
+
 
 class TestBuildActionabilityRanking:
     def _impact_df(self) -> pd.DataFrame:
@@ -335,8 +340,14 @@ class TestBuildActionabilityRanking:
     def test_output_columns_present(self) -> None:
         df = build_actionability_ranking(self._impact_df(), _SNAP)
         expected_cols = {
-            "rank_position", "drug_name", "gene_symbol", "population_code",
-            "delta_vs_baseline", "population_affected_pct",
-            "classification_strength", "clinical_implication", "snapshot_date",
+            "rank_position",
+            "drug_name",
+            "gene_symbol",
+            "population_code",
+            "delta_vs_baseline",
+            "population_affected_pct",
+            "classification_strength",
+            "clinical_implication",
+            "snapshot_date",
         }
         assert expected_cols.issubset(set(df.columns))

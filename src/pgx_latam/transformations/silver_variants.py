@@ -45,6 +45,7 @@ _POPULATION_NAMES: dict[str, tuple[str, str]] = {
 
 # ── Gene assignment ───────────────────────────────────────────────────────────
 
+
 def assign_gene_symbols(
     chrom_series: pd.Series,
     pos_series: pd.Series,
@@ -74,6 +75,7 @@ def assign_gene_symbols(
 
 
 # ── silver/populations/ ───────────────────────────────────────────────────────
+
 
 def build_populations(samples_df: pd.DataFrame) -> pd.DataFrame:
     """Build the silver populations table from the samples metadata.
@@ -112,6 +114,7 @@ def build_populations(samples_df: pd.DataFrame) -> pd.DataFrame:
 
 # ── silver/pharmacogenes/ ────────────────────────────────────────────────────
 
+
 def build_pharmacogenes(pharmgkb_genes_df: pd.DataFrame) -> pd.DataFrame:
     """Build the silver pharmacogenes table.
 
@@ -125,9 +128,7 @@ def build_pharmacogenes(pharmgkb_genes_df: pd.DataFrame) -> pd.DataFrame:
         DataFrame matching silver_pgx.pharmacogenes schema.
     """
     scope_genes = set(IN_SCOPE_GENES.keys())
-    pgkb_filtered = pharmgkb_genes_df[
-        pharmgkb_genes_df["gene_symbol"].isin(scope_genes)
-    ].copy()
+    pgkb_filtered = pharmgkb_genes_df[pharmgkb_genes_df["gene_symbol"].isin(scope_genes)].copy()
 
     rows = []
     for _, gene_row in pgkb_filtered.iterrows():
@@ -186,6 +187,7 @@ def _safe_int(value: object) -> int | None:
 
 # ── silver/variants/ ──────────────────────────────────────────────────────────
 
+
 def build_variants(
     variants_df: pd.DataFrame,
     samples_df: pd.DataFrame,
@@ -203,9 +205,7 @@ def build_variants(
     Returns:
         Total rows written across all partitions.
     """
-    sample_lookup = samples_df.set_index("sample_id")[
-        ["population_code", "superpopulation"]
-    ]
+    sample_lookup = samples_df.set_index("sample_id")[["population_code", "superpopulation"]]
     target_sample_ids = set(
         samples_df[samples_df["population_code"].isin(TARGET_POPULATIONS)]["sample_id"]
     )
@@ -245,9 +245,17 @@ def build_variants(
 
     # Drop bronze columns not in silver schema
     silver_cols = [
-        "sample_id", "variant_id", "gene_symbol", "chromosome", "position",
-        "reference_allele", "alternate_allele", "genotype", "allele_dosage",
-        "population_code", "superpopulation",
+        "sample_id",
+        "variant_id",
+        "gene_symbol",
+        "chromosome",
+        "position",
+        "reference_allele",
+        "alternate_allele",
+        "genotype",
+        "allele_dosage",
+        "population_code",
+        "superpopulation",
     ]
     available = [c for c in silver_cols if c in filtered.columns]
     filtered = filtered[available].drop_duplicates(subset=["sample_id", "variant_id"])
@@ -275,6 +283,7 @@ def build_variants(
 
 # ── Orchestrator ──────────────────────────────────────────────────────────────
 
+
 def run(settings: Settings | None = None) -> None:
     """Build all three silver variant-side tables from bronze.
 
@@ -284,15 +293,9 @@ def run(settings: Settings | None = None) -> None:
     cfg = settings or get_settings()
 
     logger.info("=== silver_variants: reading bronze tables ===")
-    samples_df = read_latest_bronze_partition(
-        cfg.bronze_root / "samples_metadata_raw"
-    )
-    variants_df = read_latest_bronze_partition(
-        cfg.bronze_root / "genomes_variants_raw"
-    )
-    pharmgkb_genes_df = read_latest_bronze_partition(
-        cfg.bronze_root / "pharmgkb_genes_raw"
-    )
+    samples_df = read_latest_bronze_partition(cfg.bronze_root / "samples_metadata_raw")
+    variants_df = read_latest_bronze_partition(cfg.bronze_root / "genomes_variants_raw")
+    pharmgkb_genes_df = read_latest_bronze_partition(cfg.bronze_root / "pharmgkb_genes_raw")
 
     logger.info("=== silver_variants: building populations ===")
     populations_df = build_populations(samples_df)

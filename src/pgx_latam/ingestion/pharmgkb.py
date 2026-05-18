@@ -55,7 +55,7 @@ def _clinical_annotations_spec() -> _DownloadSpec:
             "Phenotype Category": "phenotype_categories",
             # PharmGKB renamed "Evidence Level" → "Level of Evidence" (observed 2026-05)
             "Level of Evidence": "evidence_level",
-            "Evidence Level": "evidence_level",       # kept for older downloads
+            "Evidence Level": "evidence_level",  # kept for older downloads
             "Clinical Annotation Types": "clinical_annotation_types",
             "Pediatric": "pediatric",
             "Sentence": "annotation_text",
@@ -73,7 +73,7 @@ def _var_drug_ann_spec() -> _DownloadSpec:
         column_map={
             # PharmGKB renamed "Annotation ID" → "Variant Annotation ID" (observed 2026-05)
             "Variant Annotation ID": "annotation_id",
-            "Annotation ID": "annotation_id",             # kept for older downloads
+            "Annotation ID": "annotation_id",  # kept for older downloads
             "Variant/Haplotypes": "variant_rsid",
             "Gene": "gene_symbol",
             "Drug(s)": "drug_name",
@@ -170,12 +170,8 @@ def _map_columns(df: pd.DataFrame, spec: _DownloadSpec) -> pd.DataFrame:
             "PharmGKB may have changed their schema — update column_map in pharmgkb.py."
         )
 
-    available_mapped = {
-        src: dst for src, dst in spec.column_map.items() if src in actual_cols
-    }
-    missing_optional = [
-        src for src in spec.column_map if src not in actual_cols
-    ]
+    available_mapped = {src: dst for src, dst in spec.column_map.items() if src in actual_cols}
+    missing_optional = [src for src in spec.column_map if src not in actual_cols]
     if missing_optional:
         logger.warning(
             "%s: optional columns not found (will be null): %s",
@@ -206,12 +202,8 @@ def _parse_cross_references(df: pd.DataFrame) -> pd.DataFrame:
         matched = [p.split(":", 1)[1] for p in parts if p.startswith(f"{prefix}:")]
         return ",".join(matched)
 
-    df["atc_identifiers"] = df["_cross_references"].apply(
-        lambda x: _extract(x, "ATC")
-    )
-    df["rxnorm_identifiers"] = df["_cross_references"].apply(
-        lambda x: _extract(x, "RxNorm")
-    )
+    df["atc_identifiers"] = df["_cross_references"].apply(lambda x: _extract(x, "ATC"))
+    df["rxnorm_identifiers"] = df["_cross_references"].apply(lambda x: _extract(x, "RxNorm"))
     return df.drop(columns=["_cross_references"])
 
 

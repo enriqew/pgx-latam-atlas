@@ -17,6 +17,7 @@ from pgx_latam.transformations.silver_variants import (
 
 # ── assign_gene_symbols ───────────────────────────────────────────────────────
 
+
 class TestAssignGeneSymbols:
     def test_cyp2c19_assigned_from_chr10_coordinates(self) -> None:
         chrom = pd.Series(["chr10"])
@@ -85,6 +86,7 @@ class TestAssignGeneSymbols:
 
 # ── build_populations ─────────────────────────────────────────────────────────
 
+
 class TestBuildPopulations:
     def _sample_df(self) -> pd.DataFrame:
         return pd.DataFrame(
@@ -133,6 +135,7 @@ class TestBuildPopulations:
 
 # ── build_pharmacogenes ───────────────────────────────────────────────────────
 
+
 class TestBuildPharmacogenes:
     def _genes_df(self) -> pd.DataFrame:
         return pd.DataFrame(
@@ -174,11 +177,10 @@ class TestBuildPharmacogenes:
 
 # ── _classify_recommendation ──────────────────────────────────────────────────
 
+
 class TestClassifyRecommendation:
     def test_avoid_triggers_alternative_flag(self) -> None:
-        _change, alt = _classify_recommendation(
-            "Avoid use in poor metabolizers.", "Strong"
-        )
+        _change, alt = _classify_recommendation("Avoid use in poor metabolizers.", "Strong")
         assert alt
 
     def test_reduce_dose_triggers_dose_change_flag(self) -> None:
@@ -200,9 +202,7 @@ class TestClassifyRecommendation:
         assert not alt
 
     def test_normal_metabolizer_no_action_needed(self) -> None:
-        change, alt = _classify_recommendation(
-            "Standard dosing is appropriate.", "Strong"
-        )
+        change, alt = _classify_recommendation("Standard dosing is appropriate.", "Strong")
         assert not change
         assert not alt
 
@@ -214,19 +214,16 @@ class TestClassifyRecommendation:
         assert alt
 
     def test_case_insensitive_matching(self) -> None:
-        _change, alt = _classify_recommendation(
-            "AVOID USE IN POOR METABOLIZERS.", "Strong"
-        )
+        _change, alt = _classify_recommendation("AVOID USE IN POOR METABOLIZERS.", "Strong")
         assert alt
 
     def test_titration_triggers_dose_change(self) -> None:
-        change, _alt = _classify_recommendation(
-            "Titrate carefully based on response.", "Moderate"
-        )
+        change, _alt = _classify_recommendation("Titrate carefully based on response.", "Moderate")
         assert change
 
 
 # ── build_clinical_variants ───────────────────────────────────────────────────
+
 
 class TestBuildClinicalVariants:
     def _clinical_df(self) -> pd.DataFrame:
@@ -261,6 +258,7 @@ class TestBuildClinicalVariants:
 
 
 # ── build_drug_recommendations ────────────────────────────────────────────────
+
 
 class TestBuildDrugRecommendations:
     def _cpic_df(self) -> pd.DataFrame:
@@ -304,7 +302,5 @@ class TestBuildDrugRecommendations:
                 "cpic_release_version": ["v1.0"],
             }
         )
-        df = build_drug_recommendations(
-            pd.concat([self._cpic_df(), extra], ignore_index=True)
-        )
+        df = build_drug_recommendations(pd.concat([self._cpic_df(), extra], ignore_index=True))
         assert "CYP2D6" not in df["gene_symbol"].values

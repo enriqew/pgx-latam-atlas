@@ -33,16 +33,16 @@ logger = logging.getLogger(__name__)
 # Positions confirmed present in the 1000G Phase 3 bronze layer.
 # CYP3A5 (rs776746) and IFNL3 (rs12979860) require corrected extraction windows — skip.
 GENE_KEY_VARIANTS: dict[str, tuple[str, ...]] = {
-    "CYP2C19": ("chr10:96521657", "chr10:96540410"),   # *2 (rs4244285), *3 (rs4986893)
-    "CYP2C9":  ("chr10:96741053",),                     # *2 (rs1799853)
-    "SLCO1B1": ("chr12:21331546",),                     # *5 (rs4149056)
-    "VKORC1":  ("chr16:31093568",),                     # -1639G>A (rs9923231)
-    "TPMT":    ("chr6:18131419",),                      # *3B (rs1800460)
-    "NUDT15":  (),                                      # GRCh37 position unconfirmed — skip
-    "DPYD":    ("chr1:97981343", "chr1:97915614", "chr1:97981395"),  # *2A, HapB3, *13
-    "G6PD":    ("chrX:153763492", "chrX:153764217"),    # Ser188Phe, Glu202Lys
-    "IFNL3":   (),                                      # outside extraction window — skip
-    "CYP3A5":  (),                                      # outside extraction window — skip
+    "CYP2C19": ("chr10:96521657", "chr10:96540410"),  # *2 (rs4244285), *3 (rs4986893)
+    "CYP2C9": ("chr10:96741053",),  # *2 (rs1799853)
+    "SLCO1B1": ("chr12:21331546",),  # *5 (rs4149056)
+    "VKORC1": ("chr16:31093568",),  # -1639G>A (rs9923231)
+    "TPMT": ("chr6:18131419",),  # *3B (rs1800460)
+    "NUDT15": (),  # GRCh37 position unconfirmed — skip
+    "DPYD": ("chr1:97981343", "chr1:97915614", "chr1:97981395"),  # *2A, HapB3, *13
+    "G6PD": ("chrX:153763492", "chrX:153764217"),  # Ser188Phe, Glu202Lys
+    "IFNL3": (),  # outside extraction window — skip
+    "CYP3A5": (),  # outside extraction window — skip
 }
 
 _ACTIONABILITY_RANKING_TOP_N = 50
@@ -81,6 +81,7 @@ def _infer_phenotype(gene: str, total_nonfunc_dosage: int) -> str:
 
 # ── Gold 1: allele_frequencies_by_population ──────────────────────────────────
 
+
 def build_allele_frequencies(
     variants_df: pd.DataFrame,
     clinical_variants_df: pd.DataFrame,
@@ -101,8 +102,14 @@ def build_allele_frequencies(
         return pd.DataFrame()
 
     group_keys = [
-        "variant_id", "gene_symbol", "chromosome", "position",
-        "reference_allele", "alternate_allele", "population_code", "superpopulation",
+        "variant_id",
+        "gene_symbol",
+        "chromosome",
+        "position",
+        "reference_allele",
+        "alternate_allele",
+        "population_code",
+        "superpopulation",
     ]
     available_keys = [k for k in group_keys if k in variants_df.columns]
 
@@ -118,18 +125,16 @@ def build_allele_frequencies(
     agg["allele_frequency"] = (agg["allele_count"] / agg["total_alleles"]).round(6)
 
     ci_rows = agg.apply(
-        lambda row: wilson_score_interval(
-            int(row["allele_count"]), int(row["total_alleles"])
-        ),
+        lambda row: wilson_score_interval(int(row["allele_count"]), int(row["total_alleles"])),
         axis=1,
     )
     agg["ci_lower_wilson"] = ci_rows.apply(lambda r: round(r.lower, 6))
     agg["ci_upper_wilson"] = ci_rows.apply(lambda r: round(r.upper, 6))
 
     # Delta vs CEU
-    ceu = agg[agg["population_code"] == "CEU"][
-        ["variant_id", "allele_frequency"]
-    ].rename(columns={"allele_frequency": "_ceu_freq"})
+    ceu = agg[agg["population_code"] == "CEU"][["variant_id", "allele_frequency"]].rename(
+        columns={"allele_frequency": "_ceu_freq"}
+    )
     agg = agg.merge(ceu, on="variant_id", how="left")
     agg["delta_vs_ceu"] = (agg["allele_frequency"] - agg["_ceu_freq"]).round(6)
     agg = agg.drop(columns=["_ceu_freq"])
@@ -159,6 +164,7 @@ def build_allele_frequencies(
 
 # ── Gold 2: phenotype_distribution_by_population ──────────────────────────────
 
+
 def build_phenotype_distribution(
     variants_df: pd.DataFrame,
     populations_df: pd.DataFrame,
@@ -180,9 +186,7 @@ def build_phenotype_distribution(
         logger.warning("silver/variants/ is empty — phenotype_distribution will be empty")
         return pd.DataFrame()
 
-    pop_size_lookup = (
-        populations_df.set_index("population_code")["sample_size"].to_dict()
-    )
+    pop_size_lookup = populations_df.set_index("population_code")["sample_size"].to_dict()
 
     rows: list[dict[str, object]] = []
 
@@ -249,6 +253,7 @@ def build_phenotype_distribution(
 
 # ── Gold 3: drug_impact_summary ───────────────────────────────────────────────
 
+
 def build_drug_impact_summary(
     phenotype_df: pd.DataFrame,
     drug_recommendations_df: pd.DataFrame,
@@ -278,8 +283,16 @@ def build_drug_impact_summary(
     actionable_recs = drug_recommendations_df[
         drug_recommendations_df["requires_dose_change"]
         | drug_recommendations_df["requires_alternative"]
-    ][["gene_symbol", "drug_name", "phenotype", "classification_strength",
-       "requires_dose_change", "requires_alternative"]].copy()
+    ][
+        [
+            "gene_symbol",
+            "drug_name",
+            "phenotype",
+            "classification_strength",
+            "requires_dose_change",
+            "requires_alternative",
+        ]
+    ].copy()
     actionable_recs["drug_name"] = actionable_recs["drug_name"].str.lower().str.strip()
 
     # Normalize phenotype column name: drug_recommendations uses "phenotype",
@@ -301,8 +314,13 @@ def build_drug_impact_summary(
 
     impact = (
         merged.groupby(
-            ["drug_name", "gene_symbol", "population_code", "population_total",
-             "classification_strength"]
+            [
+                "drug_name",
+                "gene_symbol",
+                "population_code",
+                "population_total",
+                "classification_strength",
+            ]
         )
         .agg(individuals_requiring_change=("individual_count", "sum"))
         .reset_index()
@@ -324,10 +342,16 @@ def build_drug_impact_summary(
 
     result = impact[
         [
-            "drug_name", "gene_symbol", "population_code", "population_total",
-            "individuals_requiring_change", "percentage_requiring_change",
-            "baseline_ceu_percentage", "delta_vs_baseline",
-            "classification_strength", "snapshot_date",
+            "drug_name",
+            "gene_symbol",
+            "population_code",
+            "population_total",
+            "individuals_requiring_change",
+            "percentage_requiring_change",
+            "baseline_ceu_percentage",
+            "delta_vs_baseline",
+            "classification_strength",
+            "snapshot_date",
         ]
     ]
     logger.info("gold/drug_impact_summary: %d rows", len(result))
@@ -391,9 +415,15 @@ def build_actionability_ranking(
 
     result = ranked[
         [
-            "rank_position", "drug_name", "gene_symbol", "population_code",
-            "delta_vs_baseline", "population_affected_pct",
-            "classification_strength", "clinical_implication", "snapshot_date",
+            "rank_position",
+            "drug_name",
+            "gene_symbol",
+            "population_code",
+            "delta_vs_baseline",
+            "population_affected_pct",
+            "classification_strength",
+            "clinical_implication",
+            "snapshot_date",
         ]
     ].reset_index(drop=True)
 
@@ -406,6 +436,7 @@ def build_actionability_ranking(
 
 
 # ── Orchestrator ──────────────────────────────────────────────────────────────
+
 
 def run(settings: Settings | None = None, snapshot_date: date | None = None) -> None:
     """Build all four gold tables from silver data.

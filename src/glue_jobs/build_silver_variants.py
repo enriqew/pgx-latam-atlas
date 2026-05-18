@@ -40,15 +40,15 @@ TARGET_POPULATIONS = ("MXL", "PEL", "CLM", "PUR", "CEU")
 # GRCh37 gene boundaries — must match thousand_genomes.py
 GENE_REGIONS: dict[str, tuple[str, int, int]] = {
     "CYP2C19": ("chr10", 96_522_463, 96_612_671),
-    "CYP2C9":  ("chr10", 96_698_415, 96_749_148),
+    "CYP2C9": ("chr10", 96_698_415, 96_749_148),
     "SLCO1B1": ("chr12", 21_282_444, 21_394_730),
-    "VKORC1":  ("chr16", 31_102_175, 31_106_234),
-    "TPMT":    ("chr6",  18_128_556, 18_155_418),
-    "NUDT15":  ("chr13", 48_600_074, 48_609_007),
-    "DPYD":    ("chr1",  97_543_300, 98_386_615),
-    "G6PD":    ("chrX", 153_759_605, 153_798_257),
-    "IFNL3":   ("chr19", 39_729_165, 39_756_700),
-    "CYP3A5":  ("chr7",  99_245_817, 99_277_621),
+    "VKORC1": ("chr16", 31_102_175, 31_106_234),
+    "TPMT": ("chr6", 18_128_556, 18_155_418),
+    "NUDT15": ("chr13", 48_600_074, 48_609_007),
+    "DPYD": ("chr1", 97_543_300, 98_386_615),
+    "G6PD": ("chrX", 153_759_605, 153_798_257),
+    "IFNL3": ("chr19", 39_729_165, 39_756_700),
+    "CYP3A5": ("chr7", 99_245_817, 99_277_621),
 }
 
 POPULATION_NAMES: dict[str, tuple[str, str]] = {
@@ -80,21 +80,15 @@ assign_gene_udf = F.udf(_assign_gene, StringType())
 
 # ── Read bronze ───────────────────────────────────────────────────────────────
 
-variants_path = (
-    f"{BRONZE_BASE}/genomes_variants_raw/ingest_date={INGEST_DATE}"
-)
-samples_path = (
-    f"{BRONZE_BASE}/samples_metadata_raw/ingest_date={INGEST_DATE}"
-)
+variants_path = f"{BRONZE_BASE}/genomes_variants_raw/ingest_date={INGEST_DATE}"
+samples_path = f"{BRONZE_BASE}/samples_metadata_raw/ingest_date={INGEST_DATE}"
 
 variants_df: DataFrame = spark.read.parquet(variants_path)
 samples_df: DataFrame = spark.read.parquet(samples_path)
 
 # ── Filter to target populations ──────────────────────────────────────────────
 
-target_samples_df = samples_df.filter(
-    F.col("population_code").isin(list(TARGET_POPULATIONS))
-)
+target_samples_df = samples_df.filter(F.col("population_code").isin(list(TARGET_POPULATIONS)))
 
 # ── Assign gene symbols ───────────────────────────────────────────────────────
 
@@ -127,15 +121,14 @@ silver_variants = joined.select(
 
 # ── Write silver/variants/ ────────────────────────────────────────────────────
 
-silver_variants.write.mode("overwrite").partitionBy(
-    "gene_symbol", "population_code"
-).parquet(f"{SILVER_BASE}/variants/")
+silver_variants.write.mode("overwrite").partitionBy("gene_symbol", "population_code").parquet(
+    f"{SILVER_BASE}/variants/"
+)
 
 # ── Build and write silver/populations/ ───────────────────────────────────────
 
-pop_sizes = (
-    target_samples_df.groupBy("population_code", "superpopulation")
-    .agg(F.count("sample_id").alias("sample_size"))
+pop_sizes = target_samples_df.groupBy("population_code", "superpopulation").agg(
+    F.count("sample_id").alias("sample_size")
 )
 
 pop_names_bc = spark.sparkContext.broadcast(POPULATION_NAMES)
@@ -149,18 +142,19 @@ _get_region = F.udf(
     StringType(),
 )
 
-silver_populations = pop_sizes.withColumn(
-    "population_name", _get_pop_name(F.col("population_code"))
-).withColumn(
-    "region", _get_region(F.col("population_code"))
-).select(
-    "population_code", "population_name", "superpopulation", "region",
-    F.col("sample_size").cast(IntegerType()),
+silver_populations = (
+    pop_sizes.withColumn("population_name", _get_pop_name(F.col("population_code")))
+    .withColumn("region", _get_region(F.col("population_code")))
+    .select(
+        "population_code",
+        "population_name",
+        "superpopulation",
+        "region",
+        F.col("sample_size").cast(IntegerType()),
+    )
 )
 
-silver_populations.write.mode("overwrite").parquet(
-    f"{SILVER_BASE}/populations/"
-)
+silver_populations.write.mode("overwrite").parquet(f"{SILVER_BASE}/populations/")
 
 # ── Commit ────────────────────────────────────────────────────────────────────
 

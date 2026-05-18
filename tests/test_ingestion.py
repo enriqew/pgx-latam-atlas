@@ -23,6 +23,7 @@ from pgx_latam.ingestion.thousand_genomes import (
 
 # ── PharmGKB helpers ──────────────────────────────────────────────────────────
 
+
 class TestExtractTsvFromZip:
     def _make_zip(self, filename: str, content: str) -> bytes:
         buf = io.BytesIO()
@@ -116,6 +117,7 @@ class TestParseCrossReferences:
 
 # ── 1000 Genomes helpers ──────────────────────────────────────────────────────
 
+
 class TestBuildPanelDf:
     def _sample_panel(self) -> pd.DataFrame:
         return pd.DataFrame(
@@ -160,6 +162,7 @@ class TestVcfUrl:
 
     def test_all_gene_chromosomes_have_url(self) -> None:
         from pgx_latam.ingestion.thousand_genomes import GENE_REGIONS_GRCH37
+
         for gene, region in GENE_REGIONS_GRCH37.items():
             url = _vcf_url(region.chromosome)
             assert url.startswith("https://"), f"{gene}: bad URL {url}"
@@ -183,6 +186,7 @@ class TestTargetPopulations:
 
 # ── CPIC helpers ──────────────────────────────────────────────────────────────
 
+
 class TestFlattenRecommendations:
     def _sample_guidelines(self) -> dict:
         return {
@@ -199,7 +203,7 @@ class TestFlattenRecommendations:
             {
                 "id": 1001,
                 "guidelineid": "PA166104938",
-                "drugid": "PA451828",   # drug is now on the recommendation (API v2026)
+                "drugid": "PA451828",  # drug is now on the recommendation (API v2026)
                 "drugrecommendation": "Avoid use for poor metabolizers.",
                 "classification": "Strong",
                 "phenotypes": {"CYP2C19": "Poor Metabolizer"},
@@ -210,9 +214,7 @@ class TestFlattenRecommendations:
 
     def test_produces_expected_row(self) -> None:
         drug_names = {"PA451828": "clopidogrel"}
-        rows = _flatten_recommendations(
-            self._sample_recs(), self._sample_guidelines(), drug_names
-        )
+        rows = _flatten_recommendations(self._sample_recs(), self._sample_guidelines(), drug_names)
         assert len(rows) == 1
         row = rows[0]
         assert row["gene_symbol"] == "CYP2C19"
@@ -222,9 +224,18 @@ class TestFlattenRecommendations:
         assert len(row["recommendation_text"]) > 0
 
     def test_skips_rec_with_unknown_guideline(self) -> None:
-        recs = [{"id": 9999, "guidelineid": "UNKNOWN_ID", "drugid": "PA451828",
-                 "drugrecommendation": "X", "classification": "Strong",
-                 "phenotypes": {}, "activityscore": {}, "comments": ""}]
+        recs = [
+            {
+                "id": 9999,
+                "guidelineid": "UNKNOWN_ID",
+                "drugid": "PA451828",
+                "drugrecommendation": "X",
+                "classification": "Strong",
+                "phenotypes": {},
+                "activityscore": {},
+                "comments": "",
+            }
+        ]
         rows = _flatten_recommendations(recs, self._sample_guidelines(), {})
         assert len(rows) == 0
 

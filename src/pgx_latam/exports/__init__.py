@@ -28,8 +28,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Export pgx-latam gold artifacts to JSON.")
     parser.add_argument(
         "--artifact",
-        choices=["all", "allele_frequencies", "phenotype_distribution",
-                 "drug_impact_summary", "actionability_ranking"],
+        choices=[
+            "all",
+            "allele_frequencies",
+            "phenotype_distribution",
+            "drug_impact_summary",
+            "actionability_ranking",
+        ],
         default="all",
         help="Which artifact to export (default: all)",
     )

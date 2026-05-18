@@ -40,9 +40,7 @@ def wilson_score_interval(
     if successes < 0:
         raise ValueError(f"successes must be >= 0, got {successes}")
     if successes > trials:
-        raise ValueError(
-            f"successes ({successes}) cannot exceed trials ({trials})"
-        )
+        raise ValueError(f"successes ({successes}) cannot exceed trials ({trials})")
 
     z2 = z * z
     n = trials
@@ -50,9 +48,7 @@ def wilson_score_interval(
 
     denominator = n + z2
     center = (k + z2 / 2.0) / denominator
-    half_width = (z / denominator) * math.sqrt(
-        k * (n - k) / n + z2 / 4.0
-    )
+    half_width = (z / denominator) * math.sqrt(k * (n - k) / n + z2 / 4.0)
 
     return WilsonCI(
         lower=max(0.0, center - half_width),

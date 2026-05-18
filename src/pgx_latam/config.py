@@ -20,16 +20,10 @@ class Settings(BaseSettings):
     pgx_s3_lake_bucket: str = Field(default="", alias="PGX_S3_LAKE_BUCKET")
     pgx_athena_workgroup: str = Field(default="primary", alias="PGX_ATHENA_WORKGROUP")
     pgx_glue_role_arn: str = Field(default="", alias="PGX_GLUE_ROLE_ARN")
-    pgx_step_functions_role_arn: str = Field(
-        default="", alias="PGX_STEP_FUNCTIONS_ROLE_ARN"
-    )
+    pgx_step_functions_role_arn: str = Field(default="", alias="PGX_STEP_FUNCTIONS_ROLE_ARN")
 
-    local_data_root: Path = Field(
-        default=Path("data"), alias="PGX_LOCAL_DATA_ROOT"
-    )
-    artifacts_root: Path = Field(
-        default=Path("artifacts"), alias="PGX_ARTIFACTS_ROOT"
-    )
+    local_data_root: Path = Field(default=Path("data"), alias="PGX_LOCAL_DATA_ROOT")
+    artifacts_root: Path = Field(default=Path("artifacts"), alias="PGX_ARTIFACTS_ROOT")
 
     @property
     def bronze_root(self) -> Path:

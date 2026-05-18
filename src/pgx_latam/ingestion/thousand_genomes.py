@@ -37,13 +37,9 @@ logger = logging.getLogger(__name__)
 
 TARGET_POPULATIONS = ("MXL", "PEL", "CLM", "PUR", "CEU")
 
-_1000G_HTTPS_BASE = (
-    "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502"
-)
+_1000G_HTTPS_BASE = "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502"
 
-_PANEL_URL = (
-    f"{_1000G_HTTPS_BASE}/integrated_call_samples_v3.20130502.ALL.panel"
-)
+_PANEL_URL = f"{_1000G_HTTPS_BASE}/integrated_call_samples_v3.20130502.ALL.panel"
 
 _REQUEST_TIMEOUT = 60
 _WRITE_BATCH_SIZE = 50_000
@@ -53,8 +49,8 @@ _REGION_BUFFER_BP = 10_000
 @dataclass(frozen=True)
 class GeneRegion:
     chromosome: str  # without "chr" prefix, e.g. "10" or "X"
-    start: int       # 1-based, inclusive (GRCh37)
-    end: int         # 1-based, inclusive (GRCh37)
+    start: int  # 1-based, inclusive (GRCh37)
+    end: int  # 1-based, inclusive (GRCh37)
 
 
 # GRCh37 coordinates — source: PharmGKB genes.tsv (these are approximate;
@@ -63,17 +59,17 @@ GENE_REGIONS_GRCH37: dict[str, GeneRegion] = {
     # CYP2C19: extended start to 96_510_000 to include rs4244285 (*2) at 96_521_657,
     # which sits ~800bp upstream of the canonical gene body start.
     "CYP2C19": GeneRegion("10", 96_510_000, 96_612_671),
-    "CYP2C9":  GeneRegion("10", 96_698_415, 96_749_148),
+    "CYP2C9": GeneRegion("10", 96_698_415, 96_749_148),
     "SLCO1B1": GeneRegion("12", 21_282_444, 21_394_730),
     # VKORC1: extended start to 31_090_000 to include rs9923231 (-1639G>A) at 31_093_568,
     # a promoter variant ~8.6kb upstream of the gene body.
-    "VKORC1":  GeneRegion("16", 31_090_000, 31_106_234),
-    "TPMT":    GeneRegion("6",  18_128_556, 18_155_418),
-    "NUDT15":  GeneRegion("13", 48_600_074, 48_609_007),
-    "DPYD":    GeneRegion("1",  97_543_300, 98_386_615),
-    "G6PD":    GeneRegion("X", 153_759_605, 153_798_257),
-    "IFNL3":   GeneRegion("19", 39_729_165, 39_756_700),
-    "CYP3A5":  GeneRegion("7",  99_245_817, 99_277_621),
+    "VKORC1": GeneRegion("16", 31_090_000, 31_106_234),
+    "TPMT": GeneRegion("6", 18_128_556, 18_155_418),
+    "NUDT15": GeneRegion("13", 48_600_074, 48_609_007),
+    "DPYD": GeneRegion("1", 97_543_300, 98_386_615),
+    "G6PD": GeneRegion("X", 153_759_605, 153_798_257),
+    "IFNL3": GeneRegion("19", 39_729_165, 39_756_700),
+    "CYP3A5": GeneRegion("7", 99_245_817, 99_277_621),
 }
 
 
@@ -95,6 +91,7 @@ def _vcf_url(chromosome: str) -> str:
 
 # ── Panel file ────────────────────────────────────────────────────────────────
 
+
 @retry(
     retry=retry_if_exception_type(requests.RequestException),
     wait=wait_exponential(multiplier=2, min=4, max=60),
@@ -110,6 +107,7 @@ def _download_panel() -> pd.DataFrame:
             f"URL: {_PANEL_URL}"
         )
     from io import StringIO
+
     df = pd.read_csv(StringIO(response.text), sep="\t", dtype=str)
     logger.info("Panel file: %d samples", len(df))
     return df
@@ -168,6 +166,7 @@ def ingest_panel_file(
 
 # ── VCF extraction ─────────────────────────────────────────────────────────────
 
+
 def _require_pysam() -> None:
     try:
         import pysam as _  # noqa: F401
@@ -201,9 +200,7 @@ def _extract_gene_variants(
     fetch_start = max(0, region.start - _REGION_BUFFER_BP - 1)  # pysam 0-based
     fetch_end = region.end + _REGION_BUFFER_BP
     chrom_label = (
-        f"chr{region.chromosome}"
-        if not region.chromosome.startswith("chr")
-        else region.chromosome
+        f"chr{region.chromosome}" if not region.chromosome.startswith("chr") else region.chromosome
     )
 
     logger.info(
@@ -366,13 +363,9 @@ def ingest_gene_variants(
             continue
 
         chrom_df = pd.concat(chrom_rows, ignore_index=True)
-        chrom_df = chrom_df.drop_duplicates(
-            subset=["variant_id", "sample_id"]
-        )
+        chrom_df = chrom_df.drop_duplicates(subset=["variant_id", "sample_id"])
         # Drop internal columns before writing
-        chrom_df = chrom_df.drop(
-            columns=["_population_code", "_superpopulation"], errors="ignore"
-        )
+        chrom_df = chrom_df.drop(columns=["_population_code", "_superpopulation"], errors="ignore")
 
         path = write_bronze_partition(
             chrom_df,
@@ -393,6 +386,7 @@ def ingest_gene_variants(
 
 # ── Entrypoint ────────────────────────────────────────────────────────────────
 
+
 def run(ingest_date: date | None = None, settings: Settings | None = None) -> None:
     """Full 1000 Genomes ingestion: panel file + all pharmacogene VCF regions.
 
@@ -407,9 +401,7 @@ def run(ingest_date: date | None = None, settings: Settings | None = None) -> No
     logger.info("Panel written to %s — %d target samples", panel_path, len(sample_map))
 
     vcf_paths = ingest_gene_variants(effective_date, cfg, sample_map)
-    logger.info(
-        "VCF extraction complete: %d chromosome partitions written", len(vcf_paths)
-    )
+    logger.info("VCF extraction complete: %d chromosome partitions written", len(vcf_paths))
 
 
 def main() -> None:
