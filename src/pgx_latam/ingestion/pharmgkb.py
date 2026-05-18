@@ -53,13 +53,16 @@ def _clinical_annotations_spec() -> _DownloadSpec:
             "Gene": "gene_symbol",
             "Drug(s)": "drug_names",
             "Phenotype Category": "phenotype_categories",
-            "Evidence Level": "evidence_level",
+            # PharmGKB renamed "Evidence Level" → "Level of Evidence" (observed 2026-05)
+            "Level of Evidence": "evidence_level",
+            "Evidence Level": "evidence_level",       # kept for older downloads
             "Clinical Annotation Types": "clinical_annotation_types",
             "Pediatric": "pediatric",
             "Sentence": "annotation_text",
+            "URL": "url",
         },
         table_name="pharmgkb_clinical_annotations_raw",
-        required_columns=("Clinical Annotation ID", "Gene", "Evidence Level"),
+        required_columns=("Clinical Annotation ID", "Gene"),
     )
 
 
@@ -68,7 +71,9 @@ def _var_drug_ann_spec() -> _DownloadSpec:
         url=f"{_PHARMGKB_BASE}/variantAnnotations.zip",
         zip_member="var_drug_ann.tsv",
         column_map={
-            "Annotation ID": "annotation_id",
+            # PharmGKB renamed "Annotation ID" → "Variant Annotation ID" (observed 2026-05)
+            "Variant Annotation ID": "annotation_id",
+            "Annotation ID": "annotation_id",             # kept for older downloads
             "Variant/Haplotypes": "variant_rsid",
             "Gene": "gene_symbol",
             "Drug(s)": "drug_name",
@@ -80,7 +85,7 @@ def _var_drug_ann_spec() -> _DownloadSpec:
             "Alleles": "alleles",
         },
         table_name="pharmgkb_var_drug_ann_raw",
-        required_columns=("Annotation ID", "Gene"),
+        required_columns=("Gene",),
     )
 
 
