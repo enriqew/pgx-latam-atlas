@@ -91,3 +91,19 @@ jobs:
         run: |
           aws s3 cp infra/step_functions/pgx_pipeline.asl.json \
             s3://${{ secrets.PGX_GLUE_SCRIPTS_BUCKET }}/step_functions/pgx_pipeline.asl.json
+
+      - name: Package and deploy Export Artifacts Lambda
+        run: |
+          BUILD_DIR=$(mktemp -d)
+          pip install -r src/lambda/export_artifacts/requirements.txt \
+            --quiet --target "$BUILD_DIR"
+          cp src/lambda/export_artifacts/handler.py "$BUILD_DIR/"
+          cd "$BUILD_DIR"
+          zip -qr /tmp/export_artifacts.zip .
+          aws s3 cp /tmp/export_artifacts.zip \
+            s3://${{ secrets.PGX_GLUE_SCRIPTS_BUCKET }}/lambda_packages/export_artifacts.zip
+          aws lambda update-function-code \
+            --function-name pgx-latam-${{ inputs.environment }}-export-artifacts \
+            --s3-bucket ${{ secrets.PGX_GLUE_SCRIPTS_BUCKET }} \
+            --s3-key lambda_packages/export_artifacts.zip \
+            --no-cli-pager

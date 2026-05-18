@@ -1,5 +1,6 @@
-# Lambda function stubs — implementations added in Phase 5
-# All functions use the shared lambda_execution IAM role
+# Lambda functions — all share the lambda_execution IAM role.
+# export_artifacts has a full implementation in src/lambda/export_artifacts/.
+# All other functions are placeholder stubs; implement when Glue migration to Lambda is needed.
 
 locals {
   lambda_runtime = "python3.11"
@@ -121,6 +122,8 @@ resource "aws_lambda_function" "build_gold_ranking" {
   environment { variables = local.lambda_env }
 }
 
+# export_artifacts is deployed from S3 by the CI pipeline after Terraform apply.
+# On initial apply the placeholder zip is used; CI overrides via update-function-code.
 resource "aws_lambda_function" "export_artifacts" {
   function_name    = "${local.name_prefix}-export-artifacts"
   role             = aws_iam_role.lambda_execution.arn
@@ -131,7 +134,10 @@ resource "aws_lambda_function" "export_artifacts" {
   timeout          = local.lambda_timeout
   environment {
     variables = merge(local.lambda_env, {
-      GITHUB_REPO = var.github_repo
+      GITHUB_REPO           = var.github_repo
+      ATHENA_RESULTS_PREFIX = "athena-results"
+      GOLD_DATABASE         = "gold_pgx"
+      SILVER_DATABASE       = "silver_pgx"
     })
   }
 }
