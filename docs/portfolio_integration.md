@@ -28,7 +28,7 @@ Create `src/lib/pgxAtlas.ts` (or `.js`):
 
 ```typescript
 const ARTIFACTS_BASE =
-  "https://raw.githubusercontent.com/enrique-redonda/pgx-latam-atlas/main/artifacts";
+  "https://raw.githubusercontent.com/enriqew/pgx-latam-atlas/main/artifacts";
 
 export async function fetchPgxArtifact<T>(filename: string): Promise<T> {
   const response = await fetch(`${ARTIFACTS_BASE}/${filename}`);
@@ -123,7 +123,7 @@ In the portfolio's project list (wherever other projects are defined), add an en
     "greatest clinical divergence for MXL, PEL, CLM, and PUR cohorts vs " +
     "European baseline — data absent from most prescribing guidance.",
   tags: ["Pharmacogenomics", "AWS", "PySpark", "Athena", "Iceberg", "Python"],
-  repoUrl: "https://github.com/enrique-redonda/pgx-latam-atlas",
+  repoUrl: "https://github.com/enriqew/pgx-latam-atlas",
   featured: true,
 }
 ```
@@ -140,7 +140,7 @@ populations (MXL, PEL, CLM, PUR). Data engineering pipeline using AWS Glue, Athe
 (Iceberg), and Step Functions. Outputs actionable frequency deltas for 10 pharmacogenes
 across 8+ drugs with CPIC A-level guidelines.
 
-→ [Repository](https://github.com/enrique-redonda/pgx-latam-atlas)
+→ [Repository](https://github.com/enriqew/pgx-latam-atlas)
 ```
 
 ---
@@ -152,7 +152,7 @@ the artifacts), add `pgx-latam-atlas` as a git submodule:
 
 ```bash
 # In data-dive-design-hub root
-git submodule add https://github.com/enrique-redonda/pgx-latam-atlas.git public/pgx-latam-atlas
+git submodule add https://github.com/enriqew/pgx-latam-atlas.git public/pgx-latam-atlas
 git submodule update --init --recursive
 ```
 

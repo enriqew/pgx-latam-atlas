@@ -2,7 +2,7 @@
 
 > Pharmacogenomic variant frequencies and drug response divergence across Latin American populations.
 
-[![Build](https://github.com/enrique-redonda/pgx-latam-atlas/actions/workflows/ci.yml/badge.svg)](https://github.com/enrique-redonda/pgx-latam-atlas/actions/workflows/ci.yml)
+[![Build](https://github.com/enriqew/pgx-latam-atlas/actions/workflows/ci.yml/badge.svg)](https://github.com/enriqew/pgx-latam-atlas/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
 
@@ -95,7 +95,7 @@ See [`docs/architecture.md`](docs/architecture.md) for the full medallion + Step
 
 ```bash
 # Clone and install
-git clone https://github.com/enrique-redonda/pgx-latam-atlas.git
+git clone https://github.com/enriqew/pgx-latam-atlas.git
 cd pgx-latam-atlas
 uv pip install -e ".[dev,spark]"
 pre-commit install

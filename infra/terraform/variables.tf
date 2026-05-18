@@ -57,7 +57,7 @@ variable "pipeline_failure_email" {
 variable "github_repo" {
   description = "GitHub repository for OIDC trust (format: owner/repo)"
   type        = string
-  default     = "enrique-redonda/pgx-latam-atlas"
+  default     = "enriqew/pgx-latam-atlas"
 }
 
 variable "tags" {
