@@ -20,6 +20,7 @@ select = [
 ]
 ignore = [
     "ANN401",  # typing.Any allowed — necessary for pandas/boto3/dynamic dispatch
+    "TC002",   # third-party imports used at runtime (e.g. pandas in validate_bronze)
     "TC003",   # stdlib imports used at runtime, not type-checking only
     "TC004",   # third-party imports used at runtime
 ]

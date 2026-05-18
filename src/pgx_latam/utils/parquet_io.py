@@ -8,6 +8,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from pgx_latam.utils.bronze_schemas import validate_bronze
+
 logger = logging.getLogger(__name__)
 
 
@@ -32,6 +34,7 @@ def write_bronze_partition(
     Returns:
         Path to the written ``.parquet`` file.
     """
+    validate_bronze(df, table_root.name)
     partition_dir = table_root / f"ingest_date={ingest_date.isoformat()}"
     if extra_partition is not None:
         col_name, col_val = extra_partition
