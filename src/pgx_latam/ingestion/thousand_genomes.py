@@ -60,10 +60,14 @@ class GeneRegion:
 # GRCh37 coordinates — source: PharmGKB genes.tsv (these are approximate;
 # the pipeline uses a ±10kb buffer to ensure all relevant variants are captured)
 GENE_REGIONS_GRCH37: dict[str, GeneRegion] = {
-    "CYP2C19": GeneRegion("10", 96_522_463, 96_612_671),
+    # CYP2C19: extended start to 96_510_000 to include rs4244285 (*2) at 96_521_657,
+    # which sits ~800bp upstream of the canonical gene body start.
+    "CYP2C19": GeneRegion("10", 96_510_000, 96_612_671),
     "CYP2C9":  GeneRegion("10", 96_698_415, 96_749_148),
     "SLCO1B1": GeneRegion("12", 21_282_444, 21_394_730),
-    "VKORC1":  GeneRegion("16", 31_102_175, 31_106_234),
+    # VKORC1: extended start to 31_090_000 to include rs9923231 (-1639G>A) at 31_093_568,
+    # a promoter variant ~8.6kb upstream of the gene body.
+    "VKORC1":  GeneRegion("16", 31_090_000, 31_106_234),
     "TPMT":    GeneRegion("6",  18_128_556, 18_155_418),
     "NUDT15":  GeneRegion("13", 48_600_074, 48_609_007),
     "DPYD":    GeneRegion("1",  97_543_300, 98_386_615),
@@ -191,12 +195,16 @@ def _extract_gene_variants(
     Returns:
         DataFrame with bronze genomes_variants_raw schema.
     """
-    import pysam  # noqa: PLC0415 — imported late (optional dep)
+    import pysam  # imported late — optional dep; pysam requires Linux/macOS
 
     url = _vcf_url(region.chromosome)
     fetch_start = max(0, region.start - _REGION_BUFFER_BP - 1)  # pysam 0-based
     fetch_end = region.end + _REGION_BUFFER_BP
-    chrom_label = f"chr{region.chromosome}" if not region.chromosome.startswith("chr") else region.chromosome
+    chrom_label = (
+        f"chr{region.chromosome}"
+        if not region.chromosome.startswith("chr")
+        else region.chromosome
+    )
 
     logger.info(
         "Fetching %s (%s:%d-%d) from %s",

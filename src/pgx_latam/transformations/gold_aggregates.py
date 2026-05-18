@@ -13,7 +13,6 @@ from __future__ import annotations
 
 import logging
 from datetime import date, datetime
-from typing import NamedTuple
 
 import pandas as pd
 
@@ -28,20 +27,22 @@ logger = logging.getLogger(__name__)
 
 # ── Phenotype inference ───────────────────────────────────────────────────────
 
-# Primary loss-of-function variant rsIDs per gene.
-# These are the variants whose alternate alleles reduce enzymatic activity.
-# dosage 0 → Normal, dosage 1 → Intermediate, dosage ≥2 → Poor (gene-specific below).
+# Primary loss-of-function variants per gene, as positional IDs (chr:pos, GRCh37).
+# The 1000G Phase 3 VCF has "." in the ID field for all variants; pysam falls back to
+# positional format, so rsIDs never appear in bronze/silver data.
+# Positions confirmed present in the 1000G Phase 3 bronze layer.
+# CYP3A5 (rs776746) and IFNL3 (rs12979860) require corrected extraction windows — skip.
 GENE_KEY_VARIANTS: dict[str, tuple[str, ...]] = {
-    "CYP2C19": ("rs4244285", "rs4986893"),          # *2 (*3 less common)
-    "CYP2C9":  ("rs1799853", "rs1057910"),           # *2, *3
-    "SLCO1B1": ("rs4149056",),                       # *5 (Statin myopathy)
-    "VKORC1":  ("rs9923231",),                       # -1639G>A warfarin sensitivity
-    "TPMT":    ("rs1142345", "rs1800462", "rs1800460"),  # *3C, *2, *3B
-    "NUDT15":  ("rs116855232",),                     # *2
-    "DPYD":    ("rs3918290", "rs55886062", "rs67376798"),  # *2A, HapB3, *13
-    "G6PD":    ("rs1050829", "rs1050828"),            # Ser188Phe, Glu202Lys
-    "IFNL3":   ("rs12979860",),                      # IL28B (C/T polymorphism)
-    "CYP3A5":  ("rs776746",),                        # *3 non-expressor
+    "CYP2C19": ("chr10:96521657", "chr10:96540410"),   # *2 (rs4244285), *3 (rs4986893)
+    "CYP2C9":  ("chr10:96741053",),                     # *2 (rs1799853)
+    "SLCO1B1": ("chr12:21331546",),                     # *5 (rs4149056)
+    "VKORC1":  ("chr16:31093568",),                     # -1639G>A (rs9923231)
+    "TPMT":    ("chr6:18131419",),                      # *3B (rs1800460)
+    "NUDT15":  (),                                      # GRCh37 position unconfirmed — skip
+    "DPYD":    ("chr1:97981343", "chr1:97915614", "chr1:97981395"),  # *2A, HapB3, *13
+    "G6PD":    ("chrX:153763492", "chrX:153764217"),    # Ser188Phe, Glu202Lys
+    "IFNL3":   (),                                      # outside extraction window — skip
+    "CYP3A5":  (),                                      # outside extraction window — skip
 }
 
 _ACTIONABILITY_RANKING_TOP_N = 50
@@ -134,12 +135,16 @@ def build_allele_frequencies(
     agg = agg.drop(columns=["_ceu_freq"])
 
     # is_actionable join
-    actionable_rsids = set(
-        clinical_variants_df.loc[
-            clinical_variants_df.get("is_actionable", pd.Series(False)) == True,
-            "variant_rsid",
-        ]
-    ) if not clinical_variants_df.empty else set()
+    actionable_rsids = (
+        set(
+            clinical_variants_df.loc[
+                clinical_variants_df["is_actionable"].fillna(False),
+                "variant_rsid",
+            ]
+        )
+        if not clinical_variants_df.empty and "is_actionable" in clinical_variants_df.columns
+        else set()
+    )
     agg["is_actionable"] = agg["variant_id"].isin(actionable_rsids)
     agg["snapshot_date"] = snapshot_date
 
@@ -184,7 +189,10 @@ def build_phenotype_distribution(
     for gene_symbol, gene_df in variants_df.groupby("gene_symbol"):
         key_variants = GENE_KEY_VARIANTS.get(str(gene_symbol), ())
         if not key_variants:
-            logger.debug("No key variants defined for gene %s — skipping phenotype inference", gene_symbol)
+            logger.debug(
+                "No key variants defined for gene %s — skipping phenotype inference",
+                gene_symbol,
+            )
             continue
 
         gene_key_df = gene_df[gene_df["variant_id"].isin(key_variants)]
@@ -203,8 +211,9 @@ def build_phenotype_distribution(
             .agg(total_dosage=("allele_dosage", "sum"))
             .reset_index()
         )
+        gene_str = str(gene_symbol)
         individual_dosage["phenotype_category"] = individual_dosage.apply(
-            lambda row: _infer_phenotype(str(gene_symbol), int(row["total_dosage"])),
+            lambda row, g=gene_str: _infer_phenotype(g, int(row["total_dosage"])),
             axis=1,
         )
 
@@ -245,7 +254,7 @@ def build_drug_impact_summary(
     drug_recommendations_df: pd.DataFrame,
     snapshot_date: date,
 ) -> pd.DataFrame:
-    """Compute per-drug × population impact from phenotype distributions.
+    """Compute per-drug x population impact from phenotype distributions.
 
     Joins phenotype_distribution with drug_recommendations to count individuals
     whose inferred phenotype requires a dose change or alternative therapy.
@@ -259,7 +268,10 @@ def build_drug_impact_summary(
         DataFrame matching gold_pgx.drug_impact_summary schema.
     """
     if phenotype_df.empty or drug_recommendations_df.empty:
-        logger.warning("Phenotype distribution or drug recommendations empty — drug_impact_summary will be empty")
+        logger.warning(
+            "Phenotype distribution or drug recommendations empty"
+            " — drug_impact_summary will be empty"
+        )
         return pd.DataFrame()
 
     # Identify actionable phenotypes: those that require dose change OR alternative
@@ -281,7 +293,7 @@ def build_drug_impact_summary(
     )
     if merged.empty:
         logger.warning(
-            "Phenotype × drug_recommendations join produced 0 rows. "
+            "Phenotype x drug_recommendations join produced 0 rows. "
             "Phenotype category names may not align — check silver/drug_recommendations/ "
             "phenotype values vs gold phenotype categories."
         )
@@ -332,9 +344,9 @@ def build_actionability_ranking(
     snapshot_date: date,
     top_n: int = _ACTIONABILITY_RANKING_TOP_N,
 ) -> pd.DataFrame:
-    """Rank drug–gene–population combinations by actionable impact divergence.
+    """Rank drug-gene-population combinations by actionable impact divergence.
 
-    Score = |delta_vs_baseline| × classification_weight × population_affected_pct.
+    Score = |delta_vs_baseline| x classification_weight x population_affected_pct.
     Only non-CEU populations are ranked (CEU is the baseline).
 
     Args:
