@@ -194,7 +194,6 @@ class TestFlattenRecommendations:
                 "id": "PA166104938",
                 "name": "CPIC guideline for clopidogrel and CYP2C19",
                 "genes": ["CYP2C19"],
-                "drugs": ["clopidogrel"],
                 "version": 3,
             }
         }
@@ -204,6 +203,7 @@ class TestFlattenRecommendations:
             {
                 "id": 1001,
                 "guidelineid": "PA166104938",
+                "drugid": "PA451828",   # drug is now on the recommendation (API v2026)
                 "drugrecommendation": "Avoid use for poor metabolizers.",
                 "classification": "Strong",
                 "phenotypes": {"CYP2C19": "Poor Metabolizer"},
@@ -213,8 +213,9 @@ class TestFlattenRecommendations:
         ]
 
     def test_produces_expected_row(self) -> None:
+        drug_names = {"PA451828": "clopidogrel"}
         rows = _flatten_recommendations(
-            self._sample_recs(), self._sample_guidelines(), {}
+            self._sample_recs(), self._sample_guidelines(), drug_names
         )
         assert len(rows) == 1
         row = rows[0]
@@ -225,8 +226,9 @@ class TestFlattenRecommendations:
         assert len(row["recommendation_text"]) > 0
 
     def test_skips_rec_with_unknown_guideline(self) -> None:
-        recs = [{"id": 9999, "guidelineid": "UNKNOWN_ID", "drugrecommendation": "X",
-                 "classification": "Strong", "phenotypes": {}, "activityscore": {}, "comments": ""}]
+        recs = [{"id": 9999, "guidelineid": "UNKNOWN_ID", "drugid": "PA451828",
+                 "drugrecommendation": "X", "classification": "Strong",
+                 "phenotypes": {}, "activityscore": {}, "comments": ""}]
         rows = _flatten_recommendations(recs, self._sample_guidelines(), {})
         assert len(rows) == 0
 
@@ -235,7 +237,6 @@ class TestFlattenRecommendations:
             "PA166105001": {
                 "id": "PA166105001",
                 "genes": ["CYP2C19", "CYP2D6"],
-                "drugs": ["amitriptyline"],
                 "version": 2,
             }
         }
@@ -243,6 +244,7 @@ class TestFlattenRecommendations:
             {
                 "id": 2001,
                 "guidelineid": "PA166105001",
+                "drugid": "PA313",
                 "drugrecommendation": "Consider alternative.",
                 "classification": "Strong",
                 "phenotypes": {
@@ -253,7 +255,8 @@ class TestFlattenRecommendations:
                 "comments": "",
             }
         ]
-        rows = _flatten_recommendations(recs, guidelines, {})
+        drug_names = {"PA313": "amitriptyline"}
+        rows = _flatten_recommendations(recs, guidelines, drug_names)
         assert len(rows) == 2
         genes = {r["gene_symbol"] for r in rows}
         assert genes == {"CYP2C19", "CYP2D6"}

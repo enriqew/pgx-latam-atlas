@@ -72,7 +72,8 @@ def _fetch_all_pages(endpoint: str, select: str | None = None) -> list[dict[str,
 
 
 def _fetch_guidelines() -> dict[str, dict[str, Any]]:
-    raw = _fetch_all_pages("guideline", select="id,name,genes,drugs,url,version")
+    # "drugs" was removed from guideline in CPIC API v2026 — drug is now on recommendation
+    raw = _fetch_all_pages("guideline", select="id,name,genes,url,version")
     return {g["id"]: g for g in raw}
 
 
@@ -83,9 +84,10 @@ def _fetch_drugs() -> dict[str, str]:
 
 
 def _fetch_recommendations() -> list[dict[str, Any]]:
+    # "drugid" added to recommendation in CPIC API v2026
     return _fetch_all_pages(
         "recommendation",
-        select="id,guidelineid,drugrecommendation,classification,phenotypes,activityscore,comments",
+        select="id,guidelineid,drugid,drugrecommendation,classification,phenotypes,activityscore,comments",
     )
 
 
@@ -106,20 +108,11 @@ def _flatten_recommendations(
             continue
 
         guideline_genes: list[str] = guideline.get("genes") or []
-        guideline_drugs_raw = guideline.get("drugs") or []
 
-        resolved_drug_names: list[str] = []
-        for drug_entry in guideline_drugs_raw:
-            if isinstance(drug_entry, str):
-                resolved_drug_names.append(
-                    drug_names.get(drug_entry, drug_entry)
-                )
-            elif isinstance(drug_entry, dict):
-                name = drug_entry.get("name") or drug_names.get(
-                    drug_entry.get("drugid", ""), ""
-                )
-                if name:
-                    resolved_drug_names.append(name)
+        # Drug is now on the recommendation directly (CPIC API v2026).
+        # Fall back to empty string so the row is still emitted without a drug name.
+        drug_id: str = rec.get("drugid") or ""
+        drug_name: str = drug_names.get(drug_id, drug_id)
 
         phenotypes: dict[str, str] = rec.get("phenotypes") or {}
         activity_scores: dict[str, str] = rec.get("activityscore") or {}
@@ -129,7 +122,6 @@ def _flatten_recommendations(
         rec_id: str = str(rec.get("id") or "")
 
         genes_to_emit = guideline_genes if guideline_genes else list(phenotypes.keys())
-        drugs_to_emit = resolved_drug_names if resolved_drug_names else [""]
 
         for gene_symbol in genes_to_emit:
             phenotype = phenotypes.get(gene_symbol) or phenotypes.get(
@@ -139,19 +131,18 @@ def _flatten_recommendations(
                 activity_scores.get(gene_symbol)
                 or activity_scores.get(gene_symbol.upper(), "")
             )
-            for drug_name in drugs_to_emit:
-                rows.append(
-                    {
-                        "guideline_id": f"{guideline_id}:{rec_id}",
-                        "gene_symbol": gene_symbol,
-                        "drug_name": drug_name,
-                        "phenotype": phenotype,
-                        "activity_score": activity_score,
-                        "recommendation_text": recommendation_text,
-                        "classification_strength": classification,
-                        "cpic_release_version": version,
-                    }
-                )
+            rows.append(
+                {
+                    "guideline_id": f"{guideline_id}:{rec_id}",
+                    "gene_symbol": gene_symbol,
+                    "drug_name": drug_name,
+                    "phenotype": phenotype,
+                    "activity_score": activity_score,
+                    "recommendation_text": recommendation_text,
+                    "classification_strength": classification,
+                    "cpic_release_version": version,
+                }
+            )
 
     if missing_guideline_ids:
         logger.warning(
