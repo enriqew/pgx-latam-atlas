@@ -177,6 +177,36 @@ builds but requires `git submodule update` to pick up new pipeline runs.
 
 ---
 
+## ExportArtifacts Lambda
+
+Source: `src/lambda/export_artifacts/handler.py`
+
+The Lambda runs as the final step of the Step Functions pipeline:
+1. Queries the Athena `gold_pgx.*` tables (no `SELECT *` — columns enumerated explicitly)
+2. For `allele_frequencies`, filters to the ~11 key pharmacogenomic variant positions
+   (the full 182 k-row table is ~86 MB and exceeds GitHub's recommended file size)
+3. Commits each artifact to `artifacts/` in this repo via the GitHub Contents API
+4. Dependencies: `requests` only — all else uses the built-in boto3 Lambda runtime
+
+Deployment: the CI pipeline (`deploy.yml` → `sync-glue-scripts` job) packages
+`handler.py` + `requests` into a zip, uploads to the Glue scripts S3 bucket, then
+calls `aws lambda update-function-code` to push the new code. Terraform manages the
+Lambda resource definition (permissions, config) but not the code artifact.
+
+---
+
+## Allele frequencies: full dataset vs. key-variant subset
+
+| Artifact committed to GitHub | ~50 rows × 5 populations — key pharmacogene positions only |
+|------------------------------|------------------------------------------------------------|
+| Full dataset in S3           | 182,465 rows at `s3://<LAKE_BUCKET>/gold/allele_frequencies_by_population/` |
+
+To display the full allele frequencies dataset in the portfolio, query the gold Athena
+table directly or use a presigned S3 URL. For the ranked summary and phenotype charts,
+the committed artifacts are sufficient.
+
+---
+
 ## GitHub PAT for artifact commits
 
 The `ExportArtifacts` Lambda writes JSON files to this repository via the GitHub API.
