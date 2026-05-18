@@ -36,6 +36,9 @@ data/
 *.parquet
 *.csv
 !artifacts/*.json
+# allele_frequencies.json is ~86 MB — too large for GitHub; served from S3.
+# The Lambda commits a key-variant subset (<200 KB) via the GitHub Contents API.
+artifacts/allele_frequencies.json
 .DS_Store
 
 # Tabix index files downloaded during 1000G ingestion
