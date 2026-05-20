@@ -100,6 +100,16 @@ IN_SCOPE_GENES: dict[str, GeneScope] = {
             key_drugs=("tacrolimus",),
         ),
         GeneScope(
+            symbol="UGT1A9",
+            in_scope=True,
+            rationale=(
+                "CPIC B-level; mycophenolate dosing in transplant patients; "
+                "SNP-based calling; no CNV complexity; *3 prevalent in Hispanic and African ancestry"
+            ),
+            cpic_level="B",
+            key_drugs=("mycophenolate mofetil", "mycophenolic acid"),
+        ),
+        GeneScope(
             symbol="CYP2D6",
             in_scope=False,
             rationale=(

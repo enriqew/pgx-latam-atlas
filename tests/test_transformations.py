@@ -31,10 +31,11 @@ class TestStarAlleleScope:
         assert "CYP2D6" not in symbols
         assert symbols == sorted(symbols)
 
-    def test_all_in_scope_genes_have_cpic_level_a(self) -> None:
+    def test_all_in_scope_genes_have_cpic_level_a_or_b(self) -> None:
         from pgx_latam.utils.star_allele_scope import IN_SCOPE_GENES
 
         for gene in in_scope_symbols():
-            assert IN_SCOPE_GENES[gene].cpic_level == "A", (
-                f"{gene} is in scope but does not have CPIC level A"
+            level = IN_SCOPE_GENES[gene].cpic_level
+            assert level in ("A", "B"), (
+                f"{gene} is in scope but has CPIC level {level} (expected A or B)"
             )

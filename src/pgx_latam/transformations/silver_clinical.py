@@ -97,6 +97,50 @@ _CURATED_RECOMMENDATIONS: list[dict[str, object]] = [
         "requires_alternative": False,
         "cpic_release_version": "v1.4-2017",
     },
+    # UGT1A9 mycophenolate recommendations — not in CPIC PostgREST API v1.
+    # Curated from CPIC UGT1A8/UGT1A9 guideline for immunosuppressants (Luzum et al., 2021,
+    # Clin Pharmacol Ther. PMID 34115020). UGT1A9*3 reduces glucuronidation → higher MPA exposure.
+    {
+        "gene_symbol": "UGT1A9",
+        "drug_name": "mycophenolate mofetil",
+        "phenotype": "Normal Metabolizer",
+        "recommendation_text": (
+            "Initiate therapy with standard recommended dose of mycophenolate mofetil. "
+            "No genotype-based dose adjustment required."
+        ),
+        "classification_strength": "Moderate",
+        "requires_dose_change": False,
+        "requires_alternative": False,
+        "cpic_release_version": "v1.0-2021",
+    },
+    {
+        "gene_symbol": "UGT1A9",
+        "drug_name": "mycophenolate mofetil",
+        "phenotype": "Intermediate Metabolizer",
+        "recommendation_text": (
+            "Initiate therapy with standard recommended dose. "
+            "Enhanced therapeutic drug monitoring may be warranted due to genotype-predicted "
+            "intermediate UGT1A9 activity and potential for altered MPA exposure."
+        ),
+        "classification_strength": "Moderate",
+        "requires_dose_change": False,
+        "requires_alternative": False,
+        "cpic_release_version": "v1.0-2021",
+    },
+    {
+        "gene_symbol": "UGT1A9",
+        "drug_name": "mycophenolate mofetil",
+        "phenotype": "Poor Metabolizer",
+        "recommendation_text": (
+            "Consider dose reduction of mycophenolate mofetil. "
+            "UGT1A9*3/*3 genotype predicts substantially reduced glucuronidation and higher "
+            "mycophenolic acid (MPA) systemic exposure; dose reduction and enhanced monitoring recommended."
+        ),
+        "classification_strength": "Moderate",
+        "requires_dose_change": True,
+        "requires_alternative": False,
+        "cpic_release_version": "v1.0-2021",
+    },
 ]
 
 

@@ -43,6 +43,7 @@ GENE_KEY_VARIANTS: dict[str, tuple[str, ...]] = {
     "G6PD": ("chrX:153763492", "chrX:153764217"),  # Ser188Phe, Glu202Lys
     "IFNL3": (),  # outside extraction window — skip
     "CYP3A5": ("chr7:99251073",),  # *3 proxy (rs776746; CEU AF ~0.955)
+    "UGT1A9": ("chr2:234578428",),  # *3 (rs17868320, c.98T>C; ALT=T is non-functional allele; CEU AF ~0.015)
 }
 
 _ACTIONABILITY_RANKING_TOP_N = 50
@@ -74,6 +75,10 @@ def _infer_phenotype(gene: str, total_nonfunc_dosage: int) -> str:
     elif gene == "CYP3A5":
         # CYP3A5*3 (chr7:99251073 alternate) = non-expresser allele.
         # 0 copies = expresser → needs higher tacrolimus dose (CPIC: Normal Metabolizer).
+        mapping = {0: "Normal Metabolizer", 1: "Intermediate Metabolizer", 2: "Poor Metabolizer"}
+    elif gene == "UGT1A9":
+        # UGT1A9*3 (chr2:234578428 ALT=T) = reduced-function allele (c.98T>C, rs17868320).
+        # Higher *3 dosage → reduced glucuronidation → higher MPA exposure → dose reduction needed.
         mapping = {0: "Normal Metabolizer", 1: "Intermediate Metabolizer", 2: "Poor Metabolizer"}
     else:
         mapping = {

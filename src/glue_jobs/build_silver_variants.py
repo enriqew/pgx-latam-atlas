@@ -49,6 +49,7 @@ GENE_REGIONS: dict[str, tuple[str, int, int]] = {
     "G6PD": ("chrX", 153_759_605, 153_798_257),
     "IFNL3": ("chr19", 39_729_165, 39_756_700),
     "CYP3A5": ("chr7", 99_245_817, 99_277_621),
+    "UGT1A9": ("chr2", 234_575_000, 234_681_946),
 }
 
 POPULATION_NAMES: dict[str, tuple[str, str]] = {

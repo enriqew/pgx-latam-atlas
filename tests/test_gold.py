@@ -84,6 +84,20 @@ class TestInferPhenotypeCYP3A5:
         assert _infer_phenotype("CYP3A5", 3) == "Poor Metabolizer"
 
 
+class TestInferPhenotypeUGT1A9:
+    def test_normal_metabolizer_zero_star3_alleles(self) -> None:
+        assert _infer_phenotype("UGT1A9", 0) == "Normal Metabolizer"
+
+    def test_intermediate_metabolizer_one_star3_allele(self) -> None:
+        assert _infer_phenotype("UGT1A9", 1) == "Intermediate Metabolizer"
+
+    def test_poor_metabolizer_two_star3_alleles(self) -> None:
+        assert _infer_phenotype("UGT1A9", 2) == "Poor Metabolizer"
+
+    def test_dosage_above_2_clamped_to_poor_metabolizer(self) -> None:
+        assert _infer_phenotype("UGT1A9", 3) == "Poor Metabolizer"
+
+
 # ── build_allele_frequencies ──────────────────────────────────────────────────
 
 

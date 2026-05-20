@@ -70,6 +70,9 @@ GENE_REGIONS_GRCH37: dict[str, GeneRegion] = {
     "G6PD": GeneRegion("X", 153_759_605, 153_798_257),
     "IFNL3": GeneRegion("19", 39_729_165, 39_756_700),
     "CYP3A5": GeneRegion("7", 99_245_817, 99_277_621),
+    # UGT1A9: extended start to 234_575_000 to include rs17868320 (*3, c.98T>C)
+    # at chr2:234_578_428, which is ~2kb upstream of the Ensembl-annotated gene body.
+    "UGT1A9": GeneRegion("2", 234_575_000, 234_681_946),
 }
 
 
