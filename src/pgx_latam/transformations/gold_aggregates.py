@@ -31,18 +31,18 @@ logger = logging.getLogger(__name__)
 # The 1000G Phase 3 VCF has "." in the ID field for all variants; pysam falls back to
 # positional format, so rsIDs never appear in bronze/silver data.
 # Positions confirmed present in the 1000G Phase 3 bronze layer.
-# CYP3A5 (rs776746) and IFNL3 (rs12979860) require corrected extraction windows — skip.
+# IFNL3 (rs12979860) requires corrected extraction windows — skip.
 GENE_KEY_VARIANTS: dict[str, tuple[str, ...]] = {
     "CYP2C19": ("chr10:96521657", "chr10:96540410"),  # *2 (rs4244285), *3 (rs4986893)
     "CYP2C9": ("chr10:96741053",),  # *2 (rs1799853)
     "SLCO1B1": ("chr12:21331546",),  # *5 (rs4149056)
-    "VKORC1": ("chr16:31093568",),  # -1639G>A (rs9923231)
+    "VKORC1": ("chr16:31093954",),  # -1639G>A proxy (rs9923231; CEU AF ~0.31)
     "TPMT": ("chr6:18131419",),  # *3B (rs1800460)
     "NUDT15": (),  # GRCh37 position unconfirmed — skip
     "DPYD": ("chr1:97981343", "chr1:97915614", "chr1:97981395"),  # *2A, HapB3, *13
     "G6PD": ("chrX:153763492", "chrX:153764217"),  # Ser188Phe, Glu202Lys
     "IFNL3": (),  # outside extraction window — skip
-    "CYP3A5": (),  # outside extraction window — skip
+    "CYP3A5": ("chr7:99251073",),  # *3 proxy (rs776746; CEU AF ~0.955)
 }
 
 _ACTIONABILITY_RANKING_TOP_N = 50
@@ -67,8 +67,13 @@ def _infer_phenotype(gene: str, total_nonfunc_dosage: int) -> str:
     elif gene == "G6PD":
         # G6PD is X-linked; males are hemizygous. Dosage 1 in males = deficient.
         mapping = {0: "Normal", 1: "Deficient", 2: "Deficient"}
+    elif gene == "VKORC1":
+        # rs9923231 A allele (alternate) increases sensitivity to warfarin.
+        # Dosage counts the sensitivity-increasing alleles.
+        mapping = {0: "Normal Sensitivity", 1: "Intermediate Sensitivity", 2: "High Sensitivity"}
     elif gene == "CYP3A5":
-        # *3 allele = non-expressor; having 0 copies of *3 = Expressor (NM)
+        # CYP3A5*3 (chr7:99251073 alternate) = non-expresser allele.
+        # 0 copies = expresser → needs higher tacrolimus dose (CPIC: Normal Metabolizer).
         mapping = {0: "Normal Metabolizer", 1: "Intermediate Metabolizer", 2: "Poor Metabolizer"}
     else:
         mapping = {

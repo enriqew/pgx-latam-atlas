@@ -54,8 +54,9 @@ _KEY_POSITIONS = (
     "chr10:96540410",  # CYP2C19 *2 (rs4244285), *3 (rs4986893)
     "chr10:96741053",  # CYP2C9 *2 (rs1799853)
     "chr12:21331546",  # SLCO1B1 *5 (rs4149056)
-    "chr16:31093568",  # VKORC1 -1639G>A (rs9923231)
-    "chr6:18131419",  # TPMT *3B (rs1800460)
+    "chr16:31093954",  # VKORC1 -1639G>A proxy (rs9923231 LD; GRCh37 positional ID)
+    "chr7:99251073",   # CYP3A5 *3 proxy (rs776746 LD; GRCh37 positional ID)
+    "chr6:18131419",   # TPMT *3B (rs1800460)
     "chr1:97981343",
     "chr1:97915614",
     "chr1:97981395",  # DPYD *2A, HapB3, *13

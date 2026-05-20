@@ -52,8 +52,36 @@ class TestInferPhenotype:
     def test_g6pd_deficient_homozygous(self) -> None:
         assert _infer_phenotype("G6PD", 2) == "Deficient"
 
-    def test_cyp3a5_normal_zero_nonfunc_alleles(self) -> None:
+    def test_cyp3a5_normal_metabolizer_zero_nonfunc_alleles(self) -> None:
         assert _infer_phenotype("CYP3A5", 0) == "Normal Metabolizer"
+
+
+class TestInferPhenotypeVKORC1:
+    def test_normal_sensitivity_zero_dosage(self) -> None:
+        assert _infer_phenotype("VKORC1", 0) == "Normal Sensitivity"
+
+    def test_intermediate_sensitivity_one_dosage(self) -> None:
+        assert _infer_phenotype("VKORC1", 1) == "Intermediate Sensitivity"
+
+    def test_high_sensitivity_two_dosage(self) -> None:
+        assert _infer_phenotype("VKORC1", 2) == "High Sensitivity"
+
+    def test_dosage_above_2_clamped_to_high_sensitivity(self) -> None:
+        assert _infer_phenotype("VKORC1", 3) == "High Sensitivity"
+
+
+class TestInferPhenotypeCYP3A5:
+    def test_normal_metabolizer_zero_nonfunc_alleles(self) -> None:
+        assert _infer_phenotype("CYP3A5", 0) == "Normal Metabolizer"
+
+    def test_intermediate_metabolizer_one_allele(self) -> None:
+        assert _infer_phenotype("CYP3A5", 1) == "Intermediate Metabolizer"
+
+    def test_poor_metabolizer_two_alleles(self) -> None:
+        assert _infer_phenotype("CYP3A5", 2) == "Poor Metabolizer"
+
+    def test_dosage_above_2_clamped_to_poor_metabolizer(self) -> None:
+        assert _infer_phenotype("CYP3A5", 3) == "Poor Metabolizer"
 
 
 # ── build_allele_frequencies ──────────────────────────────────────────────────

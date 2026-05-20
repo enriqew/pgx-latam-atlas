@@ -9,7 +9,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "aminosalicylic acid",
@@ -21,7 +21,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "aminosalicylic acid",
@@ -33,7 +33,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "aminosalicylic acid",
@@ -45,7 +45,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "aminosalicylic acid",
@@ -57,7 +57,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "aminosalicylic acid",
@@ -69,7 +69,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "aminosalicylic acid",
@@ -81,7 +81,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "aminosalicylic acid",
@@ -93,7 +93,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "aminosalicylic acid",
@@ -105,7 +105,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -117,7 +117,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -129,7 +129,7 @@
     "baseline_ceu_percentage": 58.59,
     "delta_vs_baseline": -17.18,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -141,7 +141,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": 17.18,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -153,7 +153,7 @@
     "baseline_ceu_percentage": 58.59,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -165,7 +165,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -16.94,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -177,7 +177,7 @@
     "baseline_ceu_percentage": 58.59,
     "delta_vs_baseline": -34.12,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -189,7 +189,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": 34.12,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -201,7 +201,7 @@
     "baseline_ceu_percentage": 58.59,
     "delta_vs_baseline": 16.94,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -213,7 +213,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -21.1,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -225,7 +225,7 @@
     "baseline_ceu_percentage": 58.59,
     "delta_vs_baseline": -38.28,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -237,7 +237,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": 38.28,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -249,7 +249,7 @@
     "baseline_ceu_percentage": 58.59,
     "delta_vs_baseline": 21.1,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -261,7 +261,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -33.17,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -273,7 +273,7 @@
     "baseline_ceu_percentage": 58.59,
     "delta_vs_baseline": -50.35,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -285,7 +285,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": 50.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -297,7 +297,7 @@
     "baseline_ceu_percentage": 58.59,
     "delta_vs_baseline": 33.17,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -309,7 +309,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -8.72,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -321,7 +321,7 @@
     "baseline_ceu_percentage": 58.59,
     "delta_vs_baseline": -25.9,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -333,7 +333,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": 25.9,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "amitriptyline",
@@ -345,7 +345,7 @@
     "baseline_ceu_percentage": 58.59,
     "delta_vs_baseline": 8.72,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "aspirin",
@@ -357,7 +357,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "aspirin",
@@ -369,7 +369,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "aspirin",
@@ -381,7 +381,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "aspirin",
@@ -393,7 +393,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "aspirin",
@@ -405,7 +405,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "aspirin",
@@ -417,7 +417,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "aspirin",
@@ -429,7 +429,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "aspirin",
@@ -441,7 +441,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "aspirin",
@@ -453,7 +453,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "azathioprine",
@@ -465,7 +465,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "azathioprine",
@@ -477,7 +477,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "azathioprine",
@@ -489,7 +489,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "azathioprine",
@@ -501,7 +501,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "azathioprine",
@@ -513,7 +513,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -525,7 +525,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -537,7 +537,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 29.29,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -549,7 +549,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": -29.29,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -561,7 +561,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -573,7 +573,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": 2.68,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -585,7 +585,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 31.97,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -597,7 +597,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": -28.17,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -609,7 +609,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 1.12,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -621,7 +621,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": 8.76,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -633,7 +633,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 38.05,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -645,7 +645,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": -27.18,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -657,7 +657,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 2.11,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -669,7 +669,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": 16.76,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -681,7 +681,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 46.05,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -693,7 +693,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": -6.77,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -705,7 +705,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 22.52,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -717,7 +717,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": 1.43,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -729,7 +729,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 30.72,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -741,7 +741,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": -26.45,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "capecitabine",
@@ -753,7 +753,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 2.84,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloramphenicol",
@@ -765,7 +765,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloramphenicol",
@@ -777,7 +777,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloramphenicol",
@@ -789,7 +789,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloramphenicol",
@@ -801,7 +801,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloramphenicol",
@@ -813,7 +813,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloramphenicol",
@@ -825,7 +825,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloramphenicol",
@@ -837,7 +837,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloramphenicol",
@@ -849,7 +849,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloramphenicol",
@@ -861,7 +861,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloroquine",
@@ -873,7 +873,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloroquine",
@@ -885,7 +885,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloroquine",
@@ -897,7 +897,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloroquine",
@@ -909,7 +909,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloroquine",
@@ -921,7 +921,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloroquine",
@@ -933,7 +933,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloroquine",
@@ -945,7 +945,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloroquine",
@@ -957,7 +957,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "chloroquine",
@@ -969,7 +969,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ciprofloxacin",
@@ -981,7 +981,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ciprofloxacin",
@@ -993,7 +993,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ciprofloxacin",
@@ -1005,7 +1005,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ciprofloxacin",
@@ -1017,7 +1017,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ciprofloxacin",
@@ -1029,7 +1029,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ciprofloxacin",
@@ -1041,7 +1041,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ciprofloxacin",
@@ -1053,7 +1053,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ciprofloxacin",
@@ -1065,7 +1065,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ciprofloxacin",
@@ -1077,7 +1077,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1089,7 +1089,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1101,7 +1101,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 35.35,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1113,7 +1113,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -35.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1125,7 +1125,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1137,7 +1137,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -14.98,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1149,7 +1149,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 20.37,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1161,7 +1161,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -37.32,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1173,7 +1173,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": -1.97,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1185,7 +1185,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -21.19,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1197,7 +1197,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 14.16,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1209,7 +1209,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -35.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1221,7 +1221,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 0.09,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1233,7 +1233,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -30.14,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1245,7 +1245,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 5.21,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1257,7 +1257,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -8.57,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1269,7 +1269,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 26.78,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1281,7 +1281,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -35.5,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "citalopram",
@@ -1293,7 +1293,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": -0.15,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "clomipramine",
@@ -1305,7 +1305,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "clomipramine",
@@ -1317,7 +1317,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -16.94,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "clomipramine",
@@ -1329,7 +1329,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -21.1,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "clomipramine",
@@ -1341,7 +1341,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -33.17,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "clomipramine",
@@ -1353,7 +1353,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -8.72,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "clopidogrel",
@@ -1365,7 +1365,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "clopidogrel",
@@ -1377,7 +1377,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -16.94,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "clopidogrel",
@@ -1389,7 +1389,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -21.1,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "clopidogrel",
@@ -1401,7 +1401,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -33.17,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "clopidogrel",
@@ -1413,7 +1413,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -8.72,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dapsone",
@@ -1425,7 +1425,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dapsone",
@@ -1437,7 +1437,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dapsone",
@@ -1449,7 +1449,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dapsone",
@@ -1461,7 +1461,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dapsone",
@@ -1473,7 +1473,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dexlansoprazole",
@@ -1485,7 +1485,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dexlansoprazole",
@@ -1497,7 +1497,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -16.94,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dexlansoprazole",
@@ -1509,7 +1509,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -21.1,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dexlansoprazole",
@@ -1521,7 +1521,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -33.17,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dexlansoprazole",
@@ -1533,7 +1533,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -8.72,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dimercaprol",
@@ -1545,7 +1545,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dimercaprol",
@@ -1557,7 +1557,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dimercaprol",
@@ -1569,7 +1569,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dimercaprol",
@@ -1581,7 +1581,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dimercaprol",
@@ -1593,7 +1593,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dimercaprol",
@@ -1605,7 +1605,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dimercaprol",
@@ -1617,7 +1617,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dimercaprol",
@@ -1629,7 +1629,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "dimercaprol",
@@ -1641,7 +1641,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "doxepin",
@@ -1653,7 +1653,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "doxepin",
@@ -1665,7 +1665,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": -1.97,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "doxepin",
@@ -1677,7 +1677,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 0.09,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "doxepin",
@@ -1689,7 +1689,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": -0.15,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "doxorubicin",
@@ -1701,7 +1701,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "doxorubicin",
@@ -1713,7 +1713,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "doxorubicin",
@@ -1725,7 +1725,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "doxorubicin",
@@ -1737,7 +1737,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "doxorubicin",
@@ -1749,7 +1749,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "doxorubicin",
@@ -1761,7 +1761,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "doxorubicin",
@@ -1773,7 +1773,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "doxorubicin",
@@ -1785,7 +1785,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "doxorubicin",
@@ -1797,7 +1797,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -1809,7 +1809,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -1821,7 +1821,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 35.35,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -1833,7 +1833,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -35.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -1845,7 +1845,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -1857,7 +1857,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -14.98,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -1869,7 +1869,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 20.37,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -1881,7 +1881,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -37.32,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -1893,7 +1893,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": -1.97,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -1905,7 +1905,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -21.19,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -1917,7 +1917,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 14.16,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -1929,7 +1929,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -35.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -1941,7 +1941,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 0.09,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -1953,7 +1953,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -30.14,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -1965,7 +1965,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 5.21,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -1977,7 +1977,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -8.57,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -1989,7 +1989,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 26.78,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -2001,7 +2001,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -35.5,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "escitalopram",
@@ -2013,7 +2013,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": -0.15,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2025,7 +2025,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2037,7 +2037,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 29.29,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2049,7 +2049,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": -29.29,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2061,7 +2061,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2073,7 +2073,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": 2.68,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2085,7 +2085,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 31.97,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2097,7 +2097,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": -28.17,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2109,7 +2109,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 1.12,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2121,7 +2121,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": 8.76,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2133,7 +2133,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 38.05,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2145,7 +2145,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": -27.18,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2157,7 +2157,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 2.11,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2169,7 +2169,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": 16.76,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2181,7 +2181,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 46.05,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2193,7 +2193,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": -6.77,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2205,7 +2205,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 22.52,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2217,7 +2217,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": 1.43,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2229,7 +2229,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 30.72,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2241,7 +2241,7 @@
     "baseline_ceu_percentage": 30.3,
     "delta_vs_baseline": -26.45,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluorouracil",
@@ -2253,7 +2253,7 @@
     "baseline_ceu_percentage": 1.01,
     "delta_vs_baseline": 2.84,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluvastatin",
@@ -2265,7 +2265,7 @@
     "baseline_ceu_percentage": 13.13,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluvastatin",
@@ -2277,7 +2277,7 @@
     "baseline_ceu_percentage": 13.13,
     "delta_vs_baseline": -0.36,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluvastatin",
@@ -2289,7 +2289,7 @@
     "baseline_ceu_percentage": 13.13,
     "delta_vs_baseline": -8.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluvastatin",
@@ -2301,7 +2301,7 @@
     "baseline_ceu_percentage": 13.13,
     "delta_vs_baseline": -10.78,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "fluvastatin",
@@ -2313,7 +2313,7 @@
     "baseline_ceu_percentage": 13.13,
     "delta_vs_baseline": -4.48,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "furazolidone",
@@ -2325,7 +2325,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "furazolidone",
@@ -2337,7 +2337,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "furazolidone",
@@ -2349,7 +2349,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "furazolidone",
@@ -2361,7 +2361,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "furazolidone",
@@ -2373,7 +2373,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "furazolidone",
@@ -2385,7 +2385,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "furazolidone",
@@ -2397,7 +2397,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "furazolidone",
@@ -2409,7 +2409,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "furazolidone",
@@ -2421,7 +2421,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "glyburide",
@@ -2433,7 +2433,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "glyburide",
@@ -2445,7 +2445,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "glyburide",
@@ -2457,7 +2457,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "glyburide",
@@ -2469,7 +2469,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "glyburide",
@@ -2481,7 +2481,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "glyburide",
@@ -2493,7 +2493,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "glyburide",
@@ -2505,7 +2505,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "glyburide",
@@ -2517,7 +2517,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "glyburide",
@@ -2529,7 +2529,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "hydroxychloroquine",
@@ -2541,7 +2541,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "hydroxychloroquine",
@@ -2553,7 +2553,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "hydroxychloroquine",
@@ -2565,7 +2565,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "hydroxychloroquine",
@@ -2577,7 +2577,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "hydroxychloroquine",
@@ -2589,7 +2589,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "hydroxychloroquine",
@@ -2601,7 +2601,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "hydroxychloroquine",
@@ -2613,7 +2613,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "hydroxychloroquine",
@@ -2625,7 +2625,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "hydroxychloroquine",
@@ -2637,7 +2637,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "imipramine",
@@ -2649,7 +2649,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "imipramine",
@@ -2661,7 +2661,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "imipramine",
@@ -2673,7 +2673,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "imipramine",
@@ -2685,7 +2685,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "imipramine",
@@ -2697,7 +2697,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2709,7 +2709,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2721,7 +2721,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -35.35,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2733,7 +2733,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 35.35,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2745,7 +2745,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2757,7 +2757,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": -1.97,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2769,7 +2769,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -37.32,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2781,7 +2781,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 20.37,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2793,7 +2793,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -14.98,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2805,7 +2805,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 0.09,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2817,7 +2817,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -35.26,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2829,7 +2829,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 14.16,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2841,7 +2841,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -21.19,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2853,7 +2853,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 5.21,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2865,7 +2865,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -30.14,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2877,7 +2877,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": -0.15,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2889,7 +2889,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -35.5,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2901,7 +2901,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 26.78,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "lansoprazole",
@@ -2913,7 +2913,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -8.57,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "mafenide",
@@ -2925,7 +2925,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "mafenide",
@@ -2937,7 +2937,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "mafenide",
@@ -2949,7 +2949,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "mafenide",
@@ -2961,7 +2961,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "mafenide",
@@ -2973,7 +2973,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "mafenide",
@@ -2985,7 +2985,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "mafenide",
@@ -2997,7 +2997,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "mafenide",
@@ -3009,7 +3009,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "mafenide",
@@ -3021,7 +3021,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "mercaptopurine",
@@ -3033,7 +3033,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "mercaptopurine",
@@ -3045,7 +3045,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "mercaptopurine",
@@ -3057,7 +3057,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "mercaptopurine",
@@ -3069,7 +3069,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "mercaptopurine",
@@ -3081,7 +3081,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "methylene blue",
@@ -3093,7 +3093,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "methylene blue",
@@ -3105,7 +3105,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "methylene blue",
@@ -3117,7 +3117,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "methylene blue",
@@ -3129,7 +3129,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "methylene blue",
@@ -3141,7 +3141,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "methylene blue",
@@ -3153,7 +3153,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "methylene blue",
@@ -3165,7 +3165,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "methylene blue",
@@ -3177,7 +3177,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "methylene blue",
@@ -3189,7 +3189,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "nalidixic acid",
@@ -3201,7 +3201,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "nalidixic acid",
@@ -3213,7 +3213,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "nalidixic acid",
@@ -3225,7 +3225,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "nalidixic acid",
@@ -3237,7 +3237,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "nalidixic acid",
@@ -3249,7 +3249,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "nalidixic acid",
@@ -3261,7 +3261,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "nalidixic acid",
@@ -3273,7 +3273,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "nalidixic acid",
@@ -3285,7 +3285,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "nalidixic acid",
@@ -3297,7 +3297,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "nitrofurantoin",
@@ -3309,7 +3309,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "nitrofurantoin",
@@ -3321,7 +3321,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "nitrofurantoin",
@@ -3333,7 +3333,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "nitrofurantoin",
@@ -3345,7 +3345,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "nitrofurantoin",
@@ -3357,7 +3357,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "norfloxacin",
@@ -3369,7 +3369,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "norfloxacin",
@@ -3381,7 +3381,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "norfloxacin",
@@ -3393,7 +3393,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "norfloxacin",
@@ -3405,7 +3405,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "norfloxacin",
@@ -3417,7 +3417,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "norfloxacin",
@@ -3429,7 +3429,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "norfloxacin",
@@ -3441,7 +3441,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "norfloxacin",
@@ -3453,7 +3453,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "norfloxacin",
@@ -3465,7 +3465,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ofloxacin",
@@ -3477,7 +3477,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ofloxacin",
@@ -3489,7 +3489,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ofloxacin",
@@ -3501,7 +3501,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ofloxacin",
@@ -3513,7 +3513,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ofloxacin",
@@ -3525,7 +3525,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ofloxacin",
@@ -3537,7 +3537,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ofloxacin",
@@ -3549,7 +3549,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ofloxacin",
@@ -3561,7 +3561,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "ofloxacin",
@@ -3573,7 +3573,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3585,7 +3585,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3597,7 +3597,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -35.35,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3609,7 +3609,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 35.35,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3621,7 +3621,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3633,7 +3633,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": -1.97,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3645,7 +3645,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -37.32,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3657,7 +3657,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 20.37,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3669,7 +3669,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -14.98,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3681,7 +3681,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 0.09,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3693,7 +3693,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -35.26,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3705,7 +3705,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 14.16,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3717,7 +3717,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -21.19,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3729,7 +3729,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 5.21,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3741,7 +3741,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -30.14,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3753,7 +3753,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": -0.15,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3765,7 +3765,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -35.5,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3777,7 +3777,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 26.78,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "omeprazole",
@@ -3789,7 +3789,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -8.57,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -3801,7 +3801,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -3813,7 +3813,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -35.35,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -3825,7 +3825,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 35.35,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -3837,7 +3837,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -3849,7 +3849,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": -1.97,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -3861,7 +3861,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -37.32,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -3873,7 +3873,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 20.37,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -3885,7 +3885,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -14.98,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -3897,7 +3897,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 0.09,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -3909,7 +3909,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -35.26,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -3921,7 +3921,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 14.16,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -3933,7 +3933,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -21.19,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -3945,7 +3945,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 5.21,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -3957,7 +3957,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -30.14,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -3969,7 +3969,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": -0.15,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -3981,7 +3981,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -35.5,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -3993,7 +3993,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 26.78,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pantoprazole",
@@ -4005,7 +4005,7 @@
     "baseline_ceu_percentage": 38.38,
     "delta_vs_baseline": -8.57,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pegloticase",
@@ -4017,7 +4017,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pegloticase",
@@ -4029,7 +4029,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pegloticase",
@@ -4041,7 +4041,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pegloticase",
@@ -4053,7 +4053,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "pegloticase",
@@ -4065,7 +4065,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "phenazopyridine",
@@ -4077,7 +4077,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "phenazopyridine",
@@ -4089,7 +4089,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "phenazopyridine",
@@ -4101,7 +4101,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "phenazopyridine",
@@ -4113,7 +4113,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "phenazopyridine",
@@ -4125,7 +4125,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "phenazopyridine",
@@ -4137,7 +4137,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "phenazopyridine",
@@ -4149,7 +4149,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "phenazopyridine",
@@ -4161,7 +4161,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "phenazopyridine",
@@ -4173,7 +4173,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "primaquine",
@@ -4185,7 +4185,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "primaquine",
@@ -4197,7 +4197,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "primaquine",
@@ -4209,7 +4209,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "primaquine",
@@ -4221,7 +4221,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "primaquine",
@@ -4233,7 +4233,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "quinine",
@@ -4245,7 +4245,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "quinine",
@@ -4257,7 +4257,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "quinine",
@@ -4269,7 +4269,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "quinine",
@@ -4281,7 +4281,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "quinine",
@@ -4293,7 +4293,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "quinine",
@@ -4305,7 +4305,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "quinine",
@@ -4317,7 +4317,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "quinine",
@@ -4329,7 +4329,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "quinine",
@@ -4341,7 +4341,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "rasburicase",
@@ -4353,7 +4353,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "rasburicase",
@@ -4365,7 +4365,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "rasburicase",
@@ -4377,7 +4377,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "rasburicase",
@@ -4389,7 +4389,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "rasburicase",
@@ -4401,7 +4401,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sertraline",
@@ -4413,7 +4413,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sertraline",
@@ -4425,7 +4425,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -16.94,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sertraline",
@@ -4437,7 +4437,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -21.1,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sertraline",
@@ -4449,7 +4449,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -33.17,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sertraline",
@@ -4461,7 +4461,7 @@
     "baseline_ceu_percentage": 41.41,
     "delta_vs_baseline": -8.72,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadiazine",
@@ -4473,7 +4473,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadiazine",
@@ -4485,7 +4485,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadiazine",
@@ -4497,7 +4497,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadiazine",
@@ -4509,7 +4509,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadiazine",
@@ -4521,7 +4521,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadiazine",
@@ -4533,7 +4533,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadiazine",
@@ -4545,7 +4545,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadiazine",
@@ -4557,7 +4557,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadiazine",
@@ -4569,7 +4569,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadimidine",
@@ -4581,7 +4581,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadimidine",
@@ -4593,7 +4593,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadimidine",
@@ -4605,7 +4605,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadimidine",
@@ -4617,7 +4617,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadimidine",
@@ -4629,7 +4629,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadimidine",
@@ -4641,7 +4641,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadimidine",
@@ -4653,7 +4653,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadimidine",
@@ -4665,7 +4665,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfadimidine",
@@ -4677,7 +4677,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfamethoxazole / trimethoprim",
@@ -4689,7 +4689,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfamethoxazole / trimethoprim",
@@ -4701,7 +4701,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfamethoxazole / trimethoprim",
@@ -4713,7 +4713,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfamethoxazole / trimethoprim",
@@ -4725,7 +4725,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfamethoxazole / trimethoprim",
@@ -4737,7 +4737,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfamethoxazole / trimethoprim",
@@ -4749,7 +4749,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfamethoxazole / trimethoprim",
@@ -4761,7 +4761,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfamethoxazole / trimethoprim",
@@ -4773,7 +4773,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfamethoxazole / trimethoprim",
@@ -4785,7 +4785,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfanilamide",
@@ -4797,7 +4797,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfanilamide",
@@ -4809,7 +4809,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfanilamide",
@@ -4821,7 +4821,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfanilamide",
@@ -4833,7 +4833,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfanilamide",
@@ -4845,7 +4845,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfanilamide",
@@ -4857,7 +4857,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfanilamide",
@@ -4869,7 +4869,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfanilamide",
@@ -4881,7 +4881,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfanilamide",
@@ -4893,7 +4893,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfasalazine",
@@ -4905,7 +4905,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfasalazine",
@@ -4917,7 +4917,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfasalazine",
@@ -4929,7 +4929,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfasalazine",
@@ -4941,7 +4941,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfasalazine",
@@ -4953,7 +4953,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfasalazine",
@@ -4965,7 +4965,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfasalazine",
@@ -4977,7 +4977,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfasalazine",
@@ -4989,7 +4989,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfasalazine",
@@ -5001,7 +5001,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfisoxazole",
@@ -5013,7 +5013,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfisoxazole",
@@ -5025,7 +5025,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfisoxazole",
@@ -5037,7 +5037,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfisoxazole",
@@ -5049,7 +5049,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfisoxazole",
@@ -5061,7 +5061,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfisoxazole",
@@ -5073,7 +5073,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfisoxazole",
@@ -5085,7 +5085,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfisoxazole",
@@ -5097,7 +5097,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "sulfisoxazole",
@@ -5109,7 +5109,67 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "drug_name": "tacrolimus",
+    "gene_symbol": "CYP3A5",
+    "population_code": "CEU",
+    "population_total": 99,
+    "individuals_requiring_change": 9,
+    "percentage_requiring_change": 9.09,
+    "baseline_ceu_percentage": 9.09,
+    "delta_vs_baseline": 0.0,
+    "classification_strength": "Strong",
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "drug_name": "tacrolimus",
+    "gene_symbol": "CYP3A5",
+    "population_code": "CLM",
+    "population_total": 94,
+    "individuals_requiring_change": 4,
+    "percentage_requiring_change": 4.26,
+    "baseline_ceu_percentage": 9.09,
+    "delta_vs_baseline": -4.83,
+    "classification_strength": "Strong",
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "drug_name": "tacrolimus",
+    "gene_symbol": "CYP3A5",
+    "population_code": "MXL",
+    "population_total": 64,
+    "individuals_requiring_change": 4,
+    "percentage_requiring_change": 6.25,
+    "baseline_ceu_percentage": 9.09,
+    "delta_vs_baseline": -2.84,
+    "classification_strength": "Strong",
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "drug_name": "tacrolimus",
+    "gene_symbol": "CYP3A5",
+    "population_code": "PEL",
+    "population_total": 85,
+    "individuals_requiring_change": 2,
+    "percentage_requiring_change": 2.35,
+    "baseline_ceu_percentage": 9.09,
+    "delta_vs_baseline": -6.74,
+    "classification_strength": "Strong",
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "drug_name": "tacrolimus",
+    "gene_symbol": "CYP3A5",
+    "population_code": "PUR",
+    "population_total": 104,
+    "individuals_requiring_change": 10,
+    "percentage_requiring_change": 9.62,
+    "baseline_ceu_percentage": 9.09,
+    "delta_vs_baseline": 0.53,
+    "classification_strength": "Strong",
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "tafenoquine",
@@ -5121,7 +5181,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "tafenoquine",
@@ -5133,7 +5193,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "tafenoquine",
@@ -5145,7 +5205,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "tafenoquine",
@@ -5157,7 +5217,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "tafenoquine",
@@ -5169,7 +5229,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "thioguanine",
@@ -5181,7 +5241,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "thioguanine",
@@ -5193,7 +5253,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "thioguanine",
@@ -5205,7 +5265,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "thioguanine",
@@ -5217,7 +5277,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "thioguanine",
@@ -5229,7 +5289,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "tolbutamide",
@@ -5241,7 +5301,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "tolbutamide",
@@ -5253,7 +5313,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "tolbutamide",
@@ -5265,7 +5325,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "tolbutamide",
@@ -5277,7 +5337,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "tolbutamide",
@@ -5289,7 +5349,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "tolbutamide",
@@ -5301,7 +5361,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "tolbutamide",
@@ -5313,7 +5373,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "tolbutamide",
@@ -5325,7 +5385,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "tolbutamide",
@@ -5337,7 +5397,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "toluidine blue",
@@ -5349,7 +5409,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "toluidine blue",
@@ -5361,7 +5421,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "toluidine blue",
@@ -5373,7 +5433,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "toluidine blue",
@@ -5385,7 +5445,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "toluidine blue",
@@ -5397,7 +5457,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "toluidine blue",
@@ -5409,7 +5469,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "toluidine blue",
@@ -5421,7 +5481,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "toluidine blue",
@@ -5433,7 +5493,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "toluidine blue",
@@ -5445,7 +5505,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "trimipramine",
@@ -5457,7 +5517,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "trimipramine",
@@ -5469,7 +5529,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "trimipramine",
@@ -5481,7 +5541,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "trimipramine",
@@ -5493,7 +5553,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "trimipramine",
@@ -5505,7 +5565,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Optional",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin c",
@@ -5517,7 +5577,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin c",
@@ -5529,7 +5589,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin c",
@@ -5541,7 +5601,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin c",
@@ -5553,7 +5613,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin c",
@@ -5565,7 +5625,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin c",
@@ -5577,7 +5637,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin c",
@@ -5589,7 +5649,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin c",
@@ -5601,7 +5661,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin c",
@@ -5613,7 +5673,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin k",
@@ -5625,7 +5685,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin k",
@@ -5637,7 +5697,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -95.74,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin k",
@@ -5649,7 +5709,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -4.26,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin k",
@@ -5661,7 +5721,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -98.44,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin k",
@@ -5673,7 +5733,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -1.56,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin k",
@@ -5685,7 +5745,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -97.65,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin k",
@@ -5697,7 +5757,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -2.35,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin k",
@@ -5709,7 +5769,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -92.31,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "vitamin k",
@@ -5721,7 +5781,7 @@
     "baseline_ceu_percentage": 100.0,
     "delta_vs_baseline": -7.69,
     "classification_strength": "Strong",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "voriconazole",
@@ -5733,7 +5793,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 0.0,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "voriconazole",
@@ -5745,7 +5805,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": -1.97,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "voriconazole",
@@ -5757,7 +5817,7 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": 0.09,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "drug_name": "voriconazole",
@@ -5769,6 +5829,66 @@
     "baseline_ceu_percentage": 3.03,
     "delta_vs_baseline": -0.15,
     "classification_strength": "Moderate",
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "drug_name": "warfarin",
+    "gene_symbol": "VKORC1",
+    "population_code": "CEU",
+    "population_total": 99,
+    "individuals_requiring_change": 53,
+    "percentage_requiring_change": 53.54,
+    "baseline_ceu_percentage": 53.54,
+    "delta_vs_baseline": 0.0,
+    "classification_strength": "Strong",
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "drug_name": "warfarin",
+    "gene_symbol": "VKORC1",
+    "population_code": "CLM",
+    "population_total": 94,
+    "individuals_requiring_change": 55,
+    "percentage_requiring_change": 58.51,
+    "baseline_ceu_percentage": 53.54,
+    "delta_vs_baseline": 4.97,
+    "classification_strength": "Strong",
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "drug_name": "warfarin",
+    "gene_symbol": "VKORC1",
+    "population_code": "MXL",
+    "population_total": 64,
+    "individuals_requiring_change": 37,
+    "percentage_requiring_change": 57.81,
+    "baseline_ceu_percentage": 53.54,
+    "delta_vs_baseline": 4.27,
+    "classification_strength": "Strong",
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "drug_name": "warfarin",
+    "gene_symbol": "VKORC1",
+    "population_code": "PEL",
+    "population_total": 85,
+    "individuals_requiring_change": 69,
+    "percentage_requiring_change": 81.18,
+    "baseline_ceu_percentage": 53.54,
+    "delta_vs_baseline": 27.64,
+    "classification_strength": "Strong",
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "drug_name": "warfarin",
+    "gene_symbol": "VKORC1",
+    "population_code": "PUR",
+    "population_total": 104,
+    "individuals_requiring_change": 57,
+    "percentage_requiring_change": 54.81,
+    "baseline_ceu_percentage": 53.54,
+    "delta_vs_baseline": 1.27,
+    "classification_strength": "Strong",
+    "snapshot_date": "2026-05-20"
   }
 ]

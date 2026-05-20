@@ -9,7 +9,7 @@
     "phenotype_percentage": 38.38,
     "ci_lower_wilson": 0.294085,
     "ci_upper_wilson": 0.48227,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C19",
@@ -21,7 +21,7 @@
     "phenotype_percentage": 58.59,
     "ci_lower_wilson": 0.487396,
     "ci_upper_wilson": 0.677907,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C19",
@@ -33,7 +33,7 @@
     "phenotype_percentage": 3.03,
     "ci_lower_wilson": 0.010358,
     "ci_upper_wilson": 0.085338,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C19",
@@ -45,7 +45,7 @@
     "phenotype_percentage": 23.4,
     "ci_lower_wilson": 0.159941,
     "ci_upper_wilson": 0.329029,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C19",
@@ -57,7 +57,7 @@
     "phenotype_percentage": 75.53,
     "ci_lower_wilson": 0.659522,
     "ci_upper_wilson": 0.831067,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C19",
@@ -69,7 +69,7 @@
     "phenotype_percentage": 1.06,
     "ci_lower_wilson": 0.00188,
     "ci_upper_wilson": 0.057824,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C19",
@@ -81,7 +81,7 @@
     "phenotype_percentage": 17.19,
     "ci_lower_wilson": 0.098776,
     "ci_upper_wilson": 0.282134,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C19",
@@ -93,7 +93,7 @@
     "phenotype_percentage": 79.69,
     "ci_lower_wilson": 0.682861,
     "ci_upper_wilson": 0.877267,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C19",
@@ -105,7 +105,7 @@
     "phenotype_percentage": 3.12,
     "ci_lower_wilson": 0.008612,
     "ci_upper_wilson": 0.106975,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C19",
@@ -117,7 +117,7 @@
     "phenotype_percentage": 8.24,
     "ci_lower_wilson": 0.040463,
     "ci_upper_wilson": 0.160362,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C19",
@@ -129,7 +129,7 @@
     "phenotype_percentage": 91.76,
     "ci_lower_wilson": 0.839638,
     "ci_upper_wilson": 0.959537,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C19",
@@ -141,7 +141,7 @@
     "phenotype_percentage": 29.81,
     "ci_lower_wilson": 0.218639,
     "ci_upper_wilson": 0.391901,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C19",
@@ -153,7 +153,7 @@
     "phenotype_percentage": 67.31,
     "ci_lower_wilson": 0.578161,
     "ci_upper_wilson": 0.755662,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C19",
@@ -165,7 +165,7 @@
     "phenotype_percentage": 2.88,
     "ci_lower_wilson": 0.009858,
     "ci_upper_wilson": 0.081402,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C9",
@@ -177,7 +177,7 @@
     "phenotype_percentage": 13.13,
     "ci_lower_wilson": 0.078372,
     "ci_upper_wilson": 0.211799,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C9",
@@ -189,7 +189,7 @@
     "phenotype_percentage": 86.87,
     "ci_lower_wilson": 0.788201,
     "ci_upper_wilson": 0.921628,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C9",
@@ -201,7 +201,7 @@
     "phenotype_percentage": 12.77,
     "ci_lower_wilson": 0.074557,
     "ci_upper_wilson": 0.21,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C9",
@@ -213,7 +213,7 @@
     "phenotype_percentage": 87.23,
     "ci_lower_wilson": 0.79,
     "ci_upper_wilson": 0.925443,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C9",
@@ -225,7 +225,7 @@
     "phenotype_percentage": 4.69,
     "ci_lower_wilson": 0.016069,
     "ci_upper_wilson": 0.128999,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C9",
@@ -237,7 +237,7 @@
     "phenotype_percentage": 95.31,
     "ci_lower_wilson": 0.871001,
     "ci_upper_wilson": 0.983931,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C9",
@@ -249,7 +249,7 @@
     "phenotype_percentage": 2.35,
     "ci_lower_wilson": 0.006476,
     "ci_upper_wilson": 0.081789,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C9",
@@ -261,7 +261,7 @@
     "phenotype_percentage": 97.65,
     "ci_lower_wilson": 0.918211,
     "ci_upper_wilson": 0.993524,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C9",
@@ -273,7 +273,7 @@
     "phenotype_percentage": 8.65,
     "ci_lower_wilson": 0.046195,
     "ci_upper_wilson": 0.156339,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "CYP2C9",
@@ -285,7 +285,127 @@
     "phenotype_percentage": 91.35,
     "ci_lower_wilson": 0.843661,
     "ci_upper_wilson": 0.953805,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "CYP3A5",
+    "population_code": "CEU",
+    "superpopulation": "EUR",
+    "phenotype_category": "Intermediate Metabolizer",
+    "individual_count": 9,
+    "population_total": 99,
+    "phenotype_percentage": 9.09,
+    "ci_lower_wilson": 0.048565,
+    "ci_upper_wilson": 0.163816,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "CYP3A5",
+    "population_code": "CEU",
+    "superpopulation": "EUR",
+    "phenotype_category": "Poor Metabolizer",
+    "individual_count": 90,
+    "population_total": 99,
+    "phenotype_percentage": 90.91,
+    "ci_lower_wilson": 0.836184,
+    "ci_upper_wilson": 0.951435,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "CYP3A5",
+    "population_code": "CLM",
+    "superpopulation": "AMR",
+    "phenotype_category": "Intermediate Metabolizer",
+    "individual_count": 4,
+    "population_total": 94,
+    "phenotype_percentage": 4.26,
+    "ci_lower_wilson": 0.01667,
+    "ci_upper_wilson": 0.104358,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "CYP3A5",
+    "population_code": "CLM",
+    "superpopulation": "AMR",
+    "phenotype_category": "Poor Metabolizer",
+    "individual_count": 90,
+    "population_total": 94,
+    "phenotype_percentage": 95.74,
+    "ci_lower_wilson": 0.895642,
+    "ci_upper_wilson": 0.98333,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "CYP3A5",
+    "population_code": "MXL",
+    "superpopulation": "AMR",
+    "phenotype_category": "Intermediate Metabolizer",
+    "individual_count": 4,
+    "population_total": 64,
+    "phenotype_percentage": 6.25,
+    "ci_lower_wilson": 0.024571,
+    "ci_upper_wilson": 0.149977,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "CYP3A5",
+    "population_code": "MXL",
+    "superpopulation": "AMR",
+    "phenotype_category": "Poor Metabolizer",
+    "individual_count": 60,
+    "population_total": 64,
+    "phenotype_percentage": 93.75,
+    "ci_lower_wilson": 0.850023,
+    "ci_upper_wilson": 0.975429,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "CYP3A5",
+    "population_code": "PEL",
+    "superpopulation": "AMR",
+    "phenotype_category": "Intermediate Metabolizer",
+    "individual_count": 2,
+    "population_total": 85,
+    "phenotype_percentage": 2.35,
+    "ci_lower_wilson": 0.006476,
+    "ci_upper_wilson": 0.081789,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "CYP3A5",
+    "population_code": "PEL",
+    "superpopulation": "AMR",
+    "phenotype_category": "Poor Metabolizer",
+    "individual_count": 83,
+    "population_total": 85,
+    "phenotype_percentage": 97.65,
+    "ci_lower_wilson": 0.918211,
+    "ci_upper_wilson": 0.993524,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "CYP3A5",
+    "population_code": "PUR",
+    "superpopulation": "AMR",
+    "phenotype_category": "Intermediate Metabolizer",
+    "individual_count": 10,
+    "population_total": 104,
+    "phenotype_percentage": 9.62,
+    "ci_lower_wilson": 0.053069,
+    "ci_upper_wilson": 0.16801,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "CYP3A5",
+    "population_code": "PUR",
+    "superpopulation": "AMR",
+    "phenotype_category": "Poor Metabolizer",
+    "individual_count": 94,
+    "population_total": 104,
+    "phenotype_percentage": 90.38,
+    "ci_lower_wilson": 0.83199,
+    "ci_upper_wilson": 0.946931,
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "DPYD",
@@ -297,7 +417,7 @@
     "phenotype_percentage": 30.3,
     "ci_lower_wilson": 0.221262,
     "ci_upper_wilson": 0.399514,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "DPYD",
@@ -309,7 +429,7 @@
     "phenotype_percentage": 68.69,
     "ci_lower_wilson": 0.589983,
     "ci_upper_wilson": 0.769793,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "DPYD",
@@ -321,7 +441,7 @@
     "phenotype_percentage": 1.01,
     "ci_lower_wilson": 0.001785,
     "ci_upper_wilson": 0.055017,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "DPYD",
@@ -333,7 +453,7 @@
     "phenotype_percentage": 32.98,
     "ci_lower_wilson": 0.243074,
     "ci_upper_wilson": 0.429867,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "DPYD",
@@ -345,7 +465,7 @@
     "phenotype_percentage": 64.89,
     "ci_lower_wilson": 0.54833,
     "ci_upper_wilson": 0.737847,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "DPYD",
@@ -357,7 +477,7 @@
     "phenotype_percentage": 2.13,
     "ci_lower_wilson": 0.005854,
     "ci_upper_wilson": 0.074292,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "DPYD",
@@ -369,7 +489,7 @@
     "phenotype_percentage": 39.06,
     "ci_lower_wilson": 0.280554,
     "ci_upper_wilson": 0.513083,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "DPYD",
@@ -381,7 +501,7 @@
     "phenotype_percentage": 57.81,
     "ci_lower_wilson": 0.456098,
     "ci_upper_wilson": 0.691304,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "DPYD",
@@ -393,7 +513,7 @@
     "phenotype_percentage": 3.12,
     "ci_lower_wilson": 0.008612,
     "ci_upper_wilson": 0.106975,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "DPYD",
@@ -405,7 +525,7 @@
     "phenotype_percentage": 47.06,
     "ci_lower_wilson": 0.36806,
     "ci_upper_wilson": 0.57566,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "DPYD",
@@ -417,7 +537,7 @@
     "phenotype_percentage": 29.41,
     "ci_lower_wilson": 0.207854,
     "ci_upper_wilson": 0.398187,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "DPYD",
@@ -429,7 +549,7 @@
     "phenotype_percentage": 23.53,
     "ci_lower_wilson": 0.157794,
     "ci_upper_wilson": 0.335686,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "DPYD",
@@ -441,7 +561,7 @@
     "phenotype_percentage": 31.73,
     "ci_lower_wilson": 0.23573,
     "ci_upper_wilson": 0.411901,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "DPYD",
@@ -453,7 +573,7 @@
     "phenotype_percentage": 64.42,
     "ci_lower_wilson": 0.548589,
     "ci_upper_wilson": 0.729597,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "DPYD",
@@ -465,7 +585,7 @@
     "phenotype_percentage": 3.85,
     "ci_lower_wilson": 0.015057,
     "ci_upper_wilson": 0.094749,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "G6PD",
@@ -477,7 +597,7 @@
     "phenotype_percentage": 100.0,
     "ci_lower_wilson": 0.962645,
     "ci_upper_wilson": 1.0,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "G6PD",
@@ -489,7 +609,7 @@
     "phenotype_percentage": 4.26,
     "ci_lower_wilson": 0.01667,
     "ci_upper_wilson": 0.104358,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "G6PD",
@@ -501,7 +621,7 @@
     "phenotype_percentage": 95.74,
     "ci_lower_wilson": 0.895642,
     "ci_upper_wilson": 0.98333,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "G6PD",
@@ -513,7 +633,7 @@
     "phenotype_percentage": 1.56,
     "ci_lower_wilson": 0.002763,
     "ci_upper_wilson": 0.083343,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "G6PD",
@@ -525,7 +645,7 @@
     "phenotype_percentage": 98.44,
     "ci_lower_wilson": 0.916657,
     "ci_upper_wilson": 0.997237,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "G6PD",
@@ -537,7 +657,7 @@
     "phenotype_percentage": 2.35,
     "ci_lower_wilson": 0.006476,
     "ci_upper_wilson": 0.081789,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "G6PD",
@@ -549,7 +669,7 @@
     "phenotype_percentage": 97.65,
     "ci_lower_wilson": 0.918211,
     "ci_upper_wilson": 0.993524,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "G6PD",
@@ -561,7 +681,7 @@
     "phenotype_percentage": 7.69,
     "ci_lower_wilson": 0.039491,
     "ci_upper_wilson": 0.144497,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "G6PD",
@@ -573,7 +693,7 @@
     "phenotype_percentage": 92.31,
     "ci_lower_wilson": 0.855503,
     "ci_upper_wilson": 0.960509,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "SLCO1B1",
@@ -585,7 +705,7 @@
     "phenotype_percentage": 100.0,
     "ci_lower_wilson": 0.962645,
     "ci_upper_wilson": 1.0,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "SLCO1B1",
@@ -597,7 +717,7 @@
     "phenotype_percentage": 100.0,
     "ci_lower_wilson": 0.960737,
     "ci_upper_wilson": 1.0,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "SLCO1B1",
@@ -609,7 +729,7 @@
     "phenotype_percentage": 100.0,
     "ci_lower_wilson": 0.943374,
     "ci_upper_wilson": 1.0,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "SLCO1B1",
@@ -621,7 +741,7 @@
     "phenotype_percentage": 100.0,
     "ci_lower_wilson": 0.956759,
     "ci_upper_wilson": 1.0,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "SLCO1B1",
@@ -633,7 +753,7 @@
     "phenotype_percentage": 100.0,
     "ci_lower_wilson": 0.964377,
     "ci_upper_wilson": 1.0,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "TPMT",
@@ -645,7 +765,7 @@
     "phenotype_percentage": 100.0,
     "ci_lower_wilson": 0.962645,
     "ci_upper_wilson": 1.0,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "TPMT",
@@ -657,7 +777,7 @@
     "phenotype_percentage": 100.0,
     "ci_lower_wilson": 0.960737,
     "ci_upper_wilson": 1.0,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "TPMT",
@@ -669,7 +789,7 @@
     "phenotype_percentage": 100.0,
     "ci_lower_wilson": 0.943374,
     "ci_upper_wilson": 1.0,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "TPMT",
@@ -681,7 +801,7 @@
     "phenotype_percentage": 100.0,
     "ci_lower_wilson": 0.956759,
     "ci_upper_wilson": 1.0,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
   },
   {
     "gene_symbol": "TPMT",
@@ -693,6 +813,186 @@
     "phenotype_percentage": 100.0,
     "ci_lower_wilson": 0.964377,
     "ci_upper_wilson": 1.0,
-    "snapshot_date": "2026-05-18"
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "VKORC1",
+    "population_code": "CEU",
+    "superpopulation": "EUR",
+    "phenotype_category": "High Sensitivity",
+    "individual_count": 9,
+    "population_total": 99,
+    "phenotype_percentage": 9.09,
+    "ci_lower_wilson": 0.048565,
+    "ci_upper_wilson": 0.163816,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "VKORC1",
+    "population_code": "CEU",
+    "superpopulation": "EUR",
+    "phenotype_category": "Intermediate Sensitivity",
+    "individual_count": 44,
+    "population_total": 99,
+    "phenotype_percentage": 44.44,
+    "ci_lower_wilson": 0.350459,
+    "ci_upper_wilson": 0.54258,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "VKORC1",
+    "population_code": "CEU",
+    "superpopulation": "EUR",
+    "phenotype_category": "Normal Sensitivity",
+    "individual_count": 46,
+    "population_total": 99,
+    "phenotype_percentage": 46.46,
+    "ci_lower_wilson": 0.369563,
+    "ci_upper_wilson": 0.562371,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "VKORC1",
+    "population_code": "CLM",
+    "superpopulation": "AMR",
+    "phenotype_category": "High Sensitivity",
+    "individual_count": 12,
+    "population_total": 94,
+    "phenotype_percentage": 12.77,
+    "ci_lower_wilson": 0.074557,
+    "ci_upper_wilson": 0.21,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "VKORC1",
+    "population_code": "CLM",
+    "superpopulation": "AMR",
+    "phenotype_category": "Intermediate Sensitivity",
+    "individual_count": 43,
+    "population_total": 94,
+    "phenotype_percentage": 45.74,
+    "ci_lower_wilson": 0.360388,
+    "ci_upper_wilson": 0.557847,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "VKORC1",
+    "population_code": "CLM",
+    "superpopulation": "AMR",
+    "phenotype_category": "Normal Sensitivity",
+    "individual_count": 39,
+    "population_total": 94,
+    "phenotype_percentage": 41.49,
+    "ci_lower_wilson": 0.320549,
+    "ci_upper_wilson": 0.515922,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "VKORC1",
+    "population_code": "MXL",
+    "superpopulation": "AMR",
+    "phenotype_category": "High Sensitivity",
+    "individual_count": 8,
+    "population_total": 64,
+    "phenotype_percentage": 12.5,
+    "ci_lower_wilson": 0.064722,
+    "ci_upper_wilson": 0.227748,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "VKORC1",
+    "population_code": "MXL",
+    "superpopulation": "AMR",
+    "phenotype_category": "Intermediate Sensitivity",
+    "individual_count": 29,
+    "population_total": 64,
+    "phenotype_percentage": 45.31,
+    "ci_lower_wilson": 0.337293,
+    "ci_upper_wilson": 0.574266,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "VKORC1",
+    "population_code": "MXL",
+    "superpopulation": "AMR",
+    "phenotype_category": "Normal Sensitivity",
+    "individual_count": 27,
+    "population_total": 64,
+    "phenotype_percentage": 42.19,
+    "ci_lower_wilson": 0.308696,
+    "ci_upper_wilson": 0.543902,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "VKORC1",
+    "population_code": "PEL",
+    "superpopulation": "AMR",
+    "phenotype_category": "High Sensitivity",
+    "individual_count": 28,
+    "population_total": 85,
+    "phenotype_percentage": 32.94,
+    "ci_lower_wilson": 0.238776,
+    "ci_upper_wilson": 0.4348,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "VKORC1",
+    "population_code": "PEL",
+    "superpopulation": "AMR",
+    "phenotype_category": "Intermediate Sensitivity",
+    "individual_count": 41,
+    "population_total": 85,
+    "phenotype_percentage": 48.24,
+    "ci_lower_wilson": 0.379206,
+    "ci_upper_wilson": 0.587026,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "VKORC1",
+    "population_code": "PEL",
+    "superpopulation": "AMR",
+    "phenotype_category": "Normal Sensitivity",
+    "individual_count": 16,
+    "population_total": 85,
+    "phenotype_percentage": 18.82,
+    "ci_lower_wilson": 0.11932,
+    "ci_upper_wilson": 0.284112,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "VKORC1",
+    "population_code": "PUR",
+    "superpopulation": "AMR",
+    "phenotype_category": "High Sensitivity",
+    "individual_count": 14,
+    "population_total": 104,
+    "phenotype_percentage": 13.46,
+    "ci_lower_wilson": 0.08191,
+    "ci_upper_wilson": 0.213352,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "VKORC1",
+    "population_code": "PUR",
+    "superpopulation": "AMR",
+    "phenotype_category": "Intermediate Sensitivity",
+    "individual_count": 43,
+    "population_total": 104,
+    "phenotype_percentage": 41.35,
+    "ci_lower_wilson": 0.323548,
+    "ci_upper_wilson": 0.509541,
+    "snapshot_date": "2026-05-20"
+  },
+  {
+    "gene_symbol": "VKORC1",
+    "population_code": "PUR",
+    "superpopulation": "AMR",
+    "phenotype_category": "Normal Sensitivity",
+    "individual_count": 47,
+    "population_total": 104,
+    "phenotype_percentage": 45.19,
+    "ci_lower_wilson": 0.359688,
+    "ci_upper_wilson": 0.547584,
+    "snapshot_date": "2026-05-20"
   }
 ]

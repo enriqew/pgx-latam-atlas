@@ -46,6 +46,7 @@ _DOSE_CHANGE_PATTERNS: list[re.Pattern[str]] = [
     re.compile(r"\bmodified dose\b"),
     re.compile(r"\bdosage adjustment\b"),
     re.compile(r"\bdecrease (the )?dose\b"),
+    re.compile(r"\bincrease (starting |the )?dose\b"),
 ]
 
 _ALTERNATIVE_PATTERNS: list[re.Pattern[str]] = [
@@ -59,6 +60,43 @@ _ALTERNATIVE_PATTERNS: list[re.Pattern[str]] = [
     re.compile(r"\buse an?other\b"),
     re.compile(r"\bnot recommended\b"),
     re.compile(r"\bsubstitut\b"),
+]
+
+
+# VKORC1 warfarin recommendations are not exposed in the CPIC API response
+# (warfarin dosing uses a joint VKORC1+CYP2C9 algorithm). These rows are
+# curated from CPIC Table S1 of the warfarin guideline (PMID 28198005).
+_CURATED_RECOMMENDATIONS: list[dict[str, object]] = [
+    {
+        "gene_symbol": "VKORC1",
+        "drug_name": "warfarin",
+        "phenotype": "Normal Sensitivity",
+        "recommendation_text": "Initiate therapy with standard recommended dose.",
+        "classification_strength": "Strong",
+        "requires_dose_change": False,
+        "requires_alternative": False,
+        "cpic_release_version": "v1.4-2017",
+    },
+    {
+        "gene_symbol": "VKORC1",
+        "drug_name": "warfarin",
+        "phenotype": "Intermediate Sensitivity",
+        "recommendation_text": "Consider moderate dose reduction based on VKORC1 sensitivity genotype.",
+        "classification_strength": "Strong",
+        "requires_dose_change": True,
+        "requires_alternative": False,
+        "cpic_release_version": "v1.4-2017",
+    },
+    {
+        "gene_symbol": "VKORC1",
+        "drug_name": "warfarin",
+        "phenotype": "High Sensitivity",
+        "recommendation_text": "Consider significant dose reduction based on VKORC1 high sensitivity genotype.",
+        "classification_strength": "Strong",
+        "requires_dose_change": True,
+        "requires_alternative": False,
+        "cpic_release_version": "v1.4-2017",
+    },
 ]
 
 
@@ -233,6 +271,8 @@ def build_drug_recommendations(cpic_df: pd.DataFrame) -> pd.DataFrame:
         n_dose,
         n_alt,
     )
+    curated_df = pd.DataFrame(_CURATED_RECOMMENDATIONS)
+    result = pd.concat([result, curated_df], ignore_index=True)
     return result.reset_index(drop=True)
 
 
