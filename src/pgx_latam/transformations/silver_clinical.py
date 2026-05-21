@@ -232,6 +232,73 @@ _CURATED_RECOMMENDATIONS: list[dict[str, object]] = [
         "requires_alternative": False,
         "cpic_release_version": "v1.0-2021",
     },
+    # TPMT / azathioprine overrides — CPIC PostgREST API v1 returns the wrong recommendation
+    # text for Normal Metabolizer ("Consider alternative nonthiopurine immunosuppressant therapy")
+    # which triggers requires_alternative=True.  The correct CPIC v1.3-2019 guidance is:
+    #   NM → standard dose, no PGx-driven change (routine TDM monitoring only)
+    #   IM / Possible IM → reduce dose 30–70% (dose change, not alternative)
+    # Source: CPIC guideline for thiopurines and TPMT/NUDT15 (Relling et al., 2019;
+    # Clin Pharmacol Ther. PMID 30447069).
+    {
+        "gene_symbol": "TPMT",
+        "drug_name": "azathioprine",
+        "phenotype": "Normal Metabolizer",
+        "recommendation_text": (
+            "Initiate therapy with standard weight-based dosing of azathioprine. "
+            "No genotype-based dose adjustment required for TPMT Normal Metabolizers. "
+            "Adjust doses based on disease-specific guidelines and tolerance."
+        ),
+        "classification_strength": "Strong",
+        "requires_dose_change": False,
+        "requires_alternative": False,
+        "cpic_release_version": "v1.3-2019",
+    },
+    {
+        "gene_symbol": "TPMT",
+        "drug_name": "azathioprine",
+        "phenotype": "Intermediate Metabolizer",
+        "recommendation_text": (
+            "Initiate therapy with reduced starting doses (30-70% of standard starting dose) "
+            "of azathioprine for TPMT Intermediate Metabolizers. "
+            "Titrate based on disease response and tolerance."
+        ),
+        "classification_strength": "Strong",
+        "requires_dose_change": True,
+        "requires_alternative": False,
+        "cpic_release_version": "v1.3-2019",
+    },
+    {
+        "gene_symbol": "TPMT",
+        "drug_name": "azathioprine",
+        "phenotype": "Possible Intermediate Metabolizer",
+        "recommendation_text": (
+            "Initiate therapy with reduced starting doses (30-70% of standard starting dose) "
+            "of azathioprine for TPMT Possible Intermediate Metabolizers. "
+            "Titrate based on disease response and tolerance."
+        ),
+        "classification_strength": "Strong",
+        "requires_dose_change": True,
+        "requires_alternative": False,
+        "cpic_release_version": "v1.3-2019",
+    },
+    # NUDT15 / azathioprine Normal Metabolizer override — CPIC API text contains the phrase
+    # "adjust doses...based on disease-specific guidelines" which is routine TDM language,
+    # not a PGx-driven dose change.  The pattern \badjust(ed)? dose\b incorrectly fires.
+    # Correct CPIC v1.3-2019 guidance: NM receives standard dosing; no PGx adjustment required.
+    {
+        "gene_symbol": "NUDT15",
+        "drug_name": "azathioprine",
+        "phenotype": "Normal Metabolizer",
+        "recommendation_text": (
+            "Initiate therapy with standard weight-based dosing of azathioprine. "
+            "No genotype-based dose adjustment required for NUDT15 Normal Metabolizers. "
+            "Monitor and adjust doses per disease-specific protocol."
+        ),
+        "classification_strength": "Strong",
+        "requires_dose_change": False,
+        "requires_alternative": False,
+        "cpic_release_version": "v1.3-2019",
+    },
 ]
 
 
@@ -408,6 +475,9 @@ def build_drug_recommendations(cpic_df: pd.DataFrame) -> pd.DataFrame:
     )
     curated_df = pd.DataFrame(_CURATED_RECOMMENDATIONS)
     result = pd.concat([result, curated_df], ignore_index=True)
+    # Curated rows are appended last — keep='last' ensures they override any API-sourced rows
+    # with misclassified flags for the same gene+drug+phenotype key.
+    result = result.drop_duplicates(subset=["gene_symbol", "drug_name", "phenotype"], keep="last")
     return result.reset_index(drop=True)
 
 

@@ -78,17 +78,6 @@
   },
   {
     "rank_position": 8,
-    "drug_name": "fluorouracil",
-    "gene_symbol": "DPYD",
-    "population_code": "PEL",
-    "delta_vs_baseline": 46.05,
-    "population_affected_pct": 47.06,
-    "classification_strength": "Moderate",
-    "clinical_implication": "46.0pp higher rate of dose/therapy change vs CEU in PEL for fluorouracil (DPYD, CPIC Moderate)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 9,
     "drug_name": "capecitabine",
     "gene_symbol": "DPYD",
     "population_code": "PEL",
@@ -96,6 +85,17 @@
     "population_affected_pct": 47.06,
     "classification_strength": "Moderate",
     "clinical_implication": "46.0pp higher rate of dose/therapy change vs CEU in PEL for capecitabine (DPYD, CPIC Moderate)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 9,
+    "drug_name": "fluorouracil",
+    "gene_symbol": "DPYD",
+    "population_code": "PEL",
+    "delta_vs_baseline": 46.05,
+    "population_affected_pct": 47.06,
+    "classification_strength": "Moderate",
+    "clinical_implication": "46.0pp higher rate of dose/therapy change vs CEU in PEL for fluorouracil (DPYD, CPIC Moderate)",
     "snapshot_date": "2026-05-21"
   },
   {
@@ -133,17 +133,6 @@
   },
   {
     "rank_position": 13,
-    "drug_name": "fluorouracil",
-    "gene_symbol": "DPYD",
-    "population_code": "MXL",
-    "delta_vs_baseline": 38.05,
-    "population_affected_pct": 39.06,
-    "classification_strength": "Moderate",
-    "clinical_implication": "38.0pp higher rate of dose/therapy change vs CEU in MXL for fluorouracil (DPYD, CPIC Moderate)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 14,
     "drug_name": "capecitabine",
     "gene_symbol": "DPYD",
     "population_code": "MXL",
@@ -151,6 +140,17 @@
     "population_affected_pct": 39.06,
     "classification_strength": "Moderate",
     "clinical_implication": "38.0pp higher rate of dose/therapy change vs CEU in MXL for capecitabine (DPYD, CPIC Moderate)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 14,
+    "drug_name": "fluorouracil",
+    "gene_symbol": "DPYD",
+    "population_code": "MXL",
+    "delta_vs_baseline": 38.05,
+    "population_affected_pct": 39.06,
+    "classification_strength": "Moderate",
+    "clinical_implication": "38.0pp higher rate of dose/therapy change vs CEU in MXL for fluorouracil (DPYD, CPIC Moderate)",
     "snapshot_date": "2026-05-21"
   },
   {
@@ -210,13 +210,13 @@
   },
   {
     "rank_position": 20,
-    "drug_name": "ciprofloxacin",
+    "drug_name": "chloroquine",
     "gene_symbol": "G6PD",
     "population_code": "PUR",
     "delta_vs_baseline": -7.69,
     "population_affected_pct": 92.31,
     "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for ciprofloxacin (G6PD, CPIC Strong)",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for chloroquine (G6PD, CPIC Strong)",
     "snapshot_date": "2026-05-21"
   },
   {
@@ -232,127 +232,17 @@
   },
   {
     "rank_position": 22,
-    "drug_name": "sulfisoxazole",
+    "drug_name": "glyburide",
     "gene_symbol": "G6PD",
     "population_code": "PUR",
     "delta_vs_baseline": -7.69,
     "population_affected_pct": 92.31,
     "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for sulfisoxazole (G6PD, CPIC Strong)",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for glyburide (G6PD, CPIC Strong)",
     "snapshot_date": "2026-05-21"
   },
   {
     "rank_position": 23,
-    "drug_name": "sulfadimidine",
-    "gene_symbol": "G6PD",
-    "population_code": "PUR",
-    "delta_vs_baseline": -7.69,
-    "population_affected_pct": 92.31,
-    "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for sulfadimidine (G6PD, CPIC Strong)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 24,
-    "drug_name": "chloramphenicol",
-    "gene_symbol": "G6PD",
-    "population_code": "PUR",
-    "delta_vs_baseline": -7.69,
-    "population_affected_pct": 92.31,
-    "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for chloramphenicol (G6PD, CPIC Strong)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 25,
-    "drug_name": "tolbutamide",
-    "gene_symbol": "G6PD",
-    "population_code": "PUR",
-    "delta_vs_baseline": -7.69,
-    "population_affected_pct": 92.31,
-    "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for tolbutamide (G6PD, CPIC Strong)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 26,
-    "drug_name": "sulfanilamide",
-    "gene_symbol": "G6PD",
-    "population_code": "PUR",
-    "delta_vs_baseline": -7.69,
-    "population_affected_pct": 92.31,
-    "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for sulfanilamide (G6PD, CPIC Strong)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 27,
-    "drug_name": "chloroquine",
-    "gene_symbol": "G6PD",
-    "population_code": "PUR",
-    "delta_vs_baseline": -7.69,
-    "population_affected_pct": 92.31,
-    "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for chloroquine (G6PD, CPIC Strong)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 28,
-    "drug_name": "sulfasalazine",
-    "gene_symbol": "G6PD",
-    "population_code": "PUR",
-    "delta_vs_baseline": -7.69,
-    "population_affected_pct": 92.31,
-    "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for sulfasalazine (G6PD, CPIC Strong)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 29,
-    "drug_name": "aspirin",
-    "gene_symbol": "G6PD",
-    "population_code": "PUR",
-    "delta_vs_baseline": -7.69,
-    "population_affected_pct": 92.31,
-    "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for aspirin (G6PD, CPIC Strong)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 30,
-    "drug_name": "toluidine blue",
-    "gene_symbol": "G6PD",
-    "population_code": "PUR",
-    "delta_vs_baseline": -7.69,
-    "population_affected_pct": 92.31,
-    "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for toluidine blue (G6PD, CPIC Strong)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 31,
-    "drug_name": "doxorubicin",
-    "gene_symbol": "G6PD",
-    "population_code": "PUR",
-    "delta_vs_baseline": -7.69,
-    "population_affected_pct": 92.31,
-    "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for doxorubicin (G6PD, CPIC Strong)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 32,
-    "drug_name": "dimercaprol",
-    "gene_symbol": "G6PD",
-    "population_code": "PUR",
-    "delta_vs_baseline": -7.69,
-    "population_affected_pct": 92.31,
-    "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for dimercaprol (G6PD, CPIC Strong)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 33,
     "drug_name": "quinine",
     "gene_symbol": "G6PD",
     "population_code": "PUR",
@@ -363,7 +253,139 @@
     "snapshot_date": "2026-05-21"
   },
   {
+    "rank_position": 24,
+    "drug_name": "phenazopyridine",
+    "gene_symbol": "G6PD",
+    "population_code": "PUR",
+    "delta_vs_baseline": -7.69,
+    "population_affected_pct": 92.31,
+    "classification_strength": "Strong",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for phenazopyridine (G6PD, CPIC Strong)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 25,
+    "drug_name": "sulfisoxazole",
+    "gene_symbol": "G6PD",
+    "population_code": "PUR",
+    "delta_vs_baseline": -7.69,
+    "population_affected_pct": 92.31,
+    "classification_strength": "Strong",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for sulfisoxazole (G6PD, CPIC Strong)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 26,
+    "drug_name": "sulfasalazine",
+    "gene_symbol": "G6PD",
+    "population_code": "PUR",
+    "delta_vs_baseline": -7.69,
+    "population_affected_pct": 92.31,
+    "classification_strength": "Strong",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for sulfasalazine (G6PD, CPIC Strong)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 27,
+    "drug_name": "sulfanilamide",
+    "gene_symbol": "G6PD",
+    "population_code": "PUR",
+    "delta_vs_baseline": -7.69,
+    "population_affected_pct": 92.31,
+    "classification_strength": "Strong",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for sulfanilamide (G6PD, CPIC Strong)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 28,
+    "drug_name": "tolbutamide",
+    "gene_symbol": "G6PD",
+    "population_code": "PUR",
+    "delta_vs_baseline": -7.69,
+    "population_affected_pct": 92.31,
+    "classification_strength": "Strong",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for tolbutamide (G6PD, CPIC Strong)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 29,
+    "drug_name": "chloramphenicol",
+    "gene_symbol": "G6PD",
+    "population_code": "PUR",
+    "delta_vs_baseline": -7.69,
+    "population_affected_pct": 92.31,
+    "classification_strength": "Strong",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for chloramphenicol (G6PD, CPIC Strong)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 30,
+    "drug_name": "ciprofloxacin",
+    "gene_symbol": "G6PD",
+    "population_code": "PUR",
+    "delta_vs_baseline": -7.69,
+    "population_affected_pct": 92.31,
+    "classification_strength": "Strong",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for ciprofloxacin (G6PD, CPIC Strong)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 31,
+    "drug_name": "toluidine blue",
+    "gene_symbol": "G6PD",
+    "population_code": "PUR",
+    "delta_vs_baseline": -7.69,
+    "population_affected_pct": 92.31,
+    "classification_strength": "Strong",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for toluidine blue (G6PD, CPIC Strong)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 32,
+    "drug_name": "aspirin",
+    "gene_symbol": "G6PD",
+    "population_code": "PUR",
+    "delta_vs_baseline": -7.69,
+    "population_affected_pct": 92.31,
+    "classification_strength": "Strong",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for aspirin (G6PD, CPIC Strong)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 33,
+    "drug_name": "sulfadimidine",
+    "gene_symbol": "G6PD",
+    "population_code": "PUR",
+    "delta_vs_baseline": -7.69,
+    "population_affected_pct": 92.31,
+    "classification_strength": "Strong",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for sulfadimidine (G6PD, CPIC Strong)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
     "rank_position": 34,
+    "drug_name": "dimercaprol",
+    "gene_symbol": "G6PD",
+    "population_code": "PUR",
+    "delta_vs_baseline": -7.69,
+    "population_affected_pct": 92.31,
+    "classification_strength": "Strong",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for dimercaprol (G6PD, CPIC Strong)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 35,
+    "drug_name": "doxorubicin",
+    "gene_symbol": "G6PD",
+    "population_code": "PUR",
+    "delta_vs_baseline": -7.69,
+    "population_affected_pct": 92.31,
+    "classification_strength": "Strong",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for doxorubicin (G6PD, CPIC Strong)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 36,
     "drug_name": "sulfadiazine",
     "gene_symbol": "G6PD",
     "population_code": "PUR",
@@ -374,29 +396,18 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 35,
-    "drug_name": "ofloxacin",
-    "gene_symbol": "G6PD",
-    "population_code": "PUR",
-    "delta_vs_baseline": -7.69,
-    "population_affected_pct": 92.31,
-    "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for ofloxacin (G6PD, CPIC Strong)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 36,
-    "drug_name": "norfloxacin",
-    "gene_symbol": "G6PD",
-    "population_code": "PUR",
-    "delta_vs_baseline": -7.69,
-    "population_affected_pct": 92.31,
-    "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for norfloxacin (G6PD, CPIC Strong)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
     "rank_position": 37,
+    "drug_name": "nitrofurantoin",
+    "gene_symbol": "G6PD",
+    "population_code": "PUR",
+    "delta_vs_baseline": -7.69,
+    "population_affected_pct": 92.31,
+    "classification_strength": "Strong",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for nitrofurantoin (G6PD, CPIC Strong)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 38,
     "drug_name": "furazolidone",
     "gene_symbol": "G6PD",
     "population_code": "PUR",
@@ -407,7 +418,18 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 38,
+    "rank_position": 39,
+    "drug_name": "norfloxacin",
+    "gene_symbol": "G6PD",
+    "population_code": "PUR",
+    "delta_vs_baseline": -7.69,
+    "population_affected_pct": 92.31,
+    "classification_strength": "Strong",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for norfloxacin (G6PD, CPIC Strong)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 40,
     "drug_name": "hydroxychloroquine",
     "gene_symbol": "G6PD",
     "population_code": "PUR",
@@ -415,28 +437,6 @@
     "population_affected_pct": 92.31,
     "classification_strength": "Strong",
     "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for hydroxychloroquine (G6PD, CPIC Strong)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 39,
-    "drug_name": "vitamin c",
-    "gene_symbol": "G6PD",
-    "population_code": "PUR",
-    "delta_vs_baseline": -7.69,
-    "population_affected_pct": 92.31,
-    "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for vitamin c (G6PD, CPIC Strong)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 40,
-    "drug_name": "aminosalicylic acid",
-    "gene_symbol": "G6PD",
-    "population_code": "PUR",
-    "delta_vs_baseline": -7.69,
-    "population_affected_pct": 92.31,
-    "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for aminosalicylic acid (G6PD, CPIC Strong)",
     "snapshot_date": "2026-05-21"
   },
   {
@@ -463,17 +463,6 @@
   },
   {
     "rank_position": 43,
-    "drug_name": "nalidixic acid",
-    "gene_symbol": "G6PD",
-    "population_code": "PUR",
-    "delta_vs_baseline": -7.69,
-    "population_affected_pct": 92.31,
-    "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for nalidixic acid (G6PD, CPIC Strong)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 44,
     "drug_name": "methylene blue",
     "gene_symbol": "G6PD",
     "population_code": "PUR",
@@ -484,51 +473,51 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 45,
-    "drug_name": "nitrofurantoin",
+    "rank_position": 44,
+    "drug_name": "nalidixic acid",
     "gene_symbol": "G6PD",
     "population_code": "PUR",
     "delta_vs_baseline": -7.69,
     "population_affected_pct": 92.31,
     "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for nitrofurantoin (G6PD, CPIC Strong)",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for nalidixic acid (G6PD, CPIC Strong)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 45,
+    "drug_name": "vitamin c",
+    "gene_symbol": "G6PD",
+    "population_code": "PUR",
+    "delta_vs_baseline": -7.69,
+    "population_affected_pct": 92.31,
+    "classification_strength": "Strong",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for vitamin c (G6PD, CPIC Strong)",
     "snapshot_date": "2026-05-21"
   },
   {
     "rank_position": 46,
-    "drug_name": "glyburide",
+    "drug_name": "aminosalicylic acid",
     "gene_symbol": "G6PD",
     "population_code": "PUR",
     "delta_vs_baseline": -7.69,
     "population_affected_pct": 92.31,
     "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for glyburide (G6PD, CPIC Strong)",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for aminosalicylic acid (G6PD, CPIC Strong)",
     "snapshot_date": "2026-05-21"
   },
   {
     "rank_position": 47,
-    "drug_name": "phenazopyridine",
+    "drug_name": "ofloxacin",
     "gene_symbol": "G6PD",
     "population_code": "PUR",
     "delta_vs_baseline": -7.69,
     "population_affected_pct": 92.31,
     "classification_strength": "Strong",
-    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for phenazopyridine (G6PD, CPIC Strong)",
+    "clinical_implication": "7.7pp lower rate of dose/therapy change vs CEU in PUR for ofloxacin (G6PD, CPIC Strong)",
     "snapshot_date": "2026-05-21"
   },
   {
     "rank_position": 48,
-    "drug_name": "capecitabine",
-    "gene_symbol": "DPYD",
-    "population_code": "PUR",
-    "delta_vs_baseline": 30.72,
-    "population_affected_pct": 31.73,
-    "classification_strength": "Moderate",
-    "clinical_implication": "30.7pp higher rate of dose/therapy change vs CEU in PUR for capecitabine (DPYD, CPIC Moderate)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 49,
     "drug_name": "fluorouracil",
     "gene_symbol": "DPYD",
     "population_code": "PUR",
@@ -536,6 +525,17 @@
     "population_affected_pct": 31.73,
     "classification_strength": "Moderate",
     "clinical_implication": "30.7pp higher rate of dose/therapy change vs CEU in PUR for fluorouracil (DPYD, CPIC Moderate)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 49,
+    "drug_name": "capecitabine",
+    "gene_symbol": "DPYD",
+    "population_code": "PUR",
+    "delta_vs_baseline": 30.72,
+    "population_affected_pct": 31.73,
+    "classification_strength": "Moderate",
+    "clinical_implication": "30.7pp higher rate of dose/therapy change vs CEU in PUR for capecitabine (DPYD, CPIC Moderate)",
     "snapshot_date": "2026-05-21"
   },
   {

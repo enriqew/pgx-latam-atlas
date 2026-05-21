@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "snapshot_date": "2026-05-21",
-  "pipeline_run_id": "3564b061-91f9-4dcf-a8dd-a7a5f1cbedfc",
+  "pipeline_run_id": "e32f545a-4c15-4c4f-8d0e-4fda6cdd4383",
   "source_versions": {
     "thousand_genomes": "Phase 3 GRCh37 (20130502)",
     "pharmgkb": "latest at ingest date",
@@ -40,5 +40,5 @@
     }
   },
   "total_variants_analyzed": 182470,
-  "generated_at": "2026-05-21T04:30:50.116469Z"
+  "generated_at": "2026-05-21T16:12:12.647636Z"
 }
