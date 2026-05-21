@@ -84,6 +84,26 @@ class TestInferPhenotypeCYP3A5:
         assert _infer_phenotype("CYP3A5", 3) == "Poor Metabolizer"
 
 
+class TestInferPhenotypeSLCO1B1:
+    def test_normal_function_zero_nonfunc_alleles(self) -> None:
+        assert _infer_phenotype("SLCO1B1", 0) == "Normal Function"
+
+    def test_decreased_function_one_star5_allele(self) -> None:
+        # *1a/*5 heterozygote: reduced OATP1B1 transport → Decreased Function
+        assert _infer_phenotype("SLCO1B1", 1) == "Decreased Function"
+
+    def test_poor_function_two_star5_alleles(self) -> None:
+        assert _infer_phenotype("SLCO1B1", 2) == "Poor Function"
+
+    def test_dosage_above_2_clamped_to_poor_function(self) -> None:
+        assert _infer_phenotype("SLCO1B1", 3) == "Poor Function"
+
+    def test_key_variant_is_corrected_position(self) -> None:
+        # chr12:21331546 was monomorphic (AF=0) in all 1000G Phase 3 cohorts.
+        # The correct rs4149056 position is chr12:21331549 (T>C, c.521T>C).
+        assert GENE_KEY_VARIANTS["SLCO1B1"] == ("chr12:21331549",)
+
+
 class TestInferPhenotypeUGT1A9:
     def test_normal_metabolizer_zero_star3_alleles(self) -> None:
         assert _infer_phenotype("UGT1A9", 0) == "Normal Metabolizer"

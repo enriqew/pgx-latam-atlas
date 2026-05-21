@@ -299,6 +299,61 @@ _CURATED_RECOMMENDATIONS: list[dict[str, object]] = [
         "requires_alternative": False,
         "cpic_release_version": "v1.3-2019",
     },
+    # SLCO1B1 / fluvastatin Normal Function override — the CPIC API text for SLCO1B1
+    # Normal Function + fluvastatin says "consider an alternative statin if dose >20 mg needed",
+    # which is routine dose-escalation guidance, not a genotype-based action.  The phrase
+    # "consider an alternative" triggers _ALTERNATIVE_PATTERNS as a false positive.
+    # Correct CPIC v2.4-2022 guidance for Normal Function: prescribe desired starting dose;
+    # no genotype-based dose adjustment required.
+    # Source: Ramsey et al., 2022 CPIC SLCO1B1 guideline (PMID 34385711).
+    {
+        "gene_symbol": "SLCO1B1",
+        "drug_name": "fluvastatin",
+        "phenotype": "Normal Function",
+        "recommendation_text": (
+            "Prescribe desired starting dose and adjust doses of fluvastatin based on "
+            "disease-specific guidelines. No genotype-based dose adjustment required for "
+            "SLCO1B1 Normal Function individuals."
+        ),
+        "classification_strength": "Moderate",
+        "requires_dose_change": False,
+        "requires_alternative": False,
+        "cpic_release_version": "v2.4-2022",
+    },
+    # SLCO1B1 / rosuvastatin Normal Function override — same issue as fluvastatin.
+    # The CPIC API text for Normal Function triggers requires_alternative=True incorrectly.
+    # Correct guidance: Normal Function individuals receive standard dosing without restriction.
+    {
+        "gene_symbol": "SLCO1B1",
+        "drug_name": "rosuvastatin",
+        "phenotype": "Normal Function",
+        "recommendation_text": (
+            "Prescribe desired starting dose and adjust doses of rosuvastatin based on "
+            "disease-specific guidelines. No genotype-based dose adjustment required for "
+            "SLCO1B1 Normal Function individuals."
+        ),
+        "classification_strength": "Optional",
+        "requires_dose_change": False,
+        "requires_alternative": False,
+        "cpic_release_version": "v2.4-2022",
+    },
+    # SLCO1B1 / rosuvastatin Increased Function override — Increased Function means enhanced
+    # OATP1B1 transporter activity, not reduced.  Requiring alternative therapy for Increased
+    # Function is clinically incorrect.  Standard dosing applies.
+    {
+        "gene_symbol": "SLCO1B1",
+        "drug_name": "rosuvastatin",
+        "phenotype": "Increased Function",
+        "recommendation_text": (
+            "Prescribe desired starting dose and adjust doses of rosuvastatin based on "
+            "disease-specific guidelines. SLCO1B1 Increased Function individuals are not "
+            "at elevated risk; no genotype-based restriction required."
+        ),
+        "classification_strength": "Optional",
+        "requires_dose_change": False,
+        "requires_alternative": False,
+        "cpic_release_version": "v2.4-2022",
+    },
 ]
 
 

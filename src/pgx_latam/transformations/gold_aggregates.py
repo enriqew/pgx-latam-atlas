@@ -41,6 +41,13 @@ logger = logging.getLogger(__name__)
 # using the published allele frequency from 1000G Phase 3 (source: gnomAD v2.1 1000G subset,
 # accessed 2026-05; PMID 28369952).  All other populations use VCF-derived frequencies.
 #
+# SLCO1B1 note: rs4149056 GRCh37 canonical position is chr12:21331549 (T>C, c.521T>C).
+# The previous key chr12:21331546 (A>G) is 3 bp upstream and monomorphic in all cohorts (AF=0).
+# chr12:21331549 has population AFs: CEU 0.146, CLM 0.181, MXL 0.078, PEL 0.141, PUR 0.120.
+# These are modestly lower than gnomAD v4.1 CEU (~0.187) but within expected sampling error
+# for n~100 cohorts.  Phenotype naming follows CPIC transporter-activity framework
+# (Normal/Decreased/Poor Function) not metabolizer terminology, to match drug_recommendations.
+#
 # IFNL3 note: rs12979860 (C>T) GRCh37 position is chr19:39739183, absent from the Phase 3 VCF.
 # Previous proxy chr19:39739155 (T>G) had total absolute error 0.338 vs published 1000G Phase 3
 # allele frequencies (CEU 0.278 vs expected 0.371; PEL 0.382 vs expected 0.523).
@@ -52,15 +59,21 @@ logger = logging.getLogger(__name__)
 GENE_KEY_VARIANTS: dict[str, tuple[str, ...]] = {
     "CYP2C19": ("chr10:96521657", "chr10:96540410"),  # *2 (rs4244285), *3 (rs4986893)
     "CYP2C9": ("chr10:96741053",),  # *2 (rs1799853)
-    "SLCO1B1": ("chr12:21331546",),  # *5 (rs4149056)
+    "SLCO1B1": ("chr12:21331549",),  # *5 (rs4149056; c.521T>C; T>C; CEU AF ~0.146)
     "VKORC1": ("chr16:31093954",),  # -1639G>A proxy (rs9923231; CEU AF ~0.31)
     "TPMT": ("chr6:18131419",),  # *3B (rs1800460)
-    "NUDT15": ("chr13:48605878",),  # *3 proxy (rs116855232 nearest; G>A; CEU AF ~0.00; PUR corrected via literature — see note above)
+    "NUDT15": (
+        "chr13:48605878",
+    ),  # *3 proxy (rs116855232 nearest; G>A; CEU AF ~0.00; PUR corrected via literature — see note above)
     "DPYD": ("chr1:97981343", "chr1:97915614", "chr1:97981395"),  # *2A, HapB3, *13
     "G6PD": ("chrX:153763492", "chrX:153764217"),  # Ser188Phe, Glu202Lys
-    "IFNL3": ("chr19:39747741",),  # rs12979860 proxy (A>C; C allele = unfavorable haplotype; CEU AF ~0.30; calibrated 2026-05)
+    "IFNL3": (
+        "chr19:39747741",
+    ),  # rs12979860 proxy (A>C; C allele = unfavorable haplotype; CEU AF ~0.30; calibrated 2026-05)
     "CYP3A5": ("chr7:99251073",),  # *3 proxy (rs776746; CEU AF ~0.955)
-    "UGT1A9": ("chr2:234578428",),  # *3 (rs17868320, c.98T>C; ALT=T is non-functional allele; CEU AF ~0.015)
+    "UGT1A9": (
+        "chr2:234578428",
+    ),  # *3 (rs17868320, c.98T>C; ALT=T is non-functional allele; CEU AF ~0.015)
 }
 
 # ── Literature corrections ────────────────────────────────────────────────────
@@ -104,6 +117,14 @@ def _infer_phenotype(gene: str, total_nonfunc_dosage: int) -> str:
         # rs9923231 A allele (alternate) increases sensitivity to warfarin.
         # Dosage counts the sensitivity-increasing alleles.
         mapping = {0: "Normal Sensitivity", 1: "Intermediate Sensitivity", 2: "High Sensitivity"}
+    elif gene == "SLCO1B1":
+        # SLCO1B1*5 (chr12:21331549 T>C) = reduced-transport allele (rs4149056, c.521T>C).
+        # CPIC uses transporter-activity rather than metabolizer terminology for SLCO1B1.
+        # Dosage 0 = *1a/*1a → Normal Function
+        # Dosage 1 = *1a/*5 → Decreased Function (heterozygous; ~20-30% of LATAM cohorts)
+        # Dosage 2 = *5/*5  → Poor Function (rare)
+        # These names match the silver/drug_recommendations phenotype column, enabling the join.
+        mapping = {0: "Normal Function", 1: "Decreased Function", 2: "Poor Function"}
     elif gene == "CYP3A5":
         # CYP3A5*3 (chr7:99251073 alternate) = non-expresser allele.
         # 0 copies = expresser → needs higher tacrolimus dose (CPIC: Normal Metabolizer).
@@ -306,7 +327,7 @@ def build_phenotype_distribution(
             hwe_proportions = {
                 "Normal Metabolizer": (1 - af) ** 2,
                 "Intermediate Metabolizer": 2 * af * (1 - af),
-                "Poor Metabolizer": af ** 2,
+                "Poor Metabolizer": af**2,
             }
             # Drop any existing NUDT15/PUR rows (all will be Normal Metabolizer with 100%)
             df = df[~((df["gene_symbol"] == "NUDT15") & (df["population_code"] == "PUR"))].copy()
