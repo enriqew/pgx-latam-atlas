@@ -5,7 +5,8 @@ Registry: https://registry.opendata.aws/1000-genomes/
 Cite:     1000 Genomes Project Consortium. Nature 526, 68-74 (2015). PMID 26432245
 
 Extracts per-sample genotype calls for all in-scope pharmacogene regions,
-restricted to the five target populations (MXL, PEL, CLM, PUR, CEU).
+restricted to the target populations: MXL, PEL, CLM, PUR (Latin America),
+YRI, ASW (African ancestry), GIH (South Asia), and CEU (European baseline).
 
 Requires pysam for remote tabix-indexed VCF access. On Windows, run via
 WSL2 or Docker (see docs/local_dev.md). On Linux/macOS: pip install ".[vcf]".
@@ -35,7 +36,7 @@ logger = logging.getLogger(__name__)
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 
-TARGET_POPULATIONS = ("MXL", "PEL", "CLM", "PUR", "CEU")
+TARGET_POPULATIONS = ("MXL", "PEL", "CLM", "PUR", "CEU", "YRI", "ASW", "GIH")
 
 _1000G_HTTPS_BASE = "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502"
 

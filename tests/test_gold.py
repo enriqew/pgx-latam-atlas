@@ -383,8 +383,11 @@ class TestBuildActionabilityRanking:
             assert row["population_code"] in row["clinical_implication"]
 
     def test_top_n_respected(self) -> None:
+        # top_n=1 but 2 distinct genes → guaranteed one row per gene → 2 rows total.
+        # The per-gene guarantee takes precedence over top_n when n_genes > top_n.
         df = build_actionability_ranking(self._impact_df(), _SNAP, top_n=1)
-        assert len(df) == 1
+        n_genes = self._impact_df()[self._impact_df()["population_code"] != "CEU"]["gene_symbol"].nunique()
+        assert len(df) == n_genes
 
     def test_snapshot_date_column(self) -> None:
         df = build_actionability_ranking(self._impact_df(), _SNAP)

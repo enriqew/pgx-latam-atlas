@@ -504,20 +504,20 @@ def build_actionability_ranking(
         logger.warning("drug_impact_summary is empty — actionability_ranking will be empty")
         return pd.DataFrame()
 
-    latam_df = drug_impact_df[drug_impact_df["population_code"] != "CEU"].copy()
-    if latam_df.empty:
+    non_ceu_df = drug_impact_df[drug_impact_df["population_code"] != "CEU"].copy()
+    if non_ceu_df.empty:
         logger.warning("No non-CEU population rows in drug_impact_summary")
         return pd.DataFrame()
 
-    latam_df["_weight"] = latam_df["classification_strength"].map(_STRENGTH_WEIGHT).fillna(0.3)
-    latam_df["_score"] = (
-        latam_df["delta_vs_baseline"].abs()
-        * latam_df["_weight"]
-        * latam_df["percentage_requiring_change"]
+    non_ceu_df["_weight"] = non_ceu_df["classification_strength"].map(_STRENGTH_WEIGHT).fillna(0.3)
+    non_ceu_df["_score"] = (
+        non_ceu_df["delta_vs_baseline"].abs()
+        * non_ceu_df["_weight"]
+        * non_ceu_df["percentage_requiring_change"]
     )
 
     # Sort globally by score descending
-    sorted_df = latam_df.sort_values("_score", ascending=False)
+    sorted_df = non_ceu_df.sort_values("_score", ascending=False)
 
     # Guarantee at least one row per gene (best-scoring row for each gene)
     best_per_gene = sorted_df.groupby("gene_symbol", sort=False).first().reset_index()
@@ -541,8 +541,8 @@ def build_actionability_ranking(
         direction = "higher" if delta > 0 else "lower"
         return (
             f"{abs(delta):.1f}pp {direction} rate of dose/therapy change vs CEU "
-            f"in {row['population_code']} for {row['drug_name']} "
-            f"({row['gene_symbol']}, CPIC {row['classification_strength']})"
+            f"in {row['population_code']} ({row['drug_name']} / {row['gene_symbol']}, "
+            f"CPIC {row['classification_strength']})"
         )
 
     ranked["clinical_implication"] = ranked.apply(_clinical_implication, axis=1)

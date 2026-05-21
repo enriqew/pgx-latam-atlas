@@ -41,6 +41,9 @@ _POPULATION_NAMES: dict[str, tuple[str, str]] = {
         "Utah Residents (CEPH) with Northern and Western European Ancestry",
         "Europe",
     ),
+    "YRI": ("Yoruba in Ibadan, Nigeria", "Sub-Saharan Africa"),
+    "ASW": ("African Ancestry in Southwest USA", "African American"),
+    "GIH": ("Gujarati Indian from Houston, Texas", "South Asia"),
 }
 
 # ── Gene assignment ───────────────────────────────────────────────────────────
