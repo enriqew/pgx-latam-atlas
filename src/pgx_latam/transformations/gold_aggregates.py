@@ -486,10 +486,16 @@ def build_actionability_ranking(
     Score = |delta_vs_baseline| x classification_weight x population_affected_pct.
     Only non-CEU populations are ranked (CEU is the baseline).
 
+    Every gene present in drug_impact_df is guaranteed at least one entry in the
+    output (its best-scoring non-CEU row), even if that row would otherwise fall
+    outside the top_n cutoff.  After the per-gene guaranteed slots are filled,
+    remaining slots up to top_n are filled from the globally ranked list.
+
     Args:
         drug_impact_df: gold/drug_impact_summary DataFrame.
         snapshot_date: Date written to snapshot_date column.
-        top_n: Maximum rows in the output. Default: 50.
+        top_n: Minimum number of rows in the output; may exceed top_n if the number
+            of distinct genes exceeds top_n. Default: 50.
 
     Returns:
         DataFrame matching gold_pgx.actionability_ranking schema.
@@ -510,7 +516,24 @@ def build_actionability_ranking(
         * latam_df["percentage_requiring_change"]
     )
 
-    ranked = latam_df.sort_values("_score", ascending=False).head(top_n).copy()
+    # Sort globally by score descending
+    sorted_df = latam_df.sort_values("_score", ascending=False)
+
+    # Guarantee at least one row per gene (best-scoring row for each gene)
+    best_per_gene = sorted_df.groupby("gene_symbol", sort=False).first().reset_index()
+
+    # Fill remaining slots from the global top list, skipping already-selected rows
+    guaranteed_idx = set(best_per_gene.index.tolist())
+    # Re-derive indices from sorted_df using position
+    best_per_gene_positions = sorted_df.groupby("gene_symbol", sort=False).head(1).index
+    remaining_slots = max(0, top_n - len(best_per_gene))
+    filler = sorted_df[~sorted_df.index.isin(best_per_gene_positions)].head(remaining_slots)
+
+    ranked = pd.concat(
+        [sorted_df[sorted_df.index.isin(best_per_gene_positions)], filler],
+        ignore_index=True,
+    ).sort_values("_score", ascending=False)
+    ranked = ranked.reset_index(drop=True)
     ranked["rank_position"] = range(1, len(ranked) + 1)
 
     def _clinical_implication(row: pd.Series) -> str:
@@ -548,6 +571,175 @@ def build_actionability_ranking(
     return result
 
 
+# ── Gold 5: combined warfarin impact (VKORC1 + CYP2C9) ────────────────────────
+
+# CPIC warfarin dosing table: (VKORC1_phenotype, CYP2C9_phenotype) → dose_category.
+# Source: CPIC guideline for warfarin and CYP2C9/VKORC1 (Johnson et al., 2017,
+# Clin Pharmacol Ther. PMID 28198005), Table 1 / Figure 2 dose-range bands.
+#
+# Dose categories:
+#   "low"      — combined genotype predicts requirement for <3 mg/day (below standard)
+#   "standard" — combined genotype predicts 3–7 mg/day (typical CEU starting dose)
+#   "high"     — combined genotype predicts >7 mg/day (above standard)
+#
+# Mapping follows the CPIC 5×3 matrix (VKORC1 columns × CYP2C9 metabolizer rows).
+# NM = Normal Metabolizer (*1/*1), IM = Intermediate Metabolizer (*1/*2 or *1/*3),
+# PM = Poor Metabolizer (*2/*2, *2/*3, *3/*3).
+# VKORC1: NS = Normal Sensitivity (GG), IS = Intermediate Sensitivity (GA),
+#          HS = High Sensitivity (AA).
+#
+# CEU baseline reference: ~52% NS, and ~87% CYP2C9 NM → majority "standard" dosing.
+# "low" and "high" categories are treated as requiring dose adjustment vs standard.
+_WARFARIN_COMBINED_DOSE_TABLE: dict[tuple[str, str], str] = {
+    # (VKORC1_phenotype, CYP2C9_phenotype) → dose_category
+    ("Normal Sensitivity", "Normal Metabolizer"): "standard",
+    ("Normal Sensitivity", "Intermediate Metabolizer"): "standard",
+    ("Normal Sensitivity", "Poor Metabolizer"): "standard",
+    ("Intermediate Sensitivity", "Normal Metabolizer"): "standard",
+    ("Intermediate Sensitivity", "Intermediate Metabolizer"): "low",
+    ("Intermediate Sensitivity", "Poor Metabolizer"): "low",
+    ("High Sensitivity", "Normal Metabolizer"): "low",
+    ("High Sensitivity", "Intermediate Metabolizer"): "low",
+    ("High Sensitivity", "Poor Metabolizer"): "low",
+}
+
+
+def build_combined_warfarin_impact(
+    variants_df: pd.DataFrame,
+    populations_df: pd.DataFrame,
+    snapshot_date: date,
+) -> pd.DataFrame:
+    """Compute warfarin dose-category impact using combined VKORC1 + CYP2C9 phenotypes.
+
+    Per-individual VKORC1 and CYP2C9 phenotypes are inferred from their key variants
+    and joined at the sample level.  Each individual is classified into a warfarin
+    dose category (low / standard / high) using the CPIC joint dosing table.
+    Individuals classified as "low" or "high" are counted as requiring dose adjustment.
+
+    The result is a single drug_impact_summary-compatible DataFrame with
+    gene_symbol = "VKORC1+CYP2C9" and drug_name = "warfarin".
+
+    Args:
+        variants_df: silver/variants/ DataFrame.
+        populations_df: silver/populations/ DataFrame.
+        snapshot_date: Date written to snapshot_date column.
+
+    Returns:
+        DataFrame with the same columns as gold/drug_impact_summary, or empty DataFrame
+        if VKORC1 or CYP2C9 variant data is absent.
+    """
+    vkorc1_keys = GENE_KEY_VARIANTS.get("VKORC1", ())
+    cyp2c9_keys = GENE_KEY_VARIANTS.get("CYP2C9", ())
+
+    vkorc1_df = variants_df[
+        (variants_df["gene_symbol"] == "VKORC1") & (variants_df["variant_id"].isin(vkorc1_keys))
+    ]
+    cyp2c9_df = variants_df[
+        (variants_df["gene_symbol"] == "CYP2C9") & (variants_df["variant_id"].isin(cyp2c9_keys))
+    ]
+
+    if vkorc1_df.empty or cyp2c9_df.empty:
+        logger.warning(
+            "VKORC1 or CYP2C9 key variants absent from silver/variants/ "
+            "— combined warfarin impact will be empty"
+        )
+        return pd.DataFrame()
+
+    # Sum dosage across key variants per individual
+    vkorc1_ind = (
+        vkorc1_df.groupby(["sample_id", "population_code", "superpopulation"])
+        .agg(total_dosage=("allele_dosage", "sum"))
+        .reset_index()
+    )
+    vkorc1_ind["vkorc1_phenotype"] = vkorc1_ind["total_dosage"].apply(
+        lambda d: _infer_phenotype("VKORC1", int(d))
+    )
+
+    cyp2c9_ind = (
+        cyp2c9_df.groupby(["sample_id", "population_code"])
+        .agg(total_dosage=("allele_dosage", "sum"))
+        .reset_index()
+    )
+    cyp2c9_ind["cyp2c9_phenotype"] = cyp2c9_ind["total_dosage"].apply(
+        lambda d: _infer_phenotype("CYP2C9", int(d))
+    )
+
+    # Join on sample_id + population_code
+    combined = vkorc1_ind.merge(
+        cyp2c9_ind[["sample_id", "population_code", "cyp2c9_phenotype"]],
+        on=["sample_id", "population_code"],
+        how="inner",
+    )
+
+    if combined.empty:
+        logger.warning("Combined VKORC1+CYP2C9 join produced 0 rows — no shared samples")
+        return pd.DataFrame()
+
+    # Assign dose category from CPIC combined table
+    combined["dose_category"] = combined.apply(
+        lambda row: _WARFARIN_COMBINED_DOSE_TABLE.get(
+            (row["vkorc1_phenotype"], row["cyp2c9_phenotype"]), "standard"
+        ),
+        axis=1,
+    )
+    combined["requires_dose_change"] = combined["dose_category"] != "standard"
+
+    pop_size_lookup = populations_df.set_index("population_code")["sample_size"].to_dict()
+
+    rows: list[dict[str, object]] = []
+    for pop_code, pop_df in combined.groupby("population_code"):
+        population_total = pop_size_lookup.get(str(pop_code), len(pop_df))
+        if population_total == 0:
+            continue
+        n_requiring_change = int(pop_df["requires_dose_change"].sum())
+        pct = round(n_requiring_change / population_total * 100, 2)
+        rows.append(
+            {
+                "drug_name": "warfarin",
+                "gene_symbol": "VKORC1+CYP2C9",
+                "population_code": pop_code,
+                "population_total": population_total,
+                "individuals_requiring_change": n_requiring_change,
+                "percentage_requiring_change": pct,
+                "classification_strength": "Strong",
+                "snapshot_date": snapshot_date,
+            }
+        )
+
+    if not rows:
+        return pd.DataFrame()
+
+    result_df = pd.DataFrame(rows)
+
+    # Compute CEU baseline and delta_vs_baseline
+    ceu_row = result_df[result_df["population_code"] == "CEU"]
+    ceu_baseline = float(ceu_row["percentage_requiring_change"].iloc[0]) if not ceu_row.empty else 0.0
+    result_df["baseline_ceu_percentage"] = ceu_baseline
+    result_df["delta_vs_baseline"] = (
+        result_df["percentage_requiring_change"] - ceu_baseline
+    ).round(2)
+
+    logger.info(
+        "combined warfarin (VKORC1+CYP2C9): %d population rows; CEU baseline=%.1f%%",
+        len(result_df),
+        ceu_baseline,
+    )
+    return result_df[
+        [
+            "drug_name",
+            "gene_symbol",
+            "population_code",
+            "population_total",
+            "individuals_requiring_change",
+            "percentage_requiring_change",
+            "baseline_ceu_percentage",
+            "delta_vs_baseline",
+            "classification_strength",
+            "snapshot_date",
+        ]
+    ]
+
+
 # ── Orchestrator ──────────────────────────────────────────────────────────────
 
 
@@ -577,6 +769,16 @@ def run(settings: Settings | None = None, snapshot_date: date | None = None) -> 
 
     logger.info("=== gold_aggregates: drug impact summary ===")
     impact_df = build_drug_impact_summary(pheno_df, drug_recommendations_df, snap)
+
+    logger.info("=== gold_aggregates: combined warfarin impact (VKORC1+CYP2C9) ===")
+    warfarin_combined_df = build_combined_warfarin_impact(variants_df, populations_df, snap)
+    if not warfarin_combined_df.empty:
+        impact_df = pd.concat([impact_df, warfarin_combined_df], ignore_index=True)
+        logger.info(
+            "Appended %d combined warfarin rows to drug_impact_summary",
+            len(warfarin_combined_df),
+        )
+
     write_silver_table(impact_df, cfg.gold_root / "drug_impact_summary")
 
     logger.info("=== gold_aggregates: actionability ranking ===")

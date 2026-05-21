@@ -4930,5 +4930,65 @@
     "delta_vs_baseline": 1.27,
     "classification_strength": "Strong",
     "snapshot_date": "2026-05-21"
+  },
+  {
+    "drug_name": "warfarin",
+    "gene_symbol": "VKORC1+CYP2C9",
+    "population_code": "CEU",
+    "population_total": 99,
+    "individuals_requiring_change": 14,
+    "percentage_requiring_change": 14.14,
+    "baseline_ceu_percentage": 14.14,
+    "delta_vs_baseline": 0.0,
+    "classification_strength": "Strong",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "drug_name": "warfarin",
+    "gene_symbol": "VKORC1+CYP2C9",
+    "population_code": "CLM",
+    "population_total": 94,
+    "individuals_requiring_change": 17,
+    "percentage_requiring_change": 18.09,
+    "baseline_ceu_percentage": 14.14,
+    "delta_vs_baseline": 3.95,
+    "classification_strength": "Strong",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "drug_name": "warfarin",
+    "gene_symbol": "VKORC1+CYP2C9",
+    "population_code": "MXL",
+    "population_total": 64,
+    "individuals_requiring_change": 8,
+    "percentage_requiring_change": 12.5,
+    "baseline_ceu_percentage": 14.14,
+    "delta_vs_baseline": -1.64,
+    "classification_strength": "Strong",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "drug_name": "warfarin",
+    "gene_symbol": "VKORC1+CYP2C9",
+    "population_code": "PEL",
+    "population_total": 85,
+    "individuals_requiring_change": 28,
+    "percentage_requiring_change": 32.94,
+    "baseline_ceu_percentage": 14.14,
+    "delta_vs_baseline": 18.8,
+    "classification_strength": "Strong",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "drug_name": "warfarin",
+    "gene_symbol": "VKORC1+CYP2C9",
+    "population_code": "PUR",
+    "population_total": 104,
+    "individuals_requiring_change": 18,
+    "percentage_requiring_change": 17.31,
+    "baseline_ceu_percentage": 14.14,
+    "delta_vs_baseline": 3.17,
+    "classification_strength": "Strong",
+    "snapshot_date": "2026-05-21"
   }
 ]

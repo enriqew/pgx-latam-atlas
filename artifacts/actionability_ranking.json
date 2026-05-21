@@ -78,17 +78,6 @@
   },
   {
     "rank_position": 8,
-    "drug_name": "capecitabine",
-    "gene_symbol": "DPYD",
-    "population_code": "PEL",
-    "delta_vs_baseline": 46.05,
-    "population_affected_pct": 47.06,
-    "classification_strength": "Moderate",
-    "clinical_implication": "46.0pp higher rate of dose/therapy change vs CEU in PEL for capecitabine (DPYD, CPIC Moderate)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 9,
     "drug_name": "fluorouracil",
     "gene_symbol": "DPYD",
     "population_code": "PEL",
@@ -96,6 +85,17 @@
     "population_affected_pct": 47.06,
     "classification_strength": "Moderate",
     "clinical_implication": "46.0pp higher rate of dose/therapy change vs CEU in PEL for fluorouracil (DPYD, CPIC Moderate)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 9,
+    "drug_name": "capecitabine",
+    "gene_symbol": "DPYD",
+    "population_code": "PEL",
+    "delta_vs_baseline": 46.05,
+    "population_affected_pct": 47.06,
+    "classification_strength": "Moderate",
+    "clinical_implication": "46.0pp higher rate of dose/therapy change vs CEU in PEL for capecitabine (DPYD, CPIC Moderate)",
     "snapshot_date": "2026-05-21"
   },
   {
@@ -133,17 +133,6 @@
   },
   {
     "rank_position": 13,
-    "drug_name": "fluorouracil",
-    "gene_symbol": "DPYD",
-    "population_code": "MXL",
-    "delta_vs_baseline": 38.05,
-    "population_affected_pct": 39.06,
-    "classification_strength": "Moderate",
-    "clinical_implication": "38.0pp higher rate of dose/therapy change vs CEU in MXL for fluorouracil (DPYD, CPIC Moderate)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 14,
     "drug_name": "capecitabine",
     "gene_symbol": "DPYD",
     "population_code": "MXL",
@@ -151,6 +140,17 @@
     "population_affected_pct": 39.06,
     "classification_strength": "Moderate",
     "clinical_implication": "38.0pp higher rate of dose/therapy change vs CEU in MXL for capecitabine (DPYD, CPIC Moderate)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 14,
+    "drug_name": "fluorouracil",
+    "gene_symbol": "DPYD",
+    "population_code": "MXL",
+    "delta_vs_baseline": 38.05,
+    "population_affected_pct": 39.06,
+    "classification_strength": "Moderate",
+    "clinical_implication": "38.0pp higher rate of dose/therapy change vs CEU in MXL for fluorouracil (DPYD, CPIC Moderate)",
     "snapshot_date": "2026-05-21"
   },
   {
@@ -188,17 +188,6 @@
   },
   {
     "rank_position": 18,
-    "drug_name": "fluorouracil",
-    "gene_symbol": "DPYD",
-    "population_code": "CLM",
-    "delta_vs_baseline": 31.97,
-    "population_affected_pct": 32.98,
-    "classification_strength": "Moderate",
-    "clinical_implication": "32.0pp higher rate of dose/therapy change vs CEU in CLM for fluorouracil (DPYD, CPIC Moderate)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 19,
     "drug_name": "capecitabine",
     "gene_symbol": "DPYD",
     "population_code": "CLM",
@@ -209,18 +198,18 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 20,
-    "drug_name": "capecitabine",
+    "rank_position": 19,
+    "drug_name": "fluorouracil",
     "gene_symbol": "DPYD",
-    "population_code": "PUR",
-    "delta_vs_baseline": 30.72,
-    "population_affected_pct": 31.73,
+    "population_code": "CLM",
+    "delta_vs_baseline": 31.97,
+    "population_affected_pct": 32.98,
     "classification_strength": "Moderate",
-    "clinical_implication": "30.7pp higher rate of dose/therapy change vs CEU in PUR for capecitabine (DPYD, CPIC Moderate)",
+    "clinical_implication": "32.0pp higher rate of dose/therapy change vs CEU in CLM for fluorouracil (DPYD, CPIC Moderate)",
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 21,
+    "rank_position": 20,
     "drug_name": "fluorouracil",
     "gene_symbol": "DPYD",
     "population_code": "PUR",
@@ -231,7 +220,29 @@
     "snapshot_date": "2026-05-21"
   },
   {
+    "rank_position": 21,
+    "drug_name": "capecitabine",
+    "gene_symbol": "DPYD",
+    "population_code": "PUR",
+    "delta_vs_baseline": 30.72,
+    "population_affected_pct": 31.73,
+    "classification_strength": "Moderate",
+    "clinical_implication": "30.7pp higher rate of dose/therapy change vs CEU in PUR for capecitabine (DPYD, CPIC Moderate)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
     "rank_position": 22,
+    "drug_name": "warfarin",
+    "gene_symbol": "VKORC1+CYP2C9",
+    "population_code": "PEL",
+    "delta_vs_baseline": 18.8,
+    "population_affected_pct": 32.94,
+    "classification_strength": "Strong",
+    "clinical_implication": "18.8pp higher rate of dose/therapy change vs CEU in PEL for warfarin (VKORC1+CYP2C9, CPIC Strong)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 23,
     "drug_name": "amitriptyline",
     "gene_symbol": "CYP2C19",
     "population_code": "PUR",
@@ -239,17 +250,6 @@
     "population_affected_pct": 67.31,
     "classification_strength": "Strong",
     "clinical_implication": "8.7pp higher rate of dose/therapy change vs CEU in PUR for amitriptyline (CYP2C19, CPIC Strong)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 23,
-    "drug_name": "escitalopram",
-    "gene_symbol": "CYP2C19",
-    "population_code": "PUR",
-    "delta_vs_baseline": 26.78,
-    "population_affected_pct": 29.81,
-    "classification_strength": "Moderate",
-    "clinical_implication": "26.8pp higher rate of dose/therapy change vs CEU in PUR for escitalopram (CYP2C19, CPIC Moderate)",
     "snapshot_date": "2026-05-21"
   },
   {
@@ -265,13 +265,13 @@
   },
   {
     "rank_position": 25,
-    "drug_name": "capecitabine",
-    "gene_symbol": "DPYD",
-    "population_code": "PEL",
-    "delta_vs_baseline": 16.76,
-    "population_affected_pct": 47.06,
+    "drug_name": "escitalopram",
+    "gene_symbol": "CYP2C19",
+    "population_code": "PUR",
+    "delta_vs_baseline": 26.78,
+    "population_affected_pct": 29.81,
     "classification_strength": "Moderate",
-    "clinical_implication": "16.8pp higher rate of dose/therapy change vs CEU in PEL for capecitabine (DPYD, CPIC Moderate)",
+    "clinical_implication": "26.8pp higher rate of dose/therapy change vs CEU in PUR for escitalopram (CYP2C19, CPIC Moderate)",
     "snapshot_date": "2026-05-21"
   },
   {
@@ -287,6 +287,17 @@
   },
   {
     "rank_position": 27,
+    "drug_name": "capecitabine",
+    "gene_symbol": "DPYD",
+    "population_code": "PEL",
+    "delta_vs_baseline": 16.76,
+    "population_affected_pct": 47.06,
+    "classification_strength": "Moderate",
+    "clinical_implication": "16.8pp higher rate of dose/therapy change vs CEU in PEL for capecitabine (DPYD, CPIC Moderate)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 28,
     "drug_name": "thioguanine",
     "gene_symbol": "NUDT15",
     "population_code": "CLM",
@@ -297,7 +308,7 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 28,
+    "rank_position": 29,
     "drug_name": "thioguanine",
     "gene_symbol": "NUDT15",
     "population_code": "PUR",
@@ -305,17 +316,6 @@
     "population_affected_pct": 94.23,
     "classification_strength": "Strong",
     "clinical_implication": "5.8pp lower rate of dose/therapy change vs CEU in PUR for thioguanine (NUDT15, CPIC Strong)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
-    "rank_position": 29,
-    "drug_name": "fluorouracil",
-    "gene_symbol": "DPYD",
-    "population_code": "PEL",
-    "delta_vs_baseline": 22.52,
-    "population_affected_pct": 23.53,
-    "classification_strength": "Strong",
-    "clinical_implication": "22.5pp higher rate of dose/therapy change vs CEU in PEL for fluorouracil (DPYD, CPIC Strong)",
     "snapshot_date": "2026-05-21"
   },
   {
@@ -331,6 +331,17 @@
   },
   {
     "rank_position": 31,
+    "drug_name": "fluorouracil",
+    "gene_symbol": "DPYD",
+    "population_code": "PEL",
+    "delta_vs_baseline": 22.52,
+    "population_affected_pct": 23.53,
+    "classification_strength": "Strong",
+    "clinical_implication": "22.5pp higher rate of dose/therapy change vs CEU in PEL for fluorouracil (DPYD, CPIC Strong)",
+    "snapshot_date": "2026-05-21"
+  },
+  {
+    "rank_position": 32,
     "drug_name": "clopidogrel",
     "gene_symbol": "CYP2C19",
     "population_code": "MXL",
@@ -341,7 +352,7 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 32,
+    "rank_position": 33,
     "drug_name": "clopidogrel",
     "gene_symbol": "CYP2C19",
     "population_code": "CLM",
@@ -352,7 +363,7 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 33,
+    "rank_position": 34,
     "drug_name": "thioguanine",
     "gene_symbol": "NUDT15",
     "population_code": "PUR",
@@ -363,7 +374,7 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 34,
+    "rank_position": 35,
     "drug_name": "citalopram",
     "gene_symbol": "CYP2C19",
     "population_code": "CLM",
@@ -374,7 +385,7 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 35,
+    "rank_position": 36,
     "drug_name": "escitalopram",
     "gene_symbol": "CYP2C19",
     "population_code": "CLM",
@@ -385,7 +396,7 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 36,
+    "rank_position": 37,
     "drug_name": "peginterferon alfa-2b",
     "gene_symbol": "IFNL3",
     "population_code": "MXL",
@@ -396,7 +407,7 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 37,
+    "rank_position": 38,
     "drug_name": "peginterferon alfa-2a",
     "gene_symbol": "IFNL3",
     "population_code": "MXL",
@@ -407,7 +418,7 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 38,
+    "rank_position": 39,
     "drug_name": "sertraline",
     "gene_symbol": "CYP2C19",
     "population_code": "MXL",
@@ -418,7 +429,7 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 39,
+    "rank_position": 40,
     "drug_name": "warfarin",
     "gene_symbol": "VKORC1",
     "population_code": "CLM",
@@ -429,7 +440,7 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 40,
+    "rank_position": 41,
     "drug_name": "sertraline",
     "gene_symbol": "CYP2C19",
     "population_code": "CLM",
@@ -440,7 +451,7 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 41,
+    "rank_position": 42,
     "drug_name": "clopidogrel",
     "gene_symbol": "CYP2C19",
     "population_code": "PUR",
@@ -451,7 +462,7 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 42,
+    "rank_position": 43,
     "drug_name": "clopidogrel",
     "gene_symbol": "CYP2C19",
     "population_code": "PEL",
@@ -462,7 +473,7 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 43,
+    "rank_position": 44,
     "drug_name": "azathioprine",
     "gene_symbol": "NUDT15",
     "population_code": "PEL",
@@ -473,7 +484,7 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 44,
+    "rank_position": 45,
     "drug_name": "fluvastatin",
     "gene_symbol": "SLCO1B1",
     "population_code": "CLM",
@@ -484,7 +495,7 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 45,
+    "rank_position": 46,
     "drug_name": "citalopram",
     "gene_symbol": "CYP2C19",
     "population_code": "MXL",
@@ -495,58 +506,47 @@
     "snapshot_date": "2026-05-21"
   },
   {
-    "rank_position": 46,
-    "drug_name": "escitalopram",
-    "gene_symbol": "CYP2C19",
-    "population_code": "MXL",
-    "delta_vs_baseline": -21.19,
-    "population_affected_pct": 17.19,
-    "classification_strength": "Moderate",
-    "clinical_implication": "21.2pp lower rate of dose/therapy change vs CEU in MXL for escitalopram (CYP2C19, CPIC Moderate)",
-    "snapshot_date": "2026-05-21"
-  },
-  {
     "rank_position": 47,
-    "drug_name": "amitriptyline",
-    "gene_symbol": "CYP2C19",
+    "drug_name": "tafenoquine",
+    "gene_symbol": "G6PD",
     "population_code": "PUR",
-    "delta_vs_baseline": -25.9,
-    "population_affected_pct": 32.69,
-    "classification_strength": "Optional",
-    "clinical_implication": "25.9pp lower rate of dose/therapy change vs CEU in PUR for amitriptyline (CYP2C19, CPIC Optional)",
+    "delta_vs_baseline": 7.69,
+    "population_affected_pct": 7.69,
+    "classification_strength": "Strong",
+    "clinical_implication": "7.7pp higher rate of dose/therapy change vs CEU in PUR for tafenoquine (G6PD, CPIC Strong)",
     "snapshot_date": "2026-05-21"
   },
   {
     "rank_position": 48,
-    "drug_name": "amitriptyline",
-    "gene_symbol": "CYP2C19",
+    "drug_name": "tacrolimus",
+    "gene_symbol": "CYP3A5",
     "population_code": "CLM",
-    "delta_vs_baseline": -34.12,
-    "population_affected_pct": 24.47,
-    "classification_strength": "Optional",
-    "clinical_implication": "34.1pp lower rate of dose/therapy change vs CEU in CLM for amitriptyline (CYP2C19, CPIC Optional)",
+    "delta_vs_baseline": -4.83,
+    "population_affected_pct": 4.26,
+    "classification_strength": "Strong",
+    "clinical_implication": "4.8pp lower rate of dose/therapy change vs CEU in CLM for tacrolimus (CYP3A5, CPIC Strong)",
     "snapshot_date": "2026-05-21"
   },
   {
     "rank_position": 49,
-    "drug_name": "warfarin",
-    "gene_symbol": "VKORC1",
+    "drug_name": "fluvastatin",
+    "gene_symbol": "CYP2C9",
     "population_code": "MXL",
-    "delta_vs_baseline": 4.27,
-    "population_affected_pct": 57.81,
-    "classification_strength": "Strong",
-    "clinical_implication": "4.3pp higher rate of dose/therapy change vs CEU in MXL for warfarin (VKORC1, CPIC Strong)",
+    "delta_vs_baseline": -8.44,
+    "population_affected_pct": 4.69,
+    "classification_strength": "Optional",
+    "clinical_implication": "8.4pp lower rate of dose/therapy change vs CEU in MXL for fluvastatin (CYP2C9, CPIC Optional)",
     "snapshot_date": "2026-05-21"
   },
   {
     "rank_position": 50,
-    "drug_name": "escitalopram",
-    "gene_symbol": "CYP2C19",
-    "population_code": "CLM",
-    "delta_vs_baseline": -14.98,
-    "population_affected_pct": 23.4,
-    "classification_strength": "Moderate",
-    "clinical_implication": "15.0pp lower rate of dose/therapy change vs CEU in CLM for escitalopram (CYP2C19, CPIC Moderate)",
+    "drug_name": "mercaptopurine",
+    "gene_symbol": "TPMT",
+    "population_code": "PUR",
+    "delta_vs_baseline": 0.0,
+    "population_affected_pct": 100.0,
+    "classification_strength": "Strong",
+    "clinical_implication": "0.0pp lower rate of dose/therapy change vs CEU in PUR for mercaptopurine (TPMT, CPIC Strong)",
     "snapshot_date": "2026-05-21"
   }
 ]
