@@ -121,6 +121,7 @@ def export_phenotype_distribution(
         "phenotype_percentage",
         "ci_lower_wilson",
         "ci_upper_wilson",
+        "data_source",
         "snapshot_date",
     ]
     available = [c for c in columns if c in df.columns]

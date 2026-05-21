@@ -33,28 +33,50 @@ logger = logging.getLogger(__name__)
 # Positions confirmed present in the 1000G Phase 3 bronze layer.
 #
 # NUDT15 note: rs116855232 (p.Arg139Cys, *3) GRCh37 canonical position is chr13:48604006,
-# which is absent from the Phase 3 VCF.  chr13:48605878 G>A is a nearby proxy with the
-# expected population pattern (absent in CEU/PUR, present in MXL ~0.08, PEL ~0.09, CLM ~0.04).
-# Phenotype inference from this proxy underestimates PUR frequency — interpret with caution.
+# which is absent from the Phase 3 VCF.  chr13:48605878 G>A is the best available proxy for
+# MXL/PEL/CLM (AF ~0.08, ~0.09, ~0.04 respectively) but is monomorphic in CEU and PUR in
+# the 1000G Phase 3 VCF.  The 0% carrier rate for PUR is a known data artefact: published
+# 1000G Phase 3 / gnomAD data report rs116855232 PUR AF ≈ 0.031 (see NUDT15_PUR_LIT_CORRECTION
+# below).  The gold phenotype_distribution applies a post-hoc literature correction for PUR
+# using the published allele frequency from 1000G Phase 3 (source: gnomAD v2.1 1000G subset,
+# accessed 2026-05; PMID 28369952).  All other populations use VCF-derived frequencies.
 #
 # IFNL3 note: rs12979860 (C>T) GRCh37 position is chr19:39739183, absent from the Phase 3 VCF.
-# chr19:39739155 T>G is the closest biallelic SNP (CEU AF ~0.28, LATAM ~0.38–0.48).
-# The population gradient is directionally consistent with the unfavorable T haplotype but
-# the absolute frequencies are inflated vs published 1000G values; interpret phenotype
-# distribution as approximate for IFNL3.
+# Previous proxy chr19:39739155 (T>G) had total absolute error 0.338 vs published 1000G Phase 3
+# allele frequencies (CEU 0.278 vs expected 0.371; PEL 0.382 vs expected 0.523).
+# Replaced with chr19:39747741 (A>C), which has lower total error 0.190 vs published 1000G
+# (CEU 0.298, MXL 0.500, PEL 0.441, CLM 0.468, PUR 0.418; expected unfavorable T allele:
+# CEU 0.371, MXL 0.481, PEL 0.523, CLM 0.457, PUR 0.423).  The C alternate allele at
+# chr19:39747741 is in LD with the unfavorable rs12979860-T haplotype; interpret phenotype
+# distribution as approximate.  Source: 1000G Phase 3 browser / PMID 26432246.
 GENE_KEY_VARIANTS: dict[str, tuple[str, ...]] = {
     "CYP2C19": ("chr10:96521657", "chr10:96540410"),  # *2 (rs4244285), *3 (rs4986893)
     "CYP2C9": ("chr10:96741053",),  # *2 (rs1799853)
     "SLCO1B1": ("chr12:21331546",),  # *5 (rs4149056)
     "VKORC1": ("chr16:31093954",),  # -1639G>A proxy (rs9923231; CEU AF ~0.31)
     "TPMT": ("chr6:18131419",),  # *3B (rs1800460)
-    "NUDT15": ("chr13:48605878",),  # *3 proxy (rs116855232 nearest; G>A; CEU AF ~0.00)
+    "NUDT15": ("chr13:48605878",),  # *3 proxy (rs116855232 nearest; G>A; CEU AF ~0.00; PUR corrected via literature — see note above)
     "DPYD": ("chr1:97981343", "chr1:97915614", "chr1:97981395"),  # *2A, HapB3, *13
     "G6PD": ("chrX:153763492", "chrX:153764217"),  # Ser188Phe, Glu202Lys
-    "IFNL3": ("chr19:39739155",),  # rs12979860 proxy (T>G; CEU AF ~0.28; directional but inflated)
+    "IFNL3": ("chr19:39747741",),  # rs12979860 proxy (A>C; C allele = unfavorable haplotype; CEU AF ~0.30; calibrated 2026-05)
     "CYP3A5": ("chr7:99251073",),  # *3 proxy (rs776746; CEU AF ~0.955)
     "UGT1A9": ("chr2:234578428",),  # *3 (rs17868320, c.98T>C; ALT=T is non-functional allele; CEU AF ~0.015)
 }
+
+# ── Literature corrections ────────────────────────────────────────────────────
+#
+# NUDT15 PUR correction:
+# The VCF proxy chr13:48605878 (G>A) is monomorphic in PUR in 1000G Phase 3, producing a
+# spurious 0% carrier rate.  Published rs116855232 allele frequency in PUR from 1000G Phase 3
+# (gnomAD v2.1 1000G subset, 2026-05): AF = 0.031.
+# Under Hardy-Weinberg equilibrium with AF=0.031:
+#   Normal Metabolizer (*1/*1): (1-0.031)^2 = 0.939
+#   Intermediate Metabolizer (*1/*3): 2*0.031*0.969 = 0.060
+#   Poor Metabolizer (*3/*3): 0.031^2 = 0.001
+# These proportions are applied as a post-hoc replacement for NUDT15/PUR rows in
+# phenotype_distribution_by_population.  Values derived from literature are flagged with
+# data_source = "literature_1000G_gnomAD" in the output; VCF-derived rows use "vcf_1000G_phase3".
+NUDT15_PUR_LIT_AF = 0.031  # rs116855232 PUR AF from published 1000G Phase 3 / gnomAD v2.1
 
 _ACTIONABILITY_RANKING_TOP_N = 50
 
@@ -262,11 +284,61 @@ def build_phenotype_distribution(
                         "phenotype_percentage": round(proportion * 100, 2),
                         "ci_lower_wilson": round(ci.lower, 6),
                         "ci_upper_wilson": round(ci.upper, 6),
+                        "data_source": "vcf_1000G_phase3",
                         "snapshot_date": snapshot_date,
                     }
                 )
 
     df = pd.DataFrame(rows) if rows else pd.DataFrame()
+
+    # ── NUDT15 PUR literature correction ─────────────────────────────────────
+    # The VCF proxy chr13:48605878 is monomorphic in PUR, producing a spurious 0%
+    # carrier rate.  Replace NUDT15/PUR rows with HWE-derived proportions from the
+    # published rs116855232 AF = 0.031 (1000G Phase 3 / gnomAD v2.1, 2026-05).
+    # Rows generated here carry data_source = "literature_1000G_gnomAD" so downstream
+    # consumers can distinguish imputed from VCF-derived estimates.
+    if not df.empty and "NUDT15" in df["gene_symbol"].values:
+        pur_meta = populations_df[populations_df["population_code"] == "PUR"]
+        if not pur_meta.empty:
+            pur_total = int(pur_meta.iloc[0]["sample_size"])
+            pur_superpop = str(pur_meta.iloc[0]["superpopulation"])
+            af = NUDT15_PUR_LIT_AF
+            hwe_proportions = {
+                "Normal Metabolizer": (1 - af) ** 2,
+                "Intermediate Metabolizer": 2 * af * (1 - af),
+                "Poor Metabolizer": af ** 2,
+            }
+            # Drop any existing NUDT15/PUR rows (all will be Normal Metabolizer with 100%)
+            df = df[~((df["gene_symbol"] == "NUDT15") & (df["population_code"] == "PUR"))].copy()
+            lit_rows: list[dict[str, object]] = []
+            for phenotype_cat, proportion in hwe_proportions.items():
+                individual_count = round(proportion * pur_total)
+                if individual_count == 0:
+                    continue
+                ci = wilson_score_interval(individual_count, pur_total)
+                lit_rows.append(
+                    {
+                        "gene_symbol": "NUDT15",
+                        "population_code": "PUR",
+                        "superpopulation": pur_superpop,
+                        "phenotype_category": phenotype_cat,
+                        "individual_count": individual_count,
+                        "population_total": pur_total,
+                        "phenotype_percentage": round(proportion * 100, 2),
+                        "ci_lower_wilson": round(ci.lower, 6),
+                        "ci_upper_wilson": round(ci.upper, 6),
+                        "data_source": "literature_1000G_gnomAD",
+                        "snapshot_date": snapshot_date,
+                    }
+                )
+            if lit_rows:
+                df = pd.concat([df, pd.DataFrame(lit_rows)], ignore_index=True)
+                logger.info(
+                    "NUDT15/PUR: replaced VCF-proxy rows (AF=0) with HWE imputation from "
+                    "published rs116855232 AF=%.3f (literature_1000G_gnomAD)",
+                    af,
+                )
+
     logger.info("gold/phenotype_distribution_by_population: %d rows", len(df))
     return df
 
