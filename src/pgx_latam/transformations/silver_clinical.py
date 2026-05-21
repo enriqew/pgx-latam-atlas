@@ -354,6 +354,64 @@ _CURATED_RECOMMENDATIONS: list[dict[str, object]] = [
         "requires_alternative": False,
         "cpic_release_version": "v2.4-2022",
     },
+    # G6PD Normal overrides — all 33 G6PD-covered drugs.
+    # The CPIC API text for G6PD Normal is "No reason to avoid based on G6PD status",
+    # which contains the word "avoid" and incorrectly triggers _ALTERNATIVE_PATTERNS
+    # (\bavoid\b fires as a false positive in the negated phrase "no reason to avoid").
+    # Correct CPIC v1.0-2022 guidance for G6PD Normal: prescribe desired dose without
+    # genotype-based restriction.  No dose change, no alternative, no PGx-driven monitoring.
+    # Source: Luzzatto et al., 2022 CPIC G6PD guideline (PMID 35311075).
+    *[
+        {
+            "gene_symbol": "G6PD",
+            "drug_name": drug,
+            "phenotype": "Normal",
+            "recommendation_text": (
+                "No genotype-based dose adjustment or alternative therapy required. "
+                "G6PD Normal individuals have adequate enzyme activity; "
+                "prescribe desired dose per standard disease-specific guidelines."
+            ),
+            "classification_strength": "Strong",
+            "requires_dose_change": False,
+            "requires_alternative": False,
+            "cpic_release_version": "v1.0-2022",
+        }
+        for drug in [
+            "aminosalicylic acid",
+            "aspirin",
+            "chloramphenicol",
+            "chloroquine",
+            "ciprofloxacin",
+            "dapsone",
+            "dimercaprol",
+            "doxorubicin",
+            "furazolidone",
+            "glyburide",
+            "hydroxychloroquine",
+            "mafenide",
+            "methylene blue",
+            "nalidixic acid",
+            "nitrofurantoin",
+            "norfloxacin",
+            "ofloxacin",
+            "pegloticase",
+            "phenazopyridine",
+            "primaquine",
+            "quinine",
+            "rasburicase",
+            "sulfadiazine",
+            "sulfadimidine",
+            "sulfamethoxazole / trimethoprim",
+            "sulfanilamide",
+            "sulfasalazine",
+            "sulfisoxazole",
+            "tafenoquine",
+            "tolbutamide",
+            "toluidine blue",
+            "vitamin c",
+            "vitamin k",
+        ]
+    ],
 ]
 
 
