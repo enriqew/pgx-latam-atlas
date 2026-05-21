@@ -97,6 +97,97 @@ _CURATED_RECOMMENDATIONS: list[dict[str, object]] = [
         "requires_alternative": False,
         "cpic_release_version": "v1.4-2017",
     },
+    # IFNL3 (IL28B) peginterferon recommendations — not exposed in the CPIC PostgREST API v1.
+    # Curated from CPIC IL28B / IFNL3 guideline for peginterferon + ribavirin HCV therapy
+    # (Muir et al., 2014, Clin Pharmacol Ther. PMID 24096968).
+    # rs12979860 CC genotype = Favorable; CT = Intermediate; TT = Unfavorable.
+    # In our pipeline, the proxy variant (chr19:39739155 T>G) codes G as the
+    # non-reference / unfavorable allele (dosage ≥ 1 = reduced response).
+    {
+        "gene_symbol": "IFNL3",
+        "drug_name": "peginterferon alfa-2a",
+        "phenotype": "Favorable Genotype",
+        "recommendation_text": (
+            "Initiate peginterferon alfa-2a plus ribavirin at standard doses. "
+            "CC genotype (favorable) is associated with approximately 70% sustained virologic "
+            "response (SVR) rate in HCV genotype 1 patients."
+        ),
+        "classification_strength": "Strong",
+        "requires_dose_change": False,
+        "requires_alternative": False,
+        "cpic_release_version": "v1.0-2014",
+    },
+    {
+        "gene_symbol": "IFNL3",
+        "drug_name": "peginterferon alfa-2a",
+        "phenotype": "Intermediate Genotype",
+        "recommendation_text": (
+            "Initiate peginterferon alfa-2a plus ribavirin at standard doses. "
+            "CT genotype (intermediate) is associated with intermediate SVR rates (~40–50%). "
+            "Enhanced monitoring is recommended."
+        ),
+        "classification_strength": "Strong",
+        "requires_dose_change": False,
+        "requires_alternative": False,
+        "cpic_release_version": "v1.0-2014",
+    },
+    {
+        "gene_symbol": "IFNL3",
+        "drug_name": "peginterferon alfa-2a",
+        "phenotype": "Unfavorable Genotype",
+        "recommendation_text": (
+            "Consider alternative therapy. TT genotype (unfavorable) is associated with "
+            "approximately 25–30% SVR rate for HCV genotype 1. "
+            "Direct-acting antiviral (DAA) regimens are preferred when available, "
+            "as they are not impacted by IFNL3 genotype."
+        ),
+        "classification_strength": "Strong",
+        "requires_dose_change": False,
+        "requires_alternative": True,
+        "cpic_release_version": "v1.0-2014",
+    },
+    {
+        "gene_symbol": "IFNL3",
+        "drug_name": "peginterferon alfa-2b",
+        "phenotype": "Favorable Genotype",
+        "recommendation_text": (
+            "Initiate peginterferon alfa-2b plus ribavirin at standard doses. "
+            "CC genotype (favorable) is associated with approximately 70% SVR rate "
+            "in HCV genotype 1 patients."
+        ),
+        "classification_strength": "Strong",
+        "requires_dose_change": False,
+        "requires_alternative": False,
+        "cpic_release_version": "v1.0-2014",
+    },
+    {
+        "gene_symbol": "IFNL3",
+        "drug_name": "peginterferon alfa-2b",
+        "phenotype": "Intermediate Genotype",
+        "recommendation_text": (
+            "Initiate peginterferon alfa-2b plus ribavirin at standard doses. "
+            "CT genotype (intermediate) is associated with intermediate SVR rates. "
+            "Enhanced monitoring is recommended."
+        ),
+        "classification_strength": "Strong",
+        "requires_dose_change": False,
+        "requires_alternative": False,
+        "cpic_release_version": "v1.0-2014",
+    },
+    {
+        "gene_symbol": "IFNL3",
+        "drug_name": "peginterferon alfa-2b",
+        "phenotype": "Unfavorable Genotype",
+        "recommendation_text": (
+            "Consider alternative therapy. TT genotype (unfavorable) is associated with "
+            "approximately 25–30% SVR rate for HCV genotype 1. "
+            "DAA regimens are preferred when available."
+        ),
+        "classification_strength": "Strong",
+        "requires_dose_change": False,
+        "requires_alternative": True,
+        "cpic_release_version": "v1.0-2014",
+    },
     # UGT1A9 mycophenolate recommendations — not in CPIC PostgREST API v1.
     # Curated from CPIC UGT1A8/UGT1A9 guideline for immunosuppressants (Luzum et al., 2021,
     # Clin Pharmacol Ther. PMID 34115020). UGT1A9*3 reduces glucuronidation → higher MPA exposure.

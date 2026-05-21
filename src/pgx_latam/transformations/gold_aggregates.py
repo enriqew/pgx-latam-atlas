@@ -31,17 +31,27 @@ logger = logging.getLogger(__name__)
 # The 1000G Phase 3 VCF has "." in the ID field for all variants; pysam falls back to
 # positional format, so rsIDs never appear in bronze/silver data.
 # Positions confirmed present in the 1000G Phase 3 bronze layer.
-# IFNL3 (rs12979860) requires corrected extraction windows — skip.
+#
+# NUDT15 note: rs116855232 (p.Arg139Cys, *3) GRCh37 canonical position is chr13:48604006,
+# which is absent from the Phase 3 VCF.  chr13:48605878 G>A is a nearby proxy with the
+# expected population pattern (absent in CEU/PUR, present in MXL ~0.08, PEL ~0.09, CLM ~0.04).
+# Phenotype inference from this proxy underestimates PUR frequency — interpret with caution.
+#
+# IFNL3 note: rs12979860 (C>T) GRCh37 position is chr19:39739183, absent from the Phase 3 VCF.
+# chr19:39739155 T>G is the closest biallelic SNP (CEU AF ~0.28, LATAM ~0.38–0.48).
+# The population gradient is directionally consistent with the unfavorable T haplotype but
+# the absolute frequencies are inflated vs published 1000G values; interpret phenotype
+# distribution as approximate for IFNL3.
 GENE_KEY_VARIANTS: dict[str, tuple[str, ...]] = {
     "CYP2C19": ("chr10:96521657", "chr10:96540410"),  # *2 (rs4244285), *3 (rs4986893)
     "CYP2C9": ("chr10:96741053",),  # *2 (rs1799853)
     "SLCO1B1": ("chr12:21331546",),  # *5 (rs4149056)
     "VKORC1": ("chr16:31093954",),  # -1639G>A proxy (rs9923231; CEU AF ~0.31)
     "TPMT": ("chr6:18131419",),  # *3B (rs1800460)
-    "NUDT15": (),  # GRCh37 position unconfirmed — skip
+    "NUDT15": ("chr13:48605878",),  # *3 proxy (rs116855232 nearest; G>A; CEU AF ~0.00)
     "DPYD": ("chr1:97981343", "chr1:97915614", "chr1:97981395"),  # *2A, HapB3, *13
     "G6PD": ("chrX:153763492", "chrX:153764217"),  # Ser188Phe, Glu202Lys
-    "IFNL3": (),  # outside extraction window — skip
+    "IFNL3": ("chr19:39739155",),  # rs12979860 proxy (T>G; CEU AF ~0.28; directional but inflated)
     "CYP3A5": ("chr7:99251073",),  # *3 proxy (rs776746; CEU AF ~0.955)
     "UGT1A9": ("chr2:234578428",),  # *3 (rs17868320, c.98T>C; ALT=T is non-functional allele; CEU AF ~0.015)
 }
