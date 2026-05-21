@@ -25,6 +25,7 @@ resource "aws_sfn_state_machine" "pgx_pipeline" {
       BuildGoldDrugImpactLambdaArn     = aws_lambda_function.build_gold_drug_impact.arn
       BuildGoldRankingLambdaArn        = aws_lambda_function.build_gold_ranking.arn
       ExportArtifactsLambdaArn         = aws_lambda_function.export_artifacts.arn
+      UpdateBedrockKBLambdaArn         = aws_lambda_function.update_bedrock_kb.arn
       PipelineFailureSNSTopicArn       = aws_sns_topic.pipeline_failure.arn
     }
   )

@@ -1,5 +1,5 @@
 {
-  "Comment": "pgx-latam-atlas pipeline: ingest → bronze → silver → gold → export",
+  "Comment": "pgx-latam-atlas pipeline: ingest → bronze → silver → gold → export → kb-sync",
   "StartAt": "IngestAllSources",
   "States": {
     "IngestAllSources": {
@@ -325,7 +325,7 @@
     },
     "ExportAndSync": {
       "Type": "Parallel",
-      "Comment": "Export artifacts to GitHub and sync knowledge base (KB sync is a future-phase placeholder)",
+      "Comment": "Export artifacts to GitHub and sync Bedrock Knowledge Base in parallel",
       "Branches": [
         {
           "StartAt": "ExportArtifacts",
@@ -352,12 +352,25 @@
           "StartAt": "UpdateBedrockKB",
           "States": {
             "UpdateBedrockKB": {
-              "Type": "Pass",
-              "Comment": "TODO: replace with Bedrock KB sync in next phase",
-              "Result": {
-                "status": "skipped",
-                "reason": "Bedrock KB integration deferred to future phase"
+              "Type": "Task",
+              "Comment": "Format Gold artefacts as text documents, upload to S3, and start Bedrock KB ingestion job",
+              "Resource": "arn:aws:states:::lambda:invoke.waitForTaskToken",
+              "Parameters": {
+                "FunctionName": "${UpdateBedrockKBLambdaArn}",
+                "Payload": {
+                  "task_token.$": "$$.Task.Token",
+                  "gold_artifacts_bucket.$": "$$.Execution.Input.gold_artifacts_bucket",
+                  "knowledge_base_id.$": "$$.Execution.Input.knowledge_base_id"
+                }
               },
+              "Retry": [
+                {
+                  "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException"],
+                  "IntervalSeconds": 30,
+                  "MaxAttempts": 2,
+                  "BackoffRate": 2.0
+                }
+              ],
               "End": true
             }
           }

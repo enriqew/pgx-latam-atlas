@@ -72,6 +72,7 @@ data "aws_iam_policy_document" "sfn_permissions" {
       aws_lambda_function.build_gold_drug_impact.arn,
       aws_lambda_function.build_gold_ranking.arn,
       aws_lambda_function.export_artifacts.arn,
+      aws_lambda_function.update_bedrock_kb.arn,
     ]
   }
   statement {
@@ -137,6 +138,25 @@ data "aws_iam_policy_document" "lambda_pipeline_access" {
     sid       = "SecretsManagerReadGitHub"
     actions   = ["secretsmanager:GetSecretValue"]
     resources = ["arn:aws:secretsmanager:*:*:secret:pgx-latam/github-pat*"]
+  }
+  statement {
+    sid = "BedrockKBIngestion"
+    actions = [
+      "bedrock:StartIngestionJob",
+      "bedrock:GetIngestionJob",
+    ]
+    # Bedrock agent actions use the knowledge-base ARN as the resource scope.
+    # The wildcard is intentional here: the KB ARN is not known at policy-creation
+    # time (circular dependency). Scope is further limited by the service.
+    resources = ["*"]
+  }
+  statement {
+    sid = "StepFunctionsTaskCallback"
+    actions = [
+      "states:SendTaskSuccess",
+      "states:SendTaskFailure",
+    ]
+    resources = ["*"]
   }
 }
 

@@ -32,3 +32,23 @@ output "failure_sns_topic_arn" {
   description = "ARN of the pipeline failure SNS topic"
   value       = aws_sns_topic.pipeline_failure.arn
 }
+
+output "bedrock_knowledge_base_id" {
+  description = "ID of the Bedrock Knowledge Base for PGx queries"
+  value       = aws_bedrockagent_knowledge_base.pgx.id
+}
+
+output "bedrock_knowledge_base_arn" {
+  description = "ARN of the Bedrock Knowledge Base"
+  value       = aws_bedrockagent_knowledge_base.pgx.arn
+}
+
+output "bedrock_data_source_id" {
+  description = "ID of the Bedrock KB data source (Gold docs in S3)"
+  value       = aws_bedrockagent_data_source.gold_docs.data_source_id
+}
+
+output "opensearch_kb_collection_endpoint" {
+  description = "OpenSearch Serverless collection endpoint for the KB vector store"
+  value       = aws_opensearchserverless_collection.kb.collection_endpoint
+}

@@ -122,6 +122,31 @@ resource "aws_lambda_function" "build_gold_ranking" {
   environment { variables = local.lambda_env }
 }
 
+# update_bedrock_kb syncs Gold-layer text documents to the Bedrock KB.
+# Invoked by Step Functions via waitForTaskToken; needs extra Bedrock + SFN permissions.
+resource "aws_lambda_function" "update_bedrock_kb" {
+  function_name    = "${local.name_prefix}-update-bedrock-kb"
+  role             = aws_iam_role.lambda_execution.arn
+  filename         = data.archive_file.lambda_placeholder.output_path
+  source_code_hash = data.archive_file.lambda_placeholder.output_base64sha256
+  handler          = "handler.handler"
+  runtime          = local.lambda_runtime
+  # KB ingestion can take up to 30 min; Lambda timeout is capped at 15 min.
+  # The polling loop inside the function sends task success/failure to SFN
+  # before the function itself times out (180 attempts × 10 s = 30 min).
+  # Set Lambda timeout to its maximum so the poller has the full window.
+  timeout = 900
+  environment {
+    variables = merge(local.lambda_env, {
+      KNOWLEDGE_BASE_ID      = aws_bedrockagent_knowledge_base.pgx.id
+      DATA_SOURCE_ID         = aws_bedrockagent_data_source.gold_docs.data_source_id
+      GOLD_DATABASE          = "gold_pgx"
+      SILVER_DATABASE        = "silver_pgx"
+      ATHENA_RESULTS_PREFIX  = "athena-results"
+    })
+  }
+}
+
 # export_artifacts is deployed from S3 by the CI pipeline after Terraform apply.
 # On initial apply the placeholder zip is used; CI overrides via update-function-code.
 resource "aws_lambda_function" "export_artifacts" {
