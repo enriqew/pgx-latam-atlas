@@ -4,9 +4,11 @@ Source:   s3://1000genomes/release/20130502/  (AWS Open Data)
 Registry: https://registry.opendata.aws/1000-genomes/
 Cite:     1000 Genomes Project Consortium. Nature 526, 68-74 (2015). PMID 26432245
 
-Extracts per-sample genotype calls for all in-scope pharmacogene regions,
-restricted to the target populations: MXL, PEL, CLM, PUR (Latin America),
-YRI, ASW (African ancestry), GIH (South Asia), and CEU (European baseline).
+Extracts per-sample genotype calls for all in-scope pharmacogene regions
+across all 26 populations of 1000 Genomes Phase 3 (AFR/AMR/EAS/EUR/SAS).
+The four LATAM cohorts (MXL, PEL, CLM, PUR) remain the analytical focus, with
+CEU as the European prescribing-guideline baseline; the rest provide global
+context so LATAM findings can be read as outliers across the full panel.
 
 Requires pysam for remote tabix-indexed VCF access. On Windows, run via
 WSL2 or Docker (see docs/local_dev.md). On Linux/macOS: pip install ".[vcf]".
@@ -36,7 +38,20 @@ logger = logging.getLogger(__name__)
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 
-TARGET_POPULATIONS = ("MXL", "PEL", "CLM", "PUR", "CEU", "YRI", "ASW", "GIH")
+# All 26 populations of 1000 Genomes Phase 3, grouped by 1000G superpopulation.
+# LATAM cohorts (AMR) remain the analytical focus; the rest provide global context.
+TARGET_POPULATIONS = (
+    # AMR — Latin America (the deep-dive cohorts)
+    "MXL", "PEL", "CLM", "PUR",
+    # EUR — European reference (CEU is the prescribing-guideline baseline)
+    "CEU", "TSI", "FIN", "GBR", "IBS",
+    # AFR — African ancestry
+    "YRI", "LWK", "GWD", "MSL", "ESN", "ASW", "ACB",
+    # EAS — East Asian
+    "CHB", "JPT", "CHS", "CDX", "KHV",
+    # SAS — South Asian
+    "GIH", "PJL", "BEB", "STU", "ITU",
+)
 
 _1000G_HTTPS_BASE = "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502"
 
@@ -244,7 +259,21 @@ def _extract_gene_variants(
             "This likely means the panel and VCF sample IDs do not match."
         )
 
-    rows: list[dict[str, object]] = []
+    # Column-oriented accumulation. A list of per-row dicts is catastrophic at
+    # 1000G scale: a large region (e.g. DPYD) × 2,504 samples is tens of millions
+    # of rows, and a dict per row costs 15-20 GB before the DataFrame even exists.
+    # Parallel typed lists plus category dtypes keep the whole gene in ~2-3 GB.
+    col_position: list[int] = []
+    col_variant_id: list[str] = []
+    col_ref: list[str] = []
+    col_alt: list[str] = []
+    col_sample: list[str] = []
+    col_genotype: list[str] = []
+    col_dosage: list[int] = []
+    col_qual: list[float | None] = []
+    col_filter: list[str] = []
+    col_pop: list[str] = []
+    col_superpop: list[str] = []
     skipped_multiallelic = 0
     skipped_missing_gt = 0
 
@@ -260,6 +289,8 @@ def _extract_gene_variants(
             qual = record.qual
             filter_keys = list(record.filter.keys()) if record.filter else []
             filter_status = ";".join(filter_keys) if filter_keys else "PASS"
+            ref = record.ref
+            pos = record.pos
 
             for sample_id in target_sample_ids:
                 gt_data = record.samples[sample_id]["GT"]
@@ -273,23 +304,17 @@ def _extract_gene_variants(
                 genotype_str = sep.join(str(g) for g in gt_data)
 
                 pop_code, superpop = sample_map[sample_id]
-                rows.append(
-                    {
-                        "chromosome": chrom_label,
-                        "position": record.pos,
-                        "variant_id": variant_id,
-                        "reference_allele": record.ref,
-                        "alternate_allele": alt,
-                        "sample_id": sample_id,
-                        "genotype": genotype_str,
-                        "allele_dosage": allele_dosage,
-                        "quality": qual,
-                        "filter_status": filter_status,
-                        "info_payload": None,
-                        "_population_code": pop_code,
-                        "_superpopulation": superpop,
-                    }
-                )
+                col_position.append(pos)
+                col_variant_id.append(variant_id)
+                col_ref.append(ref)
+                col_alt.append(alt)
+                col_sample.append(sample_id)
+                col_genotype.append(genotype_str)
+                col_dosage.append(allele_dosage)
+                col_qual.append(qual)
+                col_filter.append(filter_status)
+                col_pop.append(pop_code)
+                col_superpop.append(superpop)
     finally:
         vcf.close()
 
@@ -306,13 +331,36 @@ def _extract_gene_variants(
             skipped_missing_gt,
         )
 
+    n_rows = len(col_position)
     logger.info(
         "%s: extracted %d (variant, sample) rows from %d target samples",
         gene_symbol,
-        len(rows),
+        n_rows,
         len(target_sample_ids),
     )
-    return pd.DataFrame(rows)
+
+    # Build with memory-frugal dtypes: category for the heavily-repeated string
+    # columns (sample_id has 2,504 uniques, genotype a handful), narrow ints for
+    # position/dosage. validate_bronze checks columns and nulls, not dtypes, and
+    # categories round-trip through Parquet as dictionary-encoded columns, so the
+    # silver and gold reads stay compact too.
+    return pd.DataFrame(
+        {
+            "chromosome": pd.Categorical([chrom_label] * n_rows),
+            "position": pd.array(col_position, dtype="int32"),
+            "variant_id": pd.Categorical(col_variant_id),
+            "reference_allele": pd.Categorical(col_ref),
+            "alternate_allele": pd.Categorical(col_alt),
+            "sample_id": pd.Categorical(col_sample),
+            "genotype": pd.Categorical(col_genotype),
+            "allele_dosage": pd.array(col_dosage, dtype="int8"),
+            "quality": col_qual,
+            "filter_status": pd.Categorical(col_filter),
+            "info_payload": [None] * n_rows,
+            "_population_code": pd.Categorical(col_pop),
+            "_superpopulation": pd.Categorical(col_superpop),
+        }
+    )
 
 
 def ingest_gene_variants(

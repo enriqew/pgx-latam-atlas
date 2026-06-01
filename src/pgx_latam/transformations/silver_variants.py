@@ -31,19 +31,43 @@ logger = logging.getLogger(__name__)
 
 # ── Population reference data ─────────────────────────────────────────────────
 
-# (population_name, region) — superpopulation comes from the panel file
+# (population_name, region) — superpopulation comes from the panel file.
+# All 26 populations of 1000 Genomes Phase 3.
 _POPULATION_NAMES: dict[str, tuple[str, str]] = {
+    # AMR — Latin America (deep-dive cohorts)
     "MXL": ("Mexican Ancestry in Los Angeles, California", "Latin America"),
     "PEL": ("Peruvians in Lima, Peru", "Latin America"),
     "CLM": ("Colombians in Medellín, Colombia", "Latin America"),
     "PUR": ("Puerto Ricans in Puerto Rico", "Latin America"),
+    # EUR — Europe
     "CEU": (
         "Utah Residents (CEPH) with Northern and Western European Ancestry",
         "Europe",
     ),
+    "TSI": ("Toscani in Italia", "Europe"),
+    "FIN": ("Finnish in Finland", "Europe"),
+    "GBR": ("British in England and Scotland", "Europe"),
+    "IBS": ("Iberian Population in Spain", "Europe"),
+    # AFR — African ancestry
     "YRI": ("Yoruba in Ibadan, Nigeria", "Sub-Saharan Africa"),
+    "LWK": ("Luhya in Webuye, Kenya", "Sub-Saharan Africa"),
+    "GWD": ("Gambian in Western Divisions in the Gambia", "Sub-Saharan Africa"),
+    "MSL": ("Mende in Sierra Leone", "Sub-Saharan Africa"),
+    "ESN": ("Esan in Nigeria", "Sub-Saharan Africa"),
     "ASW": ("African Ancestry in Southwest USA", "African American"),
+    "ACB": ("African Caribbeans in Barbados", "African Caribbean"),
+    # EAS — East Asia
+    "CHB": ("Han Chinese in Beijing, China", "East Asia"),
+    "JPT": ("Japanese in Tokyo, Japan", "East Asia"),
+    "CHS": ("Southern Han Chinese", "East Asia"),
+    "CDX": ("Chinese Dai in Xishuangbanna, China", "East Asia"),
+    "KHV": ("Kinh in Ho Chi Minh City, Vietnam", "East Asia"),
+    # SAS — South Asia
     "GIH": ("Gujarati Indian from Houston, Texas", "South Asia"),
+    "PJL": ("Punjabi from Lahore, Pakistan", "South Asia"),
+    "BEB": ("Bengali from Bangladesh", "South Asia"),
+    "STU": ("Sri Lankan Tamil from the UK", "South Asia"),
+    "ITU": ("Indian Telugu from the UK", "South Asia"),
 }
 
 # ── Gene assignment ───────────────────────────────────────────────────────────

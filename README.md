@@ -17,7 +17,7 @@ most mainstream prescribing guidance.
 
 ## Key findings
 
-> Pipeline run: 2026-05-18 · 182,465 variants · 5 populations · 10 pharmacogenes.
+> Pipeline run: 2026-06-01 · 40,121 variant sites across 26 populations (all 1000G Phase 3) · 10 pharmacogenes · 1,043,146 site–cohort frequency rows.
 > Full data: [`artifacts/actionability_ranking.json`](artifacts/actionability_ranking.json)
 
 ### CYP2C19 — Normal Metabolizer enrichment in LATAM cohorts
