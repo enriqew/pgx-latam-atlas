@@ -1,24 +1,126 @@
 {
   "schema_version": "1.0.0",
-  "snapshot_date": "2026-05-21",
-  "pipeline_run_id": "4f16e37e-37b3-4fab-8d56-8b32e3e4e82f",
+  "snapshot_date": "2026-06-01",
+  "pipeline_run_id": "c8ddeb91-0f59-40ec-9bfb-5b20bdc86937",
   "source_versions": {
     "thousand_genomes": "Phase 3 GRCh37 (20130502)",
     "pharmgkb": "latest at ingest date",
     "cpic": "v4 PostgREST API"
   },
   "populations": {
+    "ACB": {
+      "name": "African Caribbeans in Barbados",
+      "region": "African Caribbean",
+      "superpopulation": "AFR",
+      "sample_size": 96
+    },
+    "ASW": {
+      "name": "African Ancestry in Southwest USA",
+      "region": "African American",
+      "superpopulation": "AFR",
+      "sample_size": 61
+    },
+    "BEB": {
+      "name": "Bengali from Bangladesh",
+      "region": "South Asia",
+      "superpopulation": "SAS",
+      "sample_size": 86
+    },
+    "CDX": {
+      "name": "Chinese Dai in Xishuangbanna, China",
+      "region": "East Asia",
+      "superpopulation": "EAS",
+      "sample_size": 93
+    },
     "CEU": {
       "name": "Utah Residents (CEPH) with Northern and Western European Ancestry",
       "region": "Europe",
       "superpopulation": "EUR",
       "sample_size": 99
     },
+    "CHB": {
+      "name": "Han Chinese in Beijing, China",
+      "region": "East Asia",
+      "superpopulation": "EAS",
+      "sample_size": 103
+    },
+    "CHS": {
+      "name": "Southern Han Chinese",
+      "region": "East Asia",
+      "superpopulation": "EAS",
+      "sample_size": 105
+    },
     "CLM": {
       "name": "Colombians in Medellín, Colombia",
       "region": "Latin America",
       "superpopulation": "AMR",
       "sample_size": 94
+    },
+    "ESN": {
+      "name": "Esan in Nigeria",
+      "region": "Sub-Saharan Africa",
+      "superpopulation": "AFR",
+      "sample_size": 99
+    },
+    "FIN": {
+      "name": "Finnish in Finland",
+      "region": "Europe",
+      "superpopulation": "EUR",
+      "sample_size": 99
+    },
+    "GBR": {
+      "name": "British in England and Scotland",
+      "region": "Europe",
+      "superpopulation": "EUR",
+      "sample_size": 91
+    },
+    "GIH": {
+      "name": "Gujarati Indian from Houston, Texas",
+      "region": "South Asia",
+      "superpopulation": "SAS",
+      "sample_size": 103
+    },
+    "GWD": {
+      "name": "Gambian in Western Divisions in the Gambia",
+      "region": "Sub-Saharan Africa",
+      "superpopulation": "AFR",
+      "sample_size": 113
+    },
+    "IBS": {
+      "name": "Iberian Population in Spain",
+      "region": "Europe",
+      "superpopulation": "EUR",
+      "sample_size": 107
+    },
+    "ITU": {
+      "name": "Indian Telugu from the UK",
+      "region": "South Asia",
+      "superpopulation": "SAS",
+      "sample_size": 102
+    },
+    "JPT": {
+      "name": "Japanese in Tokyo, Japan",
+      "region": "East Asia",
+      "superpopulation": "EAS",
+      "sample_size": 104
+    },
+    "KHV": {
+      "name": "Kinh in Ho Chi Minh City, Vietnam",
+      "region": "East Asia",
+      "superpopulation": "EAS",
+      "sample_size": 99
+    },
+    "LWK": {
+      "name": "Luhya in Webuye, Kenya",
+      "region": "Sub-Saharan Africa",
+      "superpopulation": "AFR",
+      "sample_size": 99
+    },
+    "MSL": {
+      "name": "Mende in Sierra Leone",
+      "region": "Sub-Saharan Africa",
+      "superpopulation": "AFR",
+      "sample_size": 85
     },
     "MXL": {
       "name": "Mexican Ancestry in Los Angeles, California",
@@ -32,13 +134,37 @@
       "superpopulation": "AMR",
       "sample_size": 85
     },
+    "PJL": {
+      "name": "Punjabi from Lahore, Pakistan",
+      "region": "South Asia",
+      "superpopulation": "SAS",
+      "sample_size": 96
+    },
     "PUR": {
       "name": "Puerto Ricans in Puerto Rico",
       "region": "Latin America",
       "superpopulation": "AMR",
       "sample_size": 104
+    },
+    "STU": {
+      "name": "Sri Lankan Tamil from the UK",
+      "region": "South Asia",
+      "superpopulation": "SAS",
+      "sample_size": 102
+    },
+    "TSI": {
+      "name": "Toscani in Italia",
+      "region": "Europe",
+      "superpopulation": "EUR",
+      "sample_size": 107
+    },
+    "YRI": {
+      "name": "Yoruba in Ibadan, Nigeria",
+      "region": "Sub-Saharan Africa",
+      "superpopulation": "AFR",
+      "sample_size": 108
     }
   },
-  "total_variants_analyzed": 182470,
-  "generated_at": "2026-05-21T18:12:08.183913Z"
+  "total_variants_analyzed": 1043146,
+  "generated_at": "2026-06-01T03:04:23.493383Z"
 }
