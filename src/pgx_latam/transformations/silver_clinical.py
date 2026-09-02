@@ -81,7 +81,9 @@ _CURATED_RECOMMENDATIONS: list[dict[str, object]] = [
         "gene_symbol": "VKORC1",
         "drug_name": "warfarin",
         "phenotype": "Intermediate Sensitivity",
-        "recommendation_text": "Consider moderate dose reduction based on VKORC1 sensitivity genotype.",
+        "recommendation_text": (
+            "Consider moderate dose reduction based on VKORC1 sensitivity genotype."
+        ),
         "classification_strength": "Strong",
         "requires_dose_change": True,
         "requires_alternative": False,
@@ -91,7 +93,9 @@ _CURATED_RECOMMENDATIONS: list[dict[str, object]] = [
         "gene_symbol": "VKORC1",
         "drug_name": "warfarin",
         "phenotype": "High Sensitivity",
-        "recommendation_text": "Consider significant dose reduction based on VKORC1 high sensitivity genotype.",
+        "recommendation_text": (
+            "Consider significant dose reduction based on VKORC1 high sensitivity genotype."
+        ),
         "classification_strength": "Strong",
         "requires_dose_change": True,
         "requires_alternative": False,
@@ -123,7 +127,7 @@ _CURATED_RECOMMENDATIONS: list[dict[str, object]] = [
         "phenotype": "Intermediate Genotype",
         "recommendation_text": (
             "Initiate peginterferon alfa-2a plus ribavirin at standard doses. "
-            "CT genotype (intermediate) is associated with intermediate SVR rates (~40–50%). "
+            "CT genotype (intermediate) is associated with intermediate SVR rates (~40-50%). "
             "Enhanced monitoring is recommended."
         ),
         "classification_strength": "Strong",
@@ -137,7 +141,7 @@ _CURATED_RECOMMENDATIONS: list[dict[str, object]] = [
         "phenotype": "Unfavorable Genotype",
         "recommendation_text": (
             "Consider alternative therapy. TT genotype (unfavorable) is associated with "
-            "approximately 25–30% SVR rate for HCV genotype 1. "
+            "approximately 25-30% SVR rate for HCV genotype 1. "
             "Direct-acting antiviral (DAA) regimens are preferred when available, "
             "as they are not impacted by IFNL3 genotype."
         ),
@@ -180,7 +184,7 @@ _CURATED_RECOMMENDATIONS: list[dict[str, object]] = [
         "phenotype": "Unfavorable Genotype",
         "recommendation_text": (
             "Consider alternative therapy. TT genotype (unfavorable) is associated with "
-            "approximately 25–30% SVR rate for HCV genotype 1. "
+            "approximately 25-30% SVR rate for HCV genotype 1. "
             "DAA regimens are preferred when available."
         ),
         "classification_strength": "Strong",
@@ -225,7 +229,8 @@ _CURATED_RECOMMENDATIONS: list[dict[str, object]] = [
         "recommendation_text": (
             "Consider dose reduction of mycophenolate mofetil. "
             "UGT1A9*3/*3 genotype predicts substantially reduced glucuronidation and higher "
-            "mycophenolic acid (MPA) systemic exposure; dose reduction and enhanced monitoring recommended."
+            "mycophenolic acid (MPA) systemic exposure; dose reduction and enhanced "
+            "monitoring recommended."
         ),
         "classification_strength": "Moderate",
         "requires_dose_change": True,
@@ -236,7 +241,7 @@ _CURATED_RECOMMENDATIONS: list[dict[str, object]] = [
     # text for Normal Metabolizer ("Consider alternative nonthiopurine immunosuppressant therapy")
     # which triggers requires_alternative=True.  The correct CPIC v1.3-2019 guidance is:
     #   NM → standard dose, no PGx-driven change (routine TDM monitoring only)
-    #   IM / Possible IM → reduce dose 30–70% (dose change, not alternative)
+    #   IM / Possible IM → reduce dose 30-70% (dose change, not alternative)
     # Source: CPIC guideline for thiopurines and TPMT/NUDT15 (Relling et al., 2019;
     # Clin Pharmacol Ther. PMID 30447069).
     {

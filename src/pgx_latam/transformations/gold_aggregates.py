@@ -62,9 +62,9 @@ GENE_KEY_VARIANTS: dict[str, tuple[str, ...]] = {
     "SLCO1B1": ("chr12:21331549",),  # *5 (rs4149056; c.521T>C; T>C; CEU AF ~0.146)
     "VKORC1": ("chr16:31093954",),  # -1639G>A proxy (rs9923231; CEU AF ~0.31)
     "TPMT": ("chr6:18131419",),  # *3B (rs1800460)
-    "NUDT15": (
-        "chr13:48605878",
-    ),  # *3 proxy (rs116855232 nearest; G>A; CEU AF ~0.00; PUR corrected via literature — see note above)
+    # NUDT15 *3 proxy (rs116855232 nearest; G>A; CEU AF ~0.00).
+    # PUR corrected via literature, see the note above.
+    "NUDT15": ("chr13:48605878",),
     "DPYD": ("chr1:97981343", "chr1:97915614", "chr1:97981395"),  # *2A, HapB3, *13
     "G6PD": ("chrX:153763492", "chrX:153764217"),  # Ser188Phe, Glu202Lys
     "IFNL3": (
@@ -522,9 +522,8 @@ def build_actionability_ranking(
     # Guarantee at least one row per gene (best-scoring row for each gene)
     best_per_gene = sorted_df.groupby("gene_symbol", sort=False).first().reset_index()
 
-    # Fill remaining slots from the global top list, skipping already-selected rows
-    guaranteed_idx = set(best_per_gene.index.tolist())
-    # Re-derive indices from sorted_df using position
+    # Fill remaining slots from the global top list, skipping the guaranteed rows.
+    # Positions are re-derived from sorted_df so the filler cannot duplicate them.
     best_per_gene_positions = sorted_df.groupby("gene_symbol", sort=False).head(1).index
     remaining_slots = max(0, top_n - len(best_per_gene))
     filler = sorted_df[~sorted_df.index.isin(best_per_gene_positions)].head(remaining_slots)
@@ -579,10 +578,10 @@ def build_actionability_ranking(
 #
 # Dose categories:
 #   "low"      — combined genotype predicts requirement for <3 mg/day (below standard)
-#   "standard" — combined genotype predicts 3–7 mg/day (typical CEU starting dose)
+#   "standard" — combined genotype predicts 3-7 mg/day (typical CEU starting dose)
 #   "high"     — combined genotype predicts >7 mg/day (above standard)
 #
-# Mapping follows the CPIC 5×3 matrix (VKORC1 columns × CYP2C9 metabolizer rows).
+# Mapping follows the CPIC 5x3 matrix (VKORC1 columns x CYP2C9 metabolizer rows).
 # NM = Normal Metabolizer (*1/*1), IM = Intermediate Metabolizer (*1/*2 or *1/*3),
 # PM = Poor Metabolizer (*2/*2, *2/*3, *3/*3).
 # VKORC1: NS = Normal Sensitivity (GG), IS = Intermediate Sensitivity (GA),
@@ -713,7 +712,9 @@ def build_combined_warfarin_impact(
 
     # Compute CEU baseline and delta_vs_baseline
     ceu_row = result_df[result_df["population_code"] == "CEU"]
-    ceu_baseline = float(ceu_row["percentage_requiring_change"].iloc[0]) if not ceu_row.empty else 0.0
+    ceu_baseline = (
+        float(ceu_row["percentage_requiring_change"].iloc[0]) if not ceu_row.empty else 0.0
+    )
     result_df["baseline_ceu_percentage"] = ceu_baseline
     result_df["delta_vs_baseline"] = (
         result_df["percentage_requiring_change"] - ceu_baseline

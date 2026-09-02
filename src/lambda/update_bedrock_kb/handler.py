@@ -116,9 +116,7 @@ def _run_athena_query(client: Any, sql: str) -> list[dict[str, Any]]:
             reason = status_response["QueryExecution"]["QueryExecutionStatus"].get(
                 "StateChangeReason", "unknown"
             )
-            raise RuntimeError(
-                f"Athena query {execution_id} {state}: {reason}\nSQL: {sql[:300]}"
-            )
+            raise RuntimeError(f"Athena query {execution_id} {state}: {reason}\nSQL: {sql[:300]}")
     else:
         timeout_s = _ATHENA_MAX_ATTEMPTS * _ATHENA_POLL_INTERVAL
         raise RuntimeError(f"Athena query {execution_id} timed out after {timeout_s}s")
@@ -238,9 +236,7 @@ def _build_documents(
         key = (r["gene_symbol"], r["population_code"])
         freq = float(r["allele_frequency"]) if r.get("allele_frequency") else 0.0
         af_sum.setdefault(key, []).append(freq)
-    af_lookup: dict[tuple[str, str], float] = {
-        k: sum(v) / len(v) for k, v in af_sum.items() if v
-    }
+    af_lookup: dict[tuple[str, str], float] = {k: sum(v) / len(v) for k, v in af_sum.items() if v}
 
     documents: dict[str, str] = {}
     for r in ranking_rows:
@@ -341,14 +337,10 @@ def _poll_ingestion(
             }
         if status in ("FAILED", "STOPPED"):
             failure_reasons = job.get("failureReasons", [])
-            raise RuntimeError(
-                f"Bedrock KB ingestion job {job_id} {status}: {failure_reasons}"
-            )
+            raise RuntimeError(f"Bedrock KB ingestion job {job_id} {status}: {failure_reasons}")
 
     timeout_s = _MAX_POLL_ATTEMPTS * _POLL_INTERVAL_SECONDS
-    raise RuntimeError(
-        f"Bedrock KB ingestion job {job_id} did not complete within {timeout_s}s"
-    )
+    raise RuntimeError(f"Bedrock KB ingestion job {job_id} did not complete within {timeout_s}s")
 
 
 # ── Handler ───────────────────────────────────────────────────────────────────

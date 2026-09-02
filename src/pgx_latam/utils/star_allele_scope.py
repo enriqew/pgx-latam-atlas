@@ -104,7 +104,8 @@ IN_SCOPE_GENES: dict[str, GeneScope] = {
             in_scope=True,
             rationale=(
                 "CPIC B-level; mycophenolate dosing in transplant patients; "
-                "SNP-based calling; no CNV complexity; *3 prevalent in Hispanic and African ancestry"
+                "SNP-based calling; no CNV complexity; "
+                "*3 prevalent in Hispanic and African ancestry"
             ),
             cpic_level="B",
             key_drugs=("mycophenolate mofetil", "mycophenolic acid"),

@@ -42,15 +42,36 @@ logger = logging.getLogger(__name__)
 # LATAM cohorts (AMR) remain the analytical focus; the rest provide global context.
 TARGET_POPULATIONS = (
     # AMR — Latin America (the deep-dive cohorts)
-    "MXL", "PEL", "CLM", "PUR",
+    "MXL",
+    "PEL",
+    "CLM",
+    "PUR",
     # EUR — European reference (CEU is the prescribing-guideline baseline)
-    "CEU", "TSI", "FIN", "GBR", "IBS",
+    "CEU",
+    "TSI",
+    "FIN",
+    "GBR",
+    "IBS",
     # AFR — African ancestry
-    "YRI", "LWK", "GWD", "MSL", "ESN", "ASW", "ACB",
+    "YRI",
+    "LWK",
+    "GWD",
+    "MSL",
+    "ESN",
+    "ASW",
+    "ACB",
     # EAS — East Asian
-    "CHB", "JPT", "CHS", "CDX", "KHV",
+    "CHB",
+    "JPT",
+    "CHS",
+    "CDX",
+    "KHV",
     # SAS — South Asian
-    "GIH", "PJL", "BEB", "STU", "ITU",
+    "GIH",
+    "PJL",
+    "BEB",
+    "STU",
+    "ITU",
 )
 
 _1000G_HTTPS_BASE = "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502"
@@ -260,7 +281,7 @@ def _extract_gene_variants(
         )
 
     # Column-oriented accumulation. A list of per-row dicts is catastrophic at
-    # 1000G scale: a large region (e.g. DPYD) × 2,504 samples is tens of millions
+    # 1000G scale: a large region (e.g. DPYD) x 2,504 samples is tens of millions
     # of rows, and a dict per row costs 15-20 GB before the DataFrame even exists.
     # Parallel typed lists plus category dtypes keep the whole gene in ~2-3 GB.
     col_position: list[int] = []
