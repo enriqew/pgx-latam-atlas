@@ -11,6 +11,7 @@ from pgx_latam.transformations.gold_aggregates import (
     _infer_phenotype,
     build_actionability_ranking,
     build_allele_frequencies,
+    build_combined_warfarin_impact,
     build_drug_impact_summary,
     build_phenotype_distribution,
 )
@@ -386,7 +387,9 @@ class TestBuildActionabilityRanking:
         # top_n=1 but 2 distinct genes → guaranteed one row per gene → 2 rows total.
         # The per-gene guarantee takes precedence over top_n when n_genes > top_n.
         df = build_actionability_ranking(self._impact_df(), _SNAP, top_n=1)
-        n_genes = self._impact_df()[self._impact_df()["population_code"] != "CEU"]["gene_symbol"].nunique()
+        n_genes = self._impact_df()[self._impact_df()["population_code"] != "CEU"][
+            "gene_symbol"
+        ].nunique()
         assert len(df) == n_genes
 
     def test_snapshot_date_column(self) -> None:
@@ -416,3 +419,153 @@ class TestBuildActionabilityRanking:
             "snapshot_date",
         }
         assert expected_cols.issubset(set(df.columns))
+
+
+# ── build_combined_warfarin_impact ────────────────────────────────────────────
+
+
+class TestBuildCombinedWarfarinImpact:
+    """Warfarin is the one drug scored on a joint VKORC1 + CYP2C9 phenotype.
+
+    Dose category comes from the CPIC joint table, and anything that is not
+    "standard" counts as requiring a dose change.
+    """
+
+    _VKORC1_KEY = GENE_KEY_VARIANTS["VKORC1"][0]
+    _CYP2C9_KEY = GENE_KEY_VARIANTS["CYP2C9"][0]
+
+    def _variants_df(self) -> pd.DataFrame:
+        # CEU_1  VKORC1 0 + CYP2C9 0  -> (Normal Sensitivity, Normal Metabolizer)  standard
+        # CEU_2  VKORC1 2 + CYP2C9 0  -> (High Sensitivity, Normal Metabolizer)    low
+        # PEL_1  VKORC1 2 + CYP2C9 2  -> (High Sensitivity, Poor Metabolizer)      low
+        # PEL_2  VKORC1 1 + CYP2C9 1  -> (Intermediate Sensitivity, Intermediate)  low
+        samples = [
+            ("CEU_1", "CEU", "EUR", 0, 0),
+            ("CEU_2", "CEU", "EUR", 2, 0),
+            ("PEL_1", "PEL", "AMR", 2, 2),
+            ("PEL_2", "PEL", "AMR", 1, 1),
+        ]
+        rows = []
+        for sample_id, pop, superpop, vk_dosage, cyp_dosage in samples:
+            rows.append(
+                {
+                    "sample_id": sample_id,
+                    "population_code": pop,
+                    "superpopulation": superpop,
+                    "gene_symbol": "VKORC1",
+                    "variant_id": self._VKORC1_KEY,
+                    "allele_dosage": vk_dosage,
+                }
+            )
+            rows.append(
+                {
+                    "sample_id": sample_id,
+                    "population_code": pop,
+                    "superpopulation": superpop,
+                    "gene_symbol": "CYP2C9",
+                    "variant_id": self._CYP2C9_KEY,
+                    "allele_dosage": cyp_dosage,
+                }
+            )
+        return pd.DataFrame(rows)
+
+    def _populations_df(self) -> pd.DataFrame:
+        return pd.DataFrame(
+            {
+                "population_code": ["CEU", "PEL"],
+                "sample_size": [2, 2],
+            }
+        )
+
+    def test_gene_symbol_and_drug_name(self) -> None:
+        df = build_combined_warfarin_impact(self._variants_df(), self._populations_df(), _SNAP)
+        assert set(df["gene_symbol"]) == {"VKORC1+CYP2C9"}
+        assert set(df["drug_name"]) == {"warfarin"}
+
+    def test_standard_dose_individuals_are_not_counted(self) -> None:
+        df = build_combined_warfarin_impact(self._variants_df(), self._populations_df(), _SNAP)
+        ceu = df[df["population_code"] == "CEU"].iloc[0]
+        # CEU_1 is (Normal Sensitivity, Normal Metabolizer): standard dose, not counted.
+        assert ceu["individuals_requiring_change"] == 1
+        assert ceu["percentage_requiring_change"] == 50.0
+
+    def test_every_non_standard_pair_is_counted(self) -> None:
+        df = build_combined_warfarin_impact(self._variants_df(), self._populations_df(), _SNAP)
+        pel = df[df["population_code"] == "PEL"].iloc[0]
+        assert pel["individuals_requiring_change"] == 2
+        assert pel["percentage_requiring_change"] == 100.0
+
+    def test_delta_is_measured_against_the_ceu_baseline(self) -> None:
+        df = build_combined_warfarin_impact(self._variants_df(), self._populations_df(), _SNAP)
+        assert (df["baseline_ceu_percentage"] == 50.0).all()
+        pel = df[df["population_code"] == "PEL"].iloc[0]
+        ceu = df[df["population_code"] == "CEU"].iloc[0]
+        assert pel["delta_vs_baseline"] == 50.0
+        assert ceu["delta_vs_baseline"] == 0.0
+
+    def test_population_total_comes_from_the_populations_table(self) -> None:
+        """The denominator is the cohort size, not the number of genotyped samples."""
+        populations = pd.DataFrame({"population_code": ["CEU", "PEL"], "sample_size": [10, 10]})
+        df = build_combined_warfarin_impact(self._variants_df(), populations, _SNAP)
+        pel = df[df["population_code"] == "PEL"].iloc[0]
+        assert pel["population_total"] == 10
+        assert pel["percentage_requiring_change"] == 20.0
+
+    def test_schema_matches_drug_impact_summary(self) -> None:
+        df = build_combined_warfarin_impact(self._variants_df(), self._populations_df(), _SNAP)
+        assert list(df.columns) == [
+            "drug_name",
+            "gene_symbol",
+            "population_code",
+            "population_total",
+            "individuals_requiring_change",
+            "percentage_requiring_change",
+            "baseline_ceu_percentage",
+            "delta_vs_baseline",
+            "classification_strength",
+            "snapshot_date",
+        ]
+        assert (df["snapshot_date"] == _SNAP).all()
+        assert set(df["classification_strength"]) == {"Strong"}
+
+    def test_missing_cyp2c9_returns_empty(self) -> None:
+        variants = self._variants_df()
+        vkorc1_only = variants[variants["gene_symbol"] == "VKORC1"]
+        df = build_combined_warfarin_impact(vkorc1_only, self._populations_df(), _SNAP)
+        assert df.empty
+
+    def test_missing_vkorc1_returns_empty(self) -> None:
+        variants = self._variants_df()
+        cyp2c9_only = variants[variants["gene_symbol"] == "CYP2C9"]
+        df = build_combined_warfarin_impact(cyp2c9_only, self._populations_df(), _SNAP)
+        assert df.empty
+
+    def test_non_key_variants_are_ignored(self) -> None:
+        variants = self._variants_df().copy()
+        variants.loc[variants["gene_symbol"] == "VKORC1", "variant_id"] = "chr16:99999999"
+        df = build_combined_warfarin_impact(variants, self._populations_df(), _SNAP)
+        assert df.empty
+
+    def test_no_shared_samples_returns_empty(self) -> None:
+        """VKORC1 and CYP2C9 genotyped on disjoint samples cannot be joined."""
+        variants = self._variants_df()
+        disjoint = pd.concat(
+            [
+                variants[
+                    (variants["gene_symbol"] == "VKORC1")
+                    & (variants["sample_id"].isin(["CEU_1", "PEL_1"]))
+                ],
+                variants[
+                    (variants["gene_symbol"] == "CYP2C9")
+                    & (variants["sample_id"].isin(["CEU_2", "PEL_2"]))
+                ],
+            ]
+        )
+        df = build_combined_warfarin_impact(disjoint, self._populations_df(), _SNAP)
+        assert df.empty
+
+    def test_population_with_zero_recorded_size_is_skipped(self) -> None:
+        populations = pd.DataFrame({"population_code": ["CEU", "PEL"], "sample_size": [2, 0]})
+        df = build_combined_warfarin_impact(self._variants_df(), populations, _SNAP)
+        assert "PEL" not in df["population_code"].values
+        assert "CEU" in df["population_code"].values

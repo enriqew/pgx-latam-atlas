@@ -10,6 +10,7 @@ from pgx_latam.transformations.silver_clinical import (
     build_drug_recommendations,
 )
 from pgx_latam.transformations.silver_variants import (
+    TARGET_POPULATIONS,
     assign_gene_symbols,
     build_pharmacogenes,
     build_populations,
@@ -118,7 +119,8 @@ class TestBuildPopulations:
         latam = df[df["population_code"] == "MXL"]["region"].iloc[0]
         assert "Latin America" in latam
 
-    def test_non_target_populations_excluded(self) -> None:
+    def test_panel_populations_are_kept(self) -> None:
+        """GBR and FIN joined the panel when the atlas went from LATAM to all 26 cohorts."""
         df_extra = pd.DataFrame(
             {
                 "sample_id": ["X1", "X2"],
@@ -129,8 +131,25 @@ class TestBuildPopulations:
             }
         )
         result = build_populations(pd.concat([self._sample_df(), df_extra]))
-        assert "GBR" not in result["population_code"].values
-        assert "FIN" not in result["population_code"].values
+        assert "GBR" in result["population_code"].values
+        assert "FIN" in result["population_code"].values
+
+    def test_codes_outside_the_panel_are_excluded(self) -> None:
+        df_extra = pd.DataFrame(
+            {
+                "sample_id": ["X1", "X2"],
+                "population_code": ["ZZZ", "QQQ"],
+                "superpopulation": ["EUR", "AFR"],
+                "sex": ["male", "female"],
+                "family_id": [pd.NA, pd.NA],
+            }
+        )
+        result = build_populations(pd.concat([self._sample_df(), df_extra]))
+        assert "ZZZ" not in result["population_code"].values
+        assert "QQQ" not in result["population_code"].values
+
+    def test_target_panel_covers_all_26_cohorts(self) -> None:
+        assert len(TARGET_POPULATIONS) == 26
 
 
 # ── build_pharmacogenes ───────────────────────────────────────────────────────
