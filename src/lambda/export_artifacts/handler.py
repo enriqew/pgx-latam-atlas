@@ -46,7 +46,7 @@ GITHUB_PAT_SECRET = "pgx-latam/github-pat"
 GITHUB_API_BASE = "https://api.github.com"
 
 # ── Key pharmacogenomic variant positions (GRCh37, positional format) ────────
-# Subset committed to GitHub — the full 182k-row table lives in S3.
+# Subset committed to GitHub. The full 1.04M-row table lives in S3.
 # Positions confirmed present in the 1000G Phase 3 bronze layer.
 
 _KEY_POSITIONS = (
@@ -55,9 +55,9 @@ _KEY_POSITIONS = (
     "chr10:96741053",  # CYP2C9 *2 (rs1799853)
     "chr12:21331549",  # SLCO1B1 *5 (rs4149056; c.521T>C; CEU AF ~0.146)
     "chr16:31093954",  # VKORC1 -1639G>A proxy (rs9923231 LD; GRCh37 positional ID)
-    "chr7:99251073",   # CYP3A5 *3 proxy (rs776746 LD; GRCh37 positional ID)
+    "chr7:99251073",  # CYP3A5 *3 proxy (rs776746 LD; GRCh37 positional ID)
     "chr2:234578428",  # UGT1A9 *3 (rs17868320, c.98T>C; ALT=T non-functional)
-    "chr6:18131419",   # TPMT *3B (rs1800460)
+    "chr6:18131419",  # TPMT *3B (rs1800460)
     "chr1:97981343",
     "chr1:97915614",
     "chr1:97981395",  # DPYD *2A, HapB3, *13

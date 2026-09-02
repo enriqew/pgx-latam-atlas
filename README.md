@@ -1,6 +1,6 @@
 # pgx-latam-atlas
 
-> Pharmacogenomic variant frequencies and drug response divergence across Latin American populations.
+> Pharmacogenomic allele frequencies and drug response divergence across all 26 populations of the 1000 Genomes Project Phase 3.
 
 [![Build](https://github.com/enriqew/pgx-latam-atlas/actions/workflows/ci.yml/badge.svg)](https://github.com/enriqew/pgx-latam-atlas/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -8,67 +8,94 @@
 
 ## TL;DR
 
-This project quantifies how pharmacogenomic allele frequencies differ between Latin American
-populations (MXL, PEL, CLM, PUR) and European reference cohorts (CEU) using the 1000 Genomes
-Project Phase 3 dataset, cross-referenced with PharmGKB clinical annotations and CPIC prescribing
-guidelines. The result is a set of actionability rankings that highlight which drug–gene pairs
-carry the greatest clinical divergence for Latin American patients — data currently absent from
-most mainstream prescribing guidance.
+This project measures how pharmacogenomic allele frequencies and their derived metabolizer
+phenotypes differ across all 26 populations of 1000 Genomes Phase 3, cross-referenced with
+PharmGKB clinical annotations and CPIC prescribing guidelines. The output is an actionability
+ranking: which drug–gene pairs diverge most from the Northern European cohort (CEU) that most
+prescribing guidance was calibrated on.
+
+The repo name comes from where the project started, which was a question about Latin America.
+The LATAM cohorts are still the deepest section below, but reading them against the full global
+panel instead of against Europe alone is what gives their numbers weight. PEL turns out to be the
+most extreme CYP2C19 cohort in the entire panel, and the African and South Asian cohorts carry
+divergences that a Europe versus Latin America comparison never surfaces at all.
 
 ## Key findings
 
-> Pipeline run: 2026-06-01 · 40,121 variant sites across 26 populations (all 1000G Phase 3) · 10 pharmacogenes · 1,043,146 site–cohort frequency rows.
+> Pipeline run 2026-06-01 · 40,121 variant sites × 26 populations = 1,043,146 site–cohort
+> frequency rows · 11 pharmacogenes · 2,504 individuals.
 > Full data: [`artifacts/actionability_ranking.json`](artifacts/actionability_ranking.json)
 
-### CYP2C19 — Normal Metabolizer enrichment in LATAM cohorts
+### Top drug–gene pairs by divergence from the European baseline
 
-LATAM cohorts carry a higher proportion of CYP2C19 Normal Metabolizers than the European
-baseline, which inverts the clinical risk profile depending on the drug:
-
-| Population | Normal Metabolizer | Intermediate Metabolizer | Poor Metabolizer |
-|---|---|---|---|
-| CEU (baseline) | 58.6% | 38.4% | 3.0% |
-| MXL | 79.7% | 17.2% | 3.1% |
-| CLM | 75.5% | 23.4% | 1.1% |
-| PUR | 67.3% | 29.8% | 2.9% |
-| PEL | **91.8%** | 8.2% | — |
-
-For **clopidogrel**: IM/PM are the at-risk group (reduced conversion to active metabolite → therapeutic failure). MXL has only 20.3% IM+PM vs 41.4% in CEU — roughly half the guideline-flagged population. Standard CPIC clopidogrel alerts are over-inclusive for MXL.
-
-For **amitriptyline and SSRIs** (CYP2C19 Normal Metabolizers require dose adjustment): the picture reverses. PEL reaches 91.8% affected (+50.4 pp vs CEU 41.4%), MXL 79.7% (+38.3 pp). The majority of Peruvian patients prescribed amitriptyline at standard CEU-derived doses are undertreated.
-
-### SLCO1B1 — Allele frequency divergence and statin safety
-
-SLCO1B1 variants associated with reduced hepatic uptake show the largest allele frequency
-divergence in PEL relative to CEU (up to ±25 pp). Key variants on chr12:
-
-| Variant | PEL freq | CEU freq | Δ | Direction |
-|---|---|---|---|---|
-| chr12:21326756 T>G | 62.4% | 87.4% | −25.0 pp | PEL lower |
-| chr12:21331599 T>C | 43.5% | 68.2% | −24.7 pp | PEL lower |
-| chr12:21297550 A>G | 91.2% | 66.7% | +24.5 pp | PEL higher |
-| chr12:21321507 G>T | 24.7% | 1.0% | +23.7 pp | PEL higher |
-
-CLM and MXL show moderate divergence; PUR sits closer to the CEU baseline.
-Statin safety implications (simvastatin-induced myopathy risk) require haplotype-level
-resolution of these variants into SLCO1B1 star alleles, which is planned for a future pipeline phase.
-
-### Top 5 drug–gene pairs by clinical divergence vs European baseline
-
-Ranked by percentage-point difference in individuals requiring dose or therapy change
-(CPIC A/B-level guidelines, all cohorts combined):
+Scored as `|Δ vs CEU| × guideline strength × share of the population affected`, over CPIC A and
+B level guidelines, with one guaranteed slot per gene so no pharmacogene drops off the list:
 
 | Rank | Drug | Gene | Population | Δ vs CEU | Affected |
 |---|---|---|---|---|---|
-| 1 | amitriptyline | CYP2C19 | PEL | **+50.4 pp** | 91.8% |
-| 2 | amitriptyline | CYP2C19 | MXL | +38.3 pp | 79.7% |
-| 3 | fluorouracil | DPYD | PEL | +46.0 pp | 47.1% |
-| 4 | amitriptyline | CYP2C19 | CLM | +34.1 pp | 75.5% |
-| 5 | capecitabine | DPYD | PEL | +46.0 pp | 47.1% |
+| 1 | peginterferon alfa-2b | IFNL3 | GWD (Gambian, AFR) | +64.2 pp | 74.3% |
+| 2 | peginterferon alfa-2a | IFNL3 | GWD (Gambian, AFR) | +64.2 pp | 74.3% |
+| 3 | warfarin | VKORC1+CYP2C9 | STU (Sri Lankan Tamil, SAS) | +61.4 pp | 75.5% |
+| 4 | amitriptyline | CYP2C19 | PEL (Peruvian, AMR) | +50.4 pp | 91.8% |
+| 5 | warfarin | VKORC1+CYP2C9 | ITU (Indian Telugu, SAS) | +59.4 pp | 73.5% |
 
-**Notable DPYD finding**: PEL has 23.5% DPYD Poor Metabolizers vs 1.0% in CEU (+22.5 pp).
-DPYD PM individuals face severe fluorouracil/capecitabine toxicity (myelosuppression,
-mucositis). At CEU-calibrated doses, nearly 1 in 4 Peruvian patients would be significantly overdosed.
+PEL outranks ITU on a smaller delta because the score multiplies by how much of the cohort is
+actually affected: 91.8% of Peruvian individuals against 73.5% of Indian Telugu individuals.
+The three cohorts above PEL are exactly the ones a Latin America versus Europe framing cannot see.
+
+### CYP2C19: the widest phenotype spread in the panel
+
+CYP2C19 Normal Metabolizer frequency runs from 50.0% to 91.8% across the 26 cohorts. The extremes
+are not European:
+
+| Population | Superpop | n | Normal | Intermediate | Poor |
+|---|---|---|---|---|---|
+| PEL | AMR | 85 | **91.8%** | 8.2% | 0.0% |
+| CHS | EAS | 105 | 88.6% | 11.4% | 0.0% |
+| KHV | EAS | 99 | 87.9% | 12.1% | 0.0% |
+| MXL | AMR | 64 | 79.7% | 17.2% | 3.1% |
+| CLM | AMR | 94 | 75.5% | 23.4% | 1.1% |
+| PUR | AMR | 104 | 67.3% | 29.8% | 2.9% |
+| CEU (baseline) | EUR | 99 | 58.6% | 38.4% | 3.0% |
+| YRI | AFR | 108 | 58.3% | 34.3% | 7.4% |
+| ACB | AFR | 96 | **50.0%** | 44.8% | 5.2% |
+
+The clinical reading flips depending on the drug.
+
+For **clopidogrel**, Intermediate and Poor Metabolizers are the at-risk group (reduced conversion
+to the active metabolite, so therapeutic failure). MXL has 20.3% IM+PM against 41.4% in CEU,
+roughly half the guideline-flagged population. Standard CPIC clopidogrel alerts are over-inclusive
+for MXL.
+
+For **amitriptyline and the SSRIs**, where Normal Metabolizers are the ones requiring dose
+adjustment, the picture reverses. PEL reaches 91.8% affected (+50.4 pp over CEU's 41.4%) and MXL
+79.7% (+38.3 pp). Most Peruvian patients prescribed amitriptyline at standard CEU-derived doses
+are undertreated. The East Asian cohorts sit immediately behind PEL, which is the part that only
+shows up once the full panel is in the table.
+
+### DPYD: a fluoropyrimidine safety signal concentrated in one cohort
+
+PEL carries 23.5% DPYD Poor Metabolizers against 1.0% in CEU. The next highest cohort in the whole
+panel is CHS at 11.4%, so PEL is double anything else and more than twenty times the European
+baseline. DPYD PM individuals face severe fluorouracil and capecitabine toxicity
+(myelosuppression, mucositis). At CEU-calibrated doses, close to 1 in 4 Peruvian patients would be
+significantly overdosed.
+
+### SLCO1B1: allele frequency divergence and statin safety
+
+Largest PEL versus CEU divergences among the SLCO1B1 variants published in
+`allele_frequencies.json` (chr12, GRCh37):
+
+| Variant | PEL freq | CEU freq | Δ | Direction |
+|---|---|---|---|---|
+| chr12:21331599 T>C | 43.5% | 68.2% | −24.7 pp | PEL lower |
+| chr12:21357731 C>T | 40.0% | 16.7% | +23.3 pp | PEL higher |
+| chr12:21353911 C>G | 40.0% | 16.7% | +23.3 pp | PEL higher |
+| chr12:21369883 C>G | 25.3% | 5.6% | +19.7 pp | PEL higher |
+| chr12:21343229 C>G | 40.6% | 21.2% | +19.4 pp | PEL higher |
+
+Statin safety implications (simvastatin-induced myopathy risk) require haplotype-level resolution
+of these variants into SLCO1B1 star alleles, which is planned for a future pipeline phase.
 
 ## Architecture
 
@@ -80,14 +107,14 @@ flowchart TD
         C[CPIC JSON]
     end
 
-    subgraph Bronze["Bronze — raw ingestion"]
+    subgraph Bronze["Bronze: raw ingestion"]
         B1[genomes_variants_raw]
         B2[samples_metadata_raw]
         B3[pharmgkb_*_raw]
         B4[cpic_guidelines_raw]
     end
 
-    subgraph Silver["Silver — conformed"]
+    subgraph Silver["Silver: conformed"]
         S1[variants]
         S2[populations]
         S3[clinical_variants]
@@ -95,7 +122,7 @@ flowchart TD
         S5[pharmacogenes]
     end
 
-    subgraph Gold["Gold — analytical (Iceberg)"]
+    subgraph Gold["Gold: analytical (Iceberg)"]
         Go1[allele_frequencies_by_population]
         Go2[phenotype_distribution_by_population]
         Go3[drug_impact_summary]
@@ -104,7 +131,7 @@ flowchart TD
 
     subgraph Export
         J1[artifacts/*.json]
-        KB[UpdateBedrockKB\nPASS — future phase]
+        KB[UpdateBedrockKB\nPASS, future phase]
     end
 
     G --> B1 & B2
@@ -128,6 +155,22 @@ See [`docs/architecture.md`](docs/architecture.md) for the full medallion + Step
 | 1000 Genomes Project Phase 3 | `s3://1000genomes/` (AWS Open Data) | [Data Use Policy](https://www.internationalgenome.org/data) | Static (Phase 3 final) |
 | PharmGKB | [pharmgkb.org/downloads](https://www.pharmgkb.org/downloads) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Quarterly |
 | CPIC Guidelines | [cpicpgx.org](https://cpicpgx.org/guidelines/) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Per guideline update |
+
+## Artifacts
+
+The `artifacts/` directory holds the Gold layer exports consumed by the portfolio dashboard:
+
+| File | Contents |
+|---|---|
+| `metadata.json` | Run metadata, source versions, and the 26 population definitions |
+| `phenotype_distribution.json` | Phenotype frequencies per gene and population, with Wilson CIs |
+| `drug_impact_summary.json` | Share of each cohort requiring a dose or therapy change, per drug |
+| `actionability_ranking.json` | The scored ranking above |
+| `schema_version.json` | Bumped on any breaking schema change; read it before parsing |
+
+`allele_frequencies.json` is deliberately not committed. The full table is ~85 MB, which is past
+what belongs in a git repo, so it lives in S3 and the export Lambda commits a top-40-per-gene
+subset (440 variants × 26 populations) for the dashboard to fetch at runtime.
 
 ## Running locally
 
@@ -177,11 +220,21 @@ Athena costs are minimized by Iceberg partition pruning on `gene_symbol` and `po
 
 ## Caveats
 
-- **Sample sizes**: MXL n=64, PEL n=85, CLM n=94, PUR n=104. All confidence intervals use Wilson score.
-- **CYP2D6 out of scope**: CNV complexity and star-allele calling require Aldy/PyPGx — excluded explicitly. See [`src/pgx_latam/utils/star_allele_scope.py`](src/pgx_latam/utils/star_allele_scope.py).
-- **Common-variant focus**: MAF > 1% filter applied. Rare variants require larger cohorts for reliable frequency estimates.
-- **"Latino" is not homogeneous**: MXL (Mexican ancestry in Los Angeles), PEL (Peruvians in Lima), CLM (Colombians in Medellín), PUR (Puerto Ricans in Puerto Rico) are reported separately throughout. They are never pooled into a single "Latino" category.
-- **Diplotype inference**: This pipeline counts allele frequencies; it does not call diplotypes or phenotypes for multi-variant genes (e.g., CYP2C19 \*2 + \*17 compound heterozygotes require phased haplotypes).
+- **Sample sizes**: cohorts run from n=61 (ASW) to n=113 (GWD), 2,504 individuals in total. Every
+  percentage is reported with a Wilson score confidence interval, and the narrow cohorts deserve
+  the wider interval they get.
+- **CYP2D6 out of scope**: CNV complexity and star-allele calling need Aldy or PyPGx, so CYP2D6 is
+  excluded here explicitly. See
+  [`src/pgx_latam/utils/star_allele_scope.py`](src/pgx_latam/utils/star_allele_scope.py).
+- **Common-variant focus**: a MAF > 1% filter is applied. Rare variants need larger cohorts for
+  reliable frequency estimates.
+- **Cohorts are not populations**: MXL is Mexican ancestry sampled in Los Angeles, PEL is
+  Peruvians in Lima, GWD is Gambians in the Western Division, CHS is Southern Han Chinese. They are
+  reported separately throughout and never pooled into continental buckets like "Latino" or
+  "African", which would erase exactly the spread this project is measuring.
+- **Diplotype inference**: this pipeline counts allele frequencies and maps them to phenotypes. It
+  does not call diplotypes for multi-variant genes (CYP2C19 \*2 + \*17 compound heterozygotes need
+  phased haplotypes).
 
 ## License
 

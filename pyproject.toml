@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "pgx-latam"
 version = "0.1.0"
-description = "Pharmacogenomic variant frequencies and drug response divergence across Latin American populations"
+description = "Pharmacogenomic variant frequencies and drug response divergence across the 26 populations of 1000 Genomes Phase 3"
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.11"
