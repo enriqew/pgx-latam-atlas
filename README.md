@@ -196,7 +196,7 @@ pre-commit install
 cp .env.example .env
 # Edit .env with your values
 
-# Run full local pipeline (Phase 1–3, no AWS required)
+# Run full local pipeline (Phase 1–3: no AWS required)
 make dry-run
 ```
 

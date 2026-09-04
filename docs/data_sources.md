@@ -9,7 +9,7 @@ beyond accepting standard usage terms. No PHI (protected health information) is 
 |-----------|-------|
 | **Canonical URL** | `s3://1000genomes/` (AWS Open Data Registry) |
 | **Registry entry** | https://registry.opendata.aws/1000-genomes/ |
-| **License** | [1000 Genomes Data Use Policy](https://www.internationalgenome.org/data) — free for academic and commercial use; cite the Phase 3 paper |
+| **License** | [1000 Genomes Data Use Policy](https://www.internationalgenome.org/data), free for academic and commercial use; cite the Phase 3 paper |
 | **Citation** | 1000 Genomes Project Consortium. _A global reference for human genetic variation._ Nature 526, 68–74 (2015). PMID: 26432245 |
 | **Data version** | Phase 3 final release (GRCh37/hg19) |
 | **Access pattern** | S3 public bucket, no credentials needed. VCF files per chromosome at `s3://1000genomes/release/20130502/` |
@@ -45,7 +45,7 @@ See `src/pgx_latam/utils/star_allele_scope.py` for the in-scope gene list and ra
 | Attribute | Value |
 |-----------|-------|
 | **Canonical URL** | https://www.pharmgkb.org/downloads |
-| **License** | [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) — verify against the current ClinPGx data-usage policy before redistributing derived data |
+| **License** | [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/), verify against the current ClinPGx data-usage policy before redistributing derived data |
 | **Citation** | Whirl-Carrillo M, et al. _An Evidence-Based Framework for Evaluating Pharmacogenomics Knowledge for Personalized Medicine._ Clin Pharmacol Ther. 2021. PMID: 34216021 |
 | **Refresh cadence** | Quarterly TSV releases |
 
@@ -107,5 +107,5 @@ api.cpicpgx.org/v1/guideline (JSON) ──────────────�
 ```
 
 All ingestion timestamps are recorded in `metadata.json` under `source_versions`.
-Reprocessing any partition is idempotent — bronze uses `ingest_date` partitioning,
+Reprocessing any partition is idempotent, bronze uses `ingest_date` partitioning,
 gold uses Iceberg MERGE INTO (upsert on business key).

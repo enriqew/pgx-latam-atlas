@@ -8,7 +8,7 @@ Athena (Iceberg) for analytical queries and AWS Glue for heavy ETL.
 
 ## Medallion layers
 
-### Bronze — raw ingestion
+### Bronze: raw ingestion
 
 Raw data lands here with minimal transformation. Partitioned by `ingest_date` so failed
 runs can be reprocessed without overwriting prior snapshots. Schema mirrors the source
@@ -24,7 +24,7 @@ exactly; no business logic applied.
 | `pharmgkb_genes_raw` | PharmGKB TSV release | Parquet |
 | `cpic_guidelines_raw` | CPIC JSON API | Parquet |
 
-### Silver — conformed
+### Silver: conformed
 
 Typed, deduplicated, business-key–stable tables. Joins between sources happen here.
 No aggregations yet.
@@ -37,7 +37,7 @@ No aggregations yet.
 | `clinical_variants` | PharmGKB annotations joined to rsIDs |
 | `drug_recommendations` | CPIC prescribing guidance per gene–drug–phenotype |
 
-### Gold — analytical (Apache Iceberg)
+### Gold: analytical (Apache Iceberg)
 
 Aggregate tables ready for portfolio export and (future) Bedrock Knowledge Base ingestion.
 Each row carries a `snapshot_date` column for lineage. Uses Iceberg for schema evolution
@@ -78,31 +78,31 @@ retry with 3 attempts, backoff rate 2.0.
 
 ## Infrastructure
 
-- **S3 lake bucket**: `pgx-latam-lake` — versioning enabled, lifecycle rules for bronze
+- **S3 lake bucket**: `pgx-latam-lake`: versioning enabled, lifecycle rules for bronze
   partitions older than 90 days (Glacier transition).
 - **S3 state bucket**: separate from lake; hosts Terraform remote state + DynamoDB lock table.
-- **Glue catalog**: `awsdatacatalog."pgx_latam_catalog"` — three databases (bronze_pgx,
+- **Glue catalog**: `awsdatacatalog."pgx_latam_catalog"`: three databases (bronze_pgx,
   silver_pgx, gold_pgx).
 - **Athena workgroup**: dedicated workgroup with per-query data scanned limit (100 GB default).
 - **IAM**: least-privilege roles per component. Glue role, Step Functions role, Lambda
-  execution role — all separate.
+  execution role, all separate.
 
 ## CI/CD
 
 - **PR workflow** (read-only): `ruff` + `mypy` + `pytest` (no AWS needed).
 - **Main workflow** (write): `terraform plan` output posted as PR comment; no auto-apply.
-- AWS authentication uses OIDC — no long-lived access keys in GitHub Secrets.
+- AWS authentication uses OIDC, no long-lived access keys in GitHub Secrets.
 
-## Future work — Bedrock agent
+## Future work: Bedrock agent
 
 When the gold layer is stable, a conversational agent can be layered on top without
 changing the data model. The plan:
 
 **Knowledge Base sources** (all Iceberg tables, exposed as S3 data source to Bedrock):
-- `allele_frequencies_by_population` — for variant-level frequency questions
-- `phenotype_distribution_by_population` — for phenotype distribution questions
-- `drug_impact_summary` — for drug-specific impact questions
-- `actionability_ranking` — for "what matters most for this population?" queries
+- `allele_frequencies_by_population`: for variant-level frequency questions
+- `phenotype_distribution_by_population`: for phenotype distribution questions
+- `drug_impact_summary`: for drug-specific impact questions
+- `actionability_ranking`: for "what matters most for this population?" queries
 
 **Expected query types**:
 - "What is the CYP2C19 \*2 frequency in Mexican ancestry individuals, and how does it

@@ -127,7 +127,7 @@ In the portfolio's project list (wherever other projects are defined), add an en
     "Pharmacogenomic variant frequencies and drug response divergence across " +
     "Latin American populations. Identifies which drug–gene pairs carry the " +
     "greatest clinical divergence for MXL, PEL, CLM, and PUR cohorts vs " +
-    "European baseline — data absent from most prescribing guidance.",
+    "European baseline, data absent from most prescribing guidance.",
   tags: ["Pharmacogenomics", "AWS", "PySpark", "Athena", "Iceberg", "Python"],
   repoUrl: "https://github.com/enriqew/pgx-latam-atlas",
   featured: true,
@@ -188,11 +188,11 @@ builds but requires `git submodule update` to pick up new pipeline runs.
 Source: `src/lambda/export_artifacts/handler.py`
 
 The Lambda runs as the final step of the Step Functions pipeline:
-1. Queries the Athena `gold_pgx.*` tables (no `SELECT *` — columns enumerated explicitly)
+1. Queries the Athena `gold_pgx.*` tables (no `SELECT *`: columns enumerated explicitly)
 2. For `allele_frequencies`, filters to the ~11 key pharmacogenomic variant positions
    (the full 182 k-row table is ~86 MB and exceeds GitHub's recommended file size)
 3. Commits each artifact to `artifacts/` in this repo via the GitHub Contents API
-4. Dependencies: `requests` only — all else uses the built-in boto3 Lambda runtime
+4. Dependencies: `requests` only, all else uses the built-in boto3 Lambda runtime
 
 Deployment: the CI pipeline (`deploy.yml` → `sync-glue-scripts` job) packages
 `handler.py` + `requests` into a zip, uploads to the Glue scripts S3 bucket, then
@@ -203,7 +203,7 @@ Lambda resource definition (permissions, config) but not the code artifact.
 
 ## Allele frequencies: full dataset vs. key-variant subset
 
-| Artifact committed to GitHub | ~50 rows × 5 populations — key pharmacogene positions only |
+| Artifact committed to GitHub | ~50 rows × 5 populations, key pharmacogene positions only |
 |------------------------------|------------------------------------------------------------|
 | Full dataset in S3           | 182,465 rows at `s3://<LAKE_BUCKET>/gold/allele_frequencies_by_population/` |
 
@@ -219,7 +219,7 @@ The `ExportArtifacts` Lambda writes JSON files to this repository via the GitHub
 The PAT is stored in AWS Secrets Manager (secret name: `pgx-latam/github-pat`) with
 minimum required scopes:
 
-- `contents:write` — scoped to the `pgx-latam-atlas` repository only
+- `contents:write`: scoped to the `pgx-latam-atlas` repository only
 
 The portfolio repository is **never written to** by the pipeline. Only `pgx-latam-atlas`
 receives commits from the Lambda.

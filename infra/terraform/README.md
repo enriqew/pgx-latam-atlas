@@ -54,7 +54,7 @@ cp terraform.tfvars.example terraform.tfvars
 
 ```bash
 make tf-validate   # Validate configuration
-make tf-plan       # Review plan — no changes applied
+make tf-plan       # Review plan, no changes applied
 # Apply only after reviewing plan output:
 cd infra/terraform && terraform apply
 ```
@@ -63,6 +63,6 @@ cd infra/terraform && terraform apply
 
 ## GitHub Actions CI
 
-The CI workflow uses OIDC to assume an IAM role — no long-lived access keys in secrets.
+The CI workflow uses OIDC to assume an IAM role, no long-lived access keys in secrets.
 The PR workflow runs `terraform plan` and posts output as a PR comment.
 The main branch workflow never auto-applies; it only validates and plans.
