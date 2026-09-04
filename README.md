@@ -1,5 +1,7 @@
 # pgx-latam-atlas
 
+**Live demo:** [eredonda.com/projects/pgx-latam-atlas](https://eredonda.com/projects/pgx-latam-atlas?utm_source=github&utm_medium=referral)
+
 > Pharmacogenomic allele frequencies and drug response divergence across all 26 populations of the 1000 Genomes Project Phase 3.
 
 [![Build](https://github.com/enriqew/pgx-latam-atlas/actions/workflows/ci.yml/badge.svg)](https://github.com/enriqew/pgx-latam-atlas/actions/workflows/ci.yml)
@@ -153,7 +155,7 @@ See [`docs/architecture.md`](docs/architecture.md) for the full medallion + Step
 | Source | URL | License | Refresh cadence |
 |--------|-----|---------|-----------------|
 | 1000 Genomes Project Phase 3 | `s3://1000genomes/` (AWS Open Data) | [Data Use Policy](https://www.internationalgenome.org/data) | Static (Phase 3 final) |
-| PharmGKB | [pharmgkb.org/downloads](https://www.pharmgkb.org/downloads) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Quarterly |
+| PharmGKB | [pharmgkb.org/downloads](https://www.pharmgkb.org/downloads) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Quarterly |
 | CPIC Guidelines | [cpicpgx.org](https://cpicpgx.org/guidelines/) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Per guideline update |
 
 ## Artifacts

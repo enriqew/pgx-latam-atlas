@@ -20,6 +20,7 @@ reliably captured from 1000 Genomes short-read WGS data without specialized call
 | G6PD | Rasburicase, primaquine | CPIC A-level; high prevalence of deficiency in LATAM |
 | IFNL3/4 | Peginterferon | CPIC A-level; HCV treatment (still relevant in LATAM) |
 | CYP3A5 | Tacrolimus | CPIC A-level; relevant for solid organ transplant |
+| UGT1A9 | Mycophenolate | Added after the initial scope; relevant for transplant immunosuppression |
 
 ### Explicitly out-of-scope genes
 

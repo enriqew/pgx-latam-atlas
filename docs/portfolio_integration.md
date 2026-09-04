@@ -1,5 +1,11 @@
 # Portfolio Integration
 
+> **Superseded.** This document describes a build-time fetch and Lambda delivery
+> architecture that was never built. The artifacts reach the portfolio by being
+> copied into `src/data/pgx/` (and `public/data/pgx/` for the large allele
+> frequency file) after a pipeline run, and are served as static files from
+> CloudFront. Kept for the design discussion; do not follow it as instructions.
+
 This document describes how `data-dive-design-hub` (the React/Vite portfolio) should consume
 artifacts from `pgx-latam-atlas`. **Apply these changes manually in a separate session
 targeting the `data-dive-design-hub` repository.**
@@ -137,7 +143,7 @@ In `data-dive-design-hub/README.md`, add under the projects section:
 
 Pharmacogenomic variant frequencies and drug response divergence across Latin American
 populations (MXL, PEL, CLM, PUR). Data engineering pipeline using AWS Glue, Athena
-(Iceberg), and Step Functions. Outputs actionable frequency deltas for 10 pharmacogenes
+(Iceberg), and Step Functions. Outputs actionable frequency deltas for 11 pharmacogenes
 across 8+ drugs with CPIC A-level guidelines.
 
 → [Repository](https://github.com/enriqew/pgx-latam-atlas)

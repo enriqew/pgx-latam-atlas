@@ -32,7 +32,7 @@ Pipeline run metadata. Always read this first to understand the freshness of the
 | `source_versions.pharmgkb` | string | PharmGKB release date/version used |
 | `source_versions.cpic` | string | CPIC release version used |
 | `populations` | object | Map of population_code → sample_size |
-| `total_variants_analyzed` | integer | Number of distinct variant positions processed |
+| `total_variants_analyzed` | integer | Variant-population observations: distinct positions times cohorts, not distinct positions |
 | `pipeline_run_id` | string | Step Functions execution ID |
 
 ---

@@ -45,7 +45,7 @@ See `src/pgx_latam/utils/star_allele_scope.py` for the in-scope gene list and ra
 | Attribute | Value |
 |-----------|-------|
 | **Canonical URL** | https://www.pharmgkb.org/downloads |
-| **License** | [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) |
+| **License** | [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) — verify against the current ClinPGx data-usage policy before redistributing derived data |
 | **Citation** | Whirl-Carrillo M, et al. _An Evidence-Based Framework for Evaluating Pharmacogenomics Knowledge for Personalized Medicine._ Clin Pharmacol Ther. 2021. PMID: 34216021 |
 | **Refresh cadence** | Quarterly TSV releases |
 
