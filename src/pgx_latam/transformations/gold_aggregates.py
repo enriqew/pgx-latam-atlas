@@ -56,6 +56,19 @@ logger = logging.getLogger(__name__)
 # CEU 0.371, MXL 0.481, PEL 0.523, CLM 0.457, PUR 0.423).  The C alternate allele at
 # chr19:39747741 is in LD with the unfavorable rs12979860-T haplotype; interpret phenotype
 # distribution as approximate.  Source: 1000G Phase 3 browser / PMID 26432246.
+# CYP3A5 note: the previous key variant chr7:99251073 was NOT rs776746 — it is a
+# C>CAAAT insertion 19 kb away whose alternate allele is near-fixed in every cohort
+# (AF 0.95-0.99), which made all 26 populations come out 85-99% Poor Metabolizer,
+# including the African cohorts that are almost entirely CYP3A5 expressers.  The real
+# rs776746 (6986A>G, *3) is present in the Phase 3 VCF at chr7:99270539 (GRCh37).
+#
+# CYP3A5 is on the minus strand and the GRCh37 reference carries the *3 (non-expresser)
+# allele, so at chr7:99270539 REF=C is *3 and ALT=T is *1.  The alternate dosage
+# therefore counts FUNCTIONAL copies, the opposite of every other gene here; the gene is
+# listed in REFERENCE_IS_NONFUNCTIONAL below and its dosage is inverted before the
+# dosage → phenotype mapping.  Alternate (*1) AFs: CEU 0.040, PEL 0.124, CLM 0.186,
+# MXL 0.234, PUR 0.264, YRI 0.833 — consistent with published 1000G Phase 3 values.
+
 GENE_KEY_VARIANTS: dict[str, tuple[str, ...]] = {
     "CYP2C19": ("chr10:96521657", "chr10:96540410"),  # *2 (rs4244285), *3 (rs4986893)
     "CYP2C9": ("chr10:96741053",),  # *2 (rs1799853)
@@ -70,11 +83,18 @@ GENE_KEY_VARIANTS: dict[str, tuple[str, ...]] = {
     "IFNL3": (
         "chr19:39747741",
     ),  # rs12979860 proxy (A>C; C allele = unfavorable haplotype; CEU AF ~0.30; calibrated 2026-05)
-    "CYP3A5": ("chr7:99251073",),  # *3 proxy (rs776746; CEU AF ~0.955)
+    "CYP3A5": ("chr7:99270539",),  # rs776746 (*3); REF=*3, ALT=*1 — see the note above
     "UGT1A9": (
         "chr2:234578428",
     ),  # *3 (rs17868320, c.98T>C; ALT=T is non-functional allele; CEU AF ~0.015)
 }
+
+# Genes whose GRCh37 reference allele IS the non-functional star allele.  For these the
+# VCF alternate dosage counts functional copies, so it has to be inverted before the
+# dosage → phenotype mapping, which is written in non-functional copies throughout.
+# CYP3A5 is the only one in scope: the reference carries *3 (see the note above).
+REFERENCE_IS_NONFUNCTIONAL: frozenset[str] = frozenset({"CYP3A5"})
+
 
 # ── Literature corrections ────────────────────────────────────────────────────
 #
@@ -126,8 +146,10 @@ def _infer_phenotype(gene: str, total_nonfunc_dosage: int) -> str:
         # These names match the silver/drug_recommendations phenotype column, enabling the join.
         mapping = {0: "Normal Function", 1: "Decreased Function", 2: "Poor Function"}
     elif gene == "CYP3A5":
-        # CYP3A5*3 (chr7:99251073 alternate) = non-expresser allele.
-        # 0 copies = expresser → needs higher tacrolimus dose (CPIC: Normal Metabolizer).
+        # Dosage here counts *3 (non-expresser) copies, already inverted from the VCF
+        # alternate dosage by build_phenotype_distribution — see REFERENCE_IS_NONFUNCTIONAL.
+        # 0 copies of *3 = *1/*1 expresser → needs a HIGHER tacrolimus dose
+        # (CPIC: Normal Metabolizer); *3/*3 non-expressers take the standard dose.
         mapping = {0: "Normal Metabolizer", 1: "Intermediate Metabolizer", 2: "Poor Metabolizer"}
     elif gene == "UGT1A9":
         # UGT1A9*3 (chr2:234578428 ALT=T) = reduced-function allele (c.98T>C, rs17868320).
@@ -279,6 +301,11 @@ def build_phenotype_distribution(
             .reset_index()
         )
         gene_str = str(gene_symbol)
+        if gene_str in REFERENCE_IS_NONFUNCTIONAL:
+            # The alternate allele is the functional one here: 2 copies of ALT means zero
+            # non-functional copies.  Diploid autosomal, one key variant, so 2 - dosage.
+            ploidy = 2 * len(key_variants)
+            individual_dosage["total_dosage"] = ploidy - individual_dosage["total_dosage"]
         individual_dosage["phenotype_category"] = individual_dosage.apply(
             lambda row, g=gene_str: _infer_phenotype(g, int(row["total_dosage"])),
             axis=1,

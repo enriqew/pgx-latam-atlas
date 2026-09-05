@@ -8,6 +8,7 @@ import pandas as pd
 
 from pgx_latam.transformations.gold_aggregates import (
     GENE_KEY_VARIANTS,
+    REFERENCE_IS_NONFUNCTIONAL,
     _infer_phenotype,
     build_actionability_ranking,
     build_allele_frequencies,
@@ -72,6 +73,11 @@ class TestInferPhenotypeVKORC1:
 
 
 class TestInferPhenotypeCYP3A5:
+    """Dosage here is *3 (non-expresser) copies, already inverted from the VCF alternate.
+
+    See TestCYP3A5ReferenceInversion for the inversion itself.
+    """
+
     def test_normal_metabolizer_zero_nonfunc_alleles(self) -> None:
         assert _infer_phenotype("CYP3A5", 0) == "Normal Metabolizer"
 
@@ -264,6 +270,76 @@ class TestBuildPhenotypeDistribution:
         )
         df = build_phenotype_distribution(fake_df, self._populations_df(), _SNAP)
         assert df.empty or "UNKNOWNGENE" not in df.get("gene_symbol", pd.Series()).values
+
+
+class TestCYP3A5ReferenceInversion:
+    """CYP3A5 is the one gene whose reference allele is the non-functional star allele.
+
+    At rs776746 (chr7:99270539, GRCh37) REF=C is *3 and ALT=T is *1, so the VCF
+    alternate dosage counts functional copies and has to be inverted.  Before this was
+    handled the pipeline reported every population, African cohorts included, as 85-99%
+    Poor Metabolizer.
+    """
+
+    def _variants_df(self) -> pd.DataFrame:
+        key = GENE_KEY_VARIANTS["CYP3A5"][0]
+        return pd.DataFrame(
+            {
+                "sample_id": ["S0", "S1", "S2"],
+                "variant_id": [key] * 3,
+                "gene_symbol": ["CYP3A5"] * 3,
+                # ALT dosage = *1 copies: 2 = *1/*1 expresser, 1 = *1/*3, 0 = *3/*3
+                "allele_dosage": [2, 1, 0],
+                "population_code": ["YRI"] * 3,
+                "superpopulation": ["AFR"] * 3,
+            }
+        )
+
+    def _populations_df(self) -> pd.DataFrame:
+        return pd.DataFrame(
+            {
+                "population_code": ["YRI"],
+                "sample_size": [3],
+                "population_name": ["Yoruba"],
+                "region": ["Africa"],
+            }
+        )
+
+    def test_key_variant_is_rs776746_not_the_near_fixed_indel(self) -> None:
+        assert GENE_KEY_VARIANTS["CYP3A5"] == ("chr7:99270539",)
+
+    def test_cyp3a5_is_flagged_as_reference_nonfunctional(self) -> None:
+        assert "CYP3A5" in REFERENCE_IS_NONFUNCTIONAL
+
+    def test_two_alternate_copies_are_a_normal_metabolizer(self) -> None:
+        df = build_phenotype_distribution(self._variants_df(), self._populations_df(), _SNAP)
+        row = df[df["phenotype_category"] == "Normal Metabolizer"]
+        assert row["individual_count"].iloc[0] == 1
+
+    def test_zero_alternate_copies_are_a_poor_metabolizer(self) -> None:
+        df = build_phenotype_distribution(self._variants_df(), self._populations_df(), _SNAP)
+        row = df[df["phenotype_category"] == "Poor Metabolizer"]
+        assert row["individual_count"].iloc[0] == 1
+
+    def test_one_alternate_copy_is_intermediate(self) -> None:
+        df = build_phenotype_distribution(self._variants_df(), self._populations_df(), _SNAP)
+        row = df[df["phenotype_category"] == "Intermediate Metabolizer"]
+        assert row["individual_count"].iloc[0] == 1
+
+    def test_other_genes_are_not_inverted(self) -> None:
+        key = GENE_KEY_VARIANTS["CYP2C19"][0]
+        variants = pd.DataFrame(
+            {
+                "sample_id": ["S0"],
+                "variant_id": [key],
+                "gene_symbol": ["CYP2C19"],
+                "allele_dosage": [0],
+                "population_code": ["YRI"],
+                "superpopulation": ["AFR"],
+            }
+        )
+        df = build_phenotype_distribution(variants, self._populations_df(), _SNAP)
+        assert df["phenotype_category"].iloc[0] == "Normal Metabolizer"
 
 
 # ── build_drug_impact_summary ─────────────────────────────────────────────────
