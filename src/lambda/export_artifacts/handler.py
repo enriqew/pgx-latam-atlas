@@ -238,9 +238,10 @@ def _get_github_pat() -> str:
     secret = sm.get_secret_value(SecretId=GITHUB_PAT_SECRET)
     raw = secret["SecretString"]
     try:
-        return json.loads(raw)["token"]
+        token: str = json.loads(raw)["token"]
     except (json.JSONDecodeError, KeyError):
         return raw.strip()
+    return token
 
 
 def _commit_artifact(pat: str, path: str, content_bytes: bytes, run_date: str) -> None:

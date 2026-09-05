@@ -268,11 +268,16 @@ def main() -> None:
         format="%(asctime)s %(levelname)s %(name)s — %(message)s",
     )
     run()
-    print("  ✓ artifacts/allele_frequencies.json")
-    print("  ✓ artifacts/phenotype_distribution.json")
-    print("  ✓ artifacts/drug_impact_summary.json")
-    print("  ✓ artifacts/actionability_ranking.json")
-    print("  ✓ artifacts/metadata.json")
+    # Plain ASCII: the default Windows console codepage (cp1252) cannot encode "✓",
+    # which made this exit non-zero after the artifacts had already been written.
+    for name in (
+        "allele_frequencies",
+        "phenotype_distribution",
+        "drug_impact_summary",
+        "actionability_ranking",
+        "metadata",
+    ):
+        print(f"  [ok] artifacts/{name}.json")
 
 
 if __name__ == "__main__":
