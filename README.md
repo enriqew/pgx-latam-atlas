@@ -24,7 +24,7 @@ divergences that a Europe versus Latin America comparison never surfaces at all.
 
 ## Key findings
 
-> Pipeline run 2026-06-01 · 40,121 variant sites × 26 populations = 1,043,146 site–cohort
+> Pipeline run 2026-09-05 · 40,121 variant sites × 26 populations = 1,043,146 site–cohort
 > frequency rows · 11 pharmacogenes · 2,504 individuals.
 > Full data: [`artifacts/actionability_ranking.json`](artifacts/actionability_ranking.json)
 
@@ -35,15 +35,22 @@ B level guidelines, with one guaranteed slot per gene so no pharmacogene drops o
 
 | Rank | Drug | Gene | Population | Δ vs CEU | Affected |
 |---|---|---|---|---|---|
-| 1 | peginterferon alfa-2b | IFNL3 | GWD (Gambian, AFR) | +64.2 pp | 74.3% |
-| 2 | peginterferon alfa-2a | IFNL3 | GWD (Gambian, AFR) | +64.2 pp | 74.3% |
-| 3 | warfarin | VKORC1+CYP2C9 | STU (Sri Lankan Tamil, SAS) | +61.4 pp | 75.5% |
-| 4 | amitriptyline | CYP2C19 | PEL (Peruvian, AMR) | +50.4 pp | 91.8% |
-| 5 | warfarin | VKORC1+CYP2C9 | ITU (Indian Telugu, SAS) | +59.4 pp | 73.5% |
+| 1 | tacrolimus | CYP3A5 | ESN (Esan, AFR) | +91.9 pp | 100.0% |
+| 2 | tacrolimus | CYP3A5 | YRI (Yoruba, AFR) | +91.0 pp | 99.1% |
+| 3 | tacrolimus | CYP3A5 | MSL (Mende, AFR) | +90.7 pp | 98.8% |
+| 8 | peginterferon alfa-2a | IFNL3 | GWD (Gambian, AFR) | +64.2 pp | 74.3% |
+| 10 | warfarin | VKORC1+CYP2C9 | STU (Sri Lankan Tamil, SAS) | +61.4 pp | 75.5% |
+| 11 | amitriptyline | CYP2C19 | PEL (Peruvian, AMR) | +50.4 pp | 91.8% |
 
-PEL outranks ITU on a smaller delta because the score multiplies by how much of the cohort is
-actually affected: 91.8% of Peruvian individuals against 73.5% of Indian Telugu individuals.
-The three cohorts above PEL are exactly the ones a Latin America versus Europe framing cannot see.
+Ranks 4 to 7 are the remaining African cohorts on the same tacrolimus row (LWK, ASW, GWD, ACB),
+all above +84 pp. CYP3A5 sweeping the top is the expected biology: the reference allele at
+rs776746 is the non-functional *3, Europeans are 92% non-expressers and African cohorts are
+almost entirely expressers who need substantially higher tacrolimus doses.
+
+PEL outranks ITU (rank 12, +59.4 pp) on a smaller delta because the score multiplies by how much
+of the cohort is actually affected: 91.8% of Peruvian individuals against 73.5% of Indian Telugu
+individuals. The cohorts above PEL are exactly the ones a Latin America versus Europe framing
+cannot see.
 
 ### CYP2C19: the widest phenotype spread in the panel
 

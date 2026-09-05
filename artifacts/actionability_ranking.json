@@ -1,17 +1,83 @@
 [
   {
     "rank_position": 1,
-    "drug_name": "peginterferon alfa-2b",
-    "gene_symbol": "IFNL3",
-    "population_code": "GWD",
-    "delta_vs_baseline": 64.24,
-    "population_affected_pct": 74.34,
+    "drug_name": "tacrolimus",
+    "gene_symbol": "CYP3A5",
+    "population_code": "ESN",
+    "delta_vs_baseline": 91.92,
+    "population_affected_pct": 100.0,
     "classification_strength": "Strong",
-    "clinical_implication": "64.2pp higher rate of dose/therapy change vs CEU in GWD (peginterferon alfa-2b / IFNL3, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "clinical_implication": "91.9pp higher rate of dose/therapy change vs CEU in ESN (tacrolimus / CYP3A5, CPIC Strong)",
+    "snapshot_date": "2026-09-05"
   },
   {
     "rank_position": 2,
+    "drug_name": "tacrolimus",
+    "gene_symbol": "CYP3A5",
+    "population_code": "YRI",
+    "delta_vs_baseline": 90.99,
+    "population_affected_pct": 99.07,
+    "classification_strength": "Strong",
+    "clinical_implication": "91.0pp higher rate of dose/therapy change vs CEU in YRI (tacrolimus / CYP3A5, CPIC Strong)",
+    "snapshot_date": "2026-09-05"
+  },
+  {
+    "rank_position": 3,
+    "drug_name": "tacrolimus",
+    "gene_symbol": "CYP3A5",
+    "population_code": "MSL",
+    "delta_vs_baseline": 90.74,
+    "population_affected_pct": 98.82,
+    "classification_strength": "Strong",
+    "clinical_implication": "90.7pp higher rate of dose/therapy change vs CEU in MSL (tacrolimus / CYP3A5, CPIC Strong)",
+    "snapshot_date": "2026-09-05"
+  },
+  {
+    "rank_position": 4,
+    "drug_name": "tacrolimus",
+    "gene_symbol": "CYP3A5",
+    "population_code": "LWK",
+    "delta_vs_baseline": 88.89,
+    "population_affected_pct": 96.97,
+    "classification_strength": "Strong",
+    "clinical_implication": "88.9pp higher rate of dose/therapy change vs CEU in LWK (tacrolimus / CYP3A5, CPIC Strong)",
+    "snapshot_date": "2026-09-05"
+  },
+  {
+    "rank_position": 5,
+    "drug_name": "tacrolimus",
+    "gene_symbol": "CYP3A5",
+    "population_code": "ASW",
+    "delta_vs_baseline": 85.36,
+    "population_affected_pct": 93.44,
+    "classification_strength": "Strong",
+    "clinical_implication": "85.4pp higher rate of dose/therapy change vs CEU in ASW (tacrolimus / CYP3A5, CPIC Strong)",
+    "snapshot_date": "2026-09-05"
+  },
+  {
+    "rank_position": 6,
+    "drug_name": "tacrolimus",
+    "gene_symbol": "CYP3A5",
+    "population_code": "GWD",
+    "delta_vs_baseline": 84.84,
+    "population_affected_pct": 92.92,
+    "classification_strength": "Strong",
+    "clinical_implication": "84.8pp higher rate of dose/therapy change vs CEU in GWD (tacrolimus / CYP3A5, CPIC Strong)",
+    "snapshot_date": "2026-09-05"
+  },
+  {
+    "rank_position": 7,
+    "drug_name": "tacrolimus",
+    "gene_symbol": "CYP3A5",
+    "population_code": "ACB",
+    "delta_vs_baseline": 84.63,
+    "population_affected_pct": 92.71,
+    "classification_strength": "Strong",
+    "clinical_implication": "84.6pp higher rate of dose/therapy change vs CEU in ACB (tacrolimus / CYP3A5, CPIC Strong)",
+    "snapshot_date": "2026-09-05"
+  },
+  {
+    "rank_position": 8,
     "drug_name": "peginterferon alfa-2a",
     "gene_symbol": "IFNL3",
     "population_code": "GWD",
@@ -19,10 +85,21 @@
     "population_affected_pct": 74.34,
     "classification_strength": "Strong",
     "clinical_implication": "64.2pp higher rate of dose/therapy change vs CEU in GWD (peginterferon alfa-2a / IFNL3, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 3,
+    "rank_position": 9,
+    "drug_name": "peginterferon alfa-2b",
+    "gene_symbol": "IFNL3",
+    "population_code": "GWD",
+    "delta_vs_baseline": 64.24,
+    "population_affected_pct": 74.34,
+    "classification_strength": "Strong",
+    "clinical_implication": "64.2pp higher rate of dose/therapy change vs CEU in GWD (peginterferon alfa-2b / IFNL3, CPIC Strong)",
+    "snapshot_date": "2026-09-05"
+  },
+  {
+    "rank_position": 10,
     "drug_name": "warfarin",
     "gene_symbol": "VKORC1+CYP2C9",
     "population_code": "STU",
@@ -30,10 +107,10 @@
     "population_affected_pct": 75.49,
     "classification_strength": "Strong",
     "clinical_implication": "61.4pp higher rate of dose/therapy change vs CEU in STU (warfarin / VKORC1+CYP2C9, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 4,
+    "rank_position": 11,
     "drug_name": "amitriptyline",
     "gene_symbol": "CYP2C19",
     "population_code": "PEL",
@@ -41,10 +118,10 @@
     "population_affected_pct": 91.76,
     "classification_strength": "Strong",
     "clinical_implication": "50.4pp higher rate of dose/therapy change vs CEU in PEL (amitriptyline / CYP2C19, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 5,
+    "rank_position": 12,
     "drug_name": "warfarin",
     "gene_symbol": "VKORC1+CYP2C9",
     "population_code": "ITU",
@@ -52,21 +129,10 @@
     "population_affected_pct": 73.53,
     "classification_strength": "Strong",
     "clinical_implication": "59.4pp higher rate of dose/therapy change vs CEU in ITU (warfarin / VKORC1+CYP2C9, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 6,
-    "drug_name": "peginterferon alfa-2b",
-    "gene_symbol": "IFNL3",
-    "population_code": "MSL",
-    "delta_vs_baseline": 60.49,
-    "population_affected_pct": 70.59,
-    "classification_strength": "Strong",
-    "clinical_implication": "60.5pp higher rate of dose/therapy change vs CEU in MSL (peginterferon alfa-2b / IFNL3, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
-  },
-  {
-    "rank_position": 7,
+    "rank_position": 13,
     "drug_name": "peginterferon alfa-2a",
     "gene_symbol": "IFNL3",
     "population_code": "MSL",
@@ -74,10 +140,21 @@
     "population_affected_pct": 70.59,
     "classification_strength": "Strong",
     "clinical_implication": "60.5pp higher rate of dose/therapy change vs CEU in MSL (peginterferon alfa-2a / IFNL3, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 8,
+    "rank_position": 14,
+    "drug_name": "peginterferon alfa-2b",
+    "gene_symbol": "IFNL3",
+    "population_code": "MSL",
+    "delta_vs_baseline": 60.49,
+    "population_affected_pct": 70.59,
+    "classification_strength": "Strong",
+    "clinical_implication": "60.5pp higher rate of dose/therapy change vs CEU in MSL (peginterferon alfa-2b / IFNL3, CPIC Strong)",
+    "snapshot_date": "2026-09-05"
+  },
+  {
+    "rank_position": 15,
     "drug_name": "amitriptyline",
     "gene_symbol": "CYP2C19",
     "population_code": "CHS",
@@ -85,21 +162,10 @@
     "population_affected_pct": 88.57,
     "classification_strength": "Strong",
     "clinical_implication": "47.2pp higher rate of dose/therapy change vs CEU in CHS (amitriptyline / CYP2C19, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 9,
-    "drug_name": "peginterferon alfa-2a",
-    "gene_symbol": "IFNL3",
-    "population_code": "ESN",
-    "delta_vs_baseline": 59.6,
-    "population_affected_pct": 69.7,
-    "classification_strength": "Strong",
-    "clinical_implication": "59.6pp higher rate of dose/therapy change vs CEU in ESN (peginterferon alfa-2a / IFNL3, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
-  },
-  {
-    "rank_position": 10,
+    "rank_position": 16,
     "drug_name": "peginterferon alfa-2b",
     "gene_symbol": "IFNL3",
     "population_code": "ESN",
@@ -107,10 +173,21 @@
     "population_affected_pct": 69.7,
     "classification_strength": "Strong",
     "clinical_implication": "59.6pp higher rate of dose/therapy change vs CEU in ESN (peginterferon alfa-2b / IFNL3, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 11,
+    "rank_position": 17,
+    "drug_name": "peginterferon alfa-2a",
+    "gene_symbol": "IFNL3",
+    "population_code": "ESN",
+    "delta_vs_baseline": 59.6,
+    "population_affected_pct": 69.7,
+    "classification_strength": "Strong",
+    "clinical_implication": "59.6pp higher rate of dose/therapy change vs CEU in ESN (peginterferon alfa-2a / IFNL3, CPIC Strong)",
+    "snapshot_date": "2026-09-05"
+  },
+  {
+    "rank_position": 18,
     "drug_name": "amitriptyline",
     "gene_symbol": "CYP2C19",
     "population_code": "KHV",
@@ -118,10 +195,10 @@
     "population_affected_pct": 87.88,
     "classification_strength": "Strong",
     "clinical_implication": "46.5pp higher rate of dose/therapy change vs CEU in KHV (amitriptyline / CYP2C19, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 12,
+    "rank_position": 19,
     "drug_name": "amitriptyline",
     "gene_symbol": "CYP2C19",
     "population_code": "CHB",
@@ -129,10 +206,10 @@
     "population_affected_pct": 87.38,
     "classification_strength": "Strong",
     "clinical_implication": "46.0pp higher rate of dose/therapy change vs CEU in CHB (amitriptyline / CYP2C19, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 13,
+    "rank_position": 20,
     "drug_name": "warfarin",
     "gene_symbol": "VKORC1",
     "population_code": "BEB",
@@ -140,10 +217,10 @@
     "population_affected_pct": 95.35,
     "classification_strength": "Strong",
     "clinical_implication": "41.8pp higher rate of dose/therapy change vs CEU in BEB (warfarin / VKORC1, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 14,
+    "rank_position": 21,
     "drug_name": "warfarin",
     "gene_symbol": "VKORC1",
     "population_code": "GIH",
@@ -151,21 +228,10 @@
     "population_affected_pct": 95.15,
     "classification_strength": "Strong",
     "clinical_implication": "41.6pp higher rate of dose/therapy change vs CEU in GIH (warfarin / VKORC1, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 15,
-    "drug_name": "warfarin",
-    "gene_symbol": "VKORC1",
-    "population_code": "STU",
-    "delta_vs_baseline": 41.56,
-    "population_affected_pct": 95.1,
-    "classification_strength": "Strong",
-    "clinical_implication": "41.6pp higher rate of dose/therapy change vs CEU in STU (warfarin / VKORC1, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
-  },
-  {
-    "rank_position": 16,
+    "rank_position": 22,
     "drug_name": "warfarin",
     "gene_symbol": "VKORC1",
     "population_code": "ITU",
@@ -173,21 +239,21 @@
     "population_affected_pct": 95.1,
     "classification_strength": "Strong",
     "clinical_implication": "41.6pp higher rate of dose/therapy change vs CEU in ITU (warfarin / VKORC1, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 17,
-    "drug_name": "peginterferon alfa-2b",
-    "gene_symbol": "IFNL3",
-    "population_code": "YRI",
-    "delta_vs_baseline": 57.49,
-    "population_affected_pct": 67.59,
+    "rank_position": 23,
+    "drug_name": "warfarin",
+    "gene_symbol": "VKORC1",
+    "population_code": "STU",
+    "delta_vs_baseline": 41.56,
+    "population_affected_pct": 95.1,
     "classification_strength": "Strong",
-    "clinical_implication": "57.5pp higher rate of dose/therapy change vs CEU in YRI (peginterferon alfa-2b / IFNL3, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "clinical_implication": "41.6pp higher rate of dose/therapy change vs CEU in STU (warfarin / VKORC1, CPIC Strong)",
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 18,
+    "rank_position": 24,
     "drug_name": "peginterferon alfa-2a",
     "gene_symbol": "IFNL3",
     "population_code": "YRI",
@@ -195,10 +261,21 @@
     "population_affected_pct": 67.59,
     "classification_strength": "Strong",
     "clinical_implication": "57.5pp higher rate of dose/therapy change vs CEU in YRI (peginterferon alfa-2a / IFNL3, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 19,
+    "rank_position": 25,
+    "drug_name": "peginterferon alfa-2b",
+    "gene_symbol": "IFNL3",
+    "population_code": "YRI",
+    "delta_vs_baseline": 57.49,
+    "population_affected_pct": 67.59,
+    "classification_strength": "Strong",
+    "clinical_implication": "57.5pp higher rate of dose/therapy change vs CEU in YRI (peginterferon alfa-2b / IFNL3, CPIC Strong)",
+    "snapshot_date": "2026-09-05"
+  },
+  {
+    "rank_position": 26,
     "drug_name": "amitriptyline",
     "gene_symbol": "CYP2C19",
     "population_code": "JPT",
@@ -206,10 +283,10 @@
     "population_affected_pct": 85.58,
     "classification_strength": "Strong",
     "clinical_implication": "44.2pp higher rate of dose/therapy change vs CEU in JPT (amitriptyline / CYP2C19, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 20,
+    "rank_position": 27,
     "drug_name": "amitriptyline",
     "gene_symbol": "CYP2C19",
     "population_code": "CDX",
@@ -217,10 +294,10 @@
     "population_affected_pct": 83.87,
     "classification_strength": "Strong",
     "clinical_implication": "42.5pp higher rate of dose/therapy change vs CEU in CDX (amitriptyline / CYP2C19, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 21,
+    "rank_position": 28,
     "drug_name": "warfarin",
     "gene_symbol": "VKORC1+CYP2C9",
     "population_code": "BEB",
@@ -228,10 +305,10 @@
     "population_affected_pct": 66.28,
     "classification_strength": "Strong",
     "clinical_implication": "52.1pp higher rate of dose/therapy change vs CEU in BEB (warfarin / VKORC1+CYP2C9, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 22,
+    "rank_position": 29,
     "drug_name": "warfarin",
     "gene_symbol": "VKORC1",
     "population_code": "PJL",
@@ -239,10 +316,10 @@
     "population_affected_pct": 88.54,
     "classification_strength": "Strong",
     "clinical_implication": "35.0pp higher rate of dose/therapy change vs CEU in PJL (warfarin / VKORC1, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 23,
+    "rank_position": 30,
     "drug_name": "amitriptyline",
     "gene_symbol": "CYP2C19",
     "population_code": "MXL",
@@ -250,10 +327,10 @@
     "population_affected_pct": 79.69,
     "classification_strength": "Strong",
     "clinical_implication": "38.3pp higher rate of dose/therapy change vs CEU in MXL (amitriptyline / CYP2C19, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 24,
+    "rank_position": 31,
     "drug_name": "amitriptyline",
     "gene_symbol": "CYP2C19",
     "population_code": "PEL",
@@ -261,21 +338,10 @@
     "population_affected_pct": 91.76,
     "classification_strength": "Strong",
     "clinical_implication": "33.2pp higher rate of dose/therapy change vs CEU in PEL (amitriptyline / CYP2C19, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 25,
-    "drug_name": "peginterferon alfa-2b",
-    "gene_symbol": "IFNL3",
-    "population_code": "ACB",
-    "delta_vs_baseline": 50.32,
-    "population_affected_pct": 60.42,
-    "classification_strength": "Strong",
-    "clinical_implication": "50.3pp higher rate of dose/therapy change vs CEU in ACB (peginterferon alfa-2b / IFNL3, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
-  },
-  {
-    "rank_position": 26,
+    "rank_position": 32,
     "drug_name": "peginterferon alfa-2a",
     "gene_symbol": "IFNL3",
     "population_code": "ACB",
@@ -283,10 +349,43 @@
     "population_affected_pct": 60.42,
     "classification_strength": "Strong",
     "clinical_implication": "50.3pp higher rate of dose/therapy change vs CEU in ACB (peginterferon alfa-2a / IFNL3, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 27,
+    "rank_position": 33,
+    "drug_name": "peginterferon alfa-2b",
+    "gene_symbol": "IFNL3",
+    "population_code": "ACB",
+    "delta_vs_baseline": 50.32,
+    "population_affected_pct": 60.42,
+    "classification_strength": "Strong",
+    "clinical_implication": "50.3pp higher rate of dose/therapy change vs CEU in ACB (peginterferon alfa-2b / IFNL3, CPIC Strong)",
+    "snapshot_date": "2026-09-05"
+  },
+  {
+    "rank_position": 34,
+    "drug_name": "tacrolimus",
+    "gene_symbol": "CYP3A5",
+    "population_code": "BEB",
+    "delta_vs_baseline": 51.22,
+    "population_affected_pct": 59.3,
+    "classification_strength": "Strong",
+    "clinical_implication": "51.2pp higher rate of dose/therapy change vs CEU in BEB (tacrolimus / CYP3A5, CPIC Strong)",
+    "snapshot_date": "2026-09-05"
+  },
+  {
+    "rank_position": 35,
+    "drug_name": "tacrolimus",
+    "gene_symbol": "CYP3A5",
+    "population_code": "PJL",
+    "delta_vs_baseline": 48.17,
+    "population_affected_pct": 56.25,
+    "classification_strength": "Strong",
+    "clinical_implication": "48.2pp higher rate of dose/therapy change vs CEU in PJL (tacrolimus / CYP3A5, CPIC Strong)",
+    "snapshot_date": "2026-09-05"
+  },
+  {
+    "rank_position": 36,
     "drug_name": "amitriptyline",
     "gene_symbol": "CYP2C19",
     "population_code": "CHS",
@@ -294,21 +393,10 @@
     "population_affected_pct": 88.57,
     "classification_strength": "Strong",
     "clinical_implication": "30.0pp higher rate of dose/therapy change vs CEU in CHS (amitriptyline / CYP2C19, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 28,
-    "drug_name": "primaquine",
-    "gene_symbol": "G6PD",
-    "population_code": "YRI",
-    "delta_vs_baseline": 50.93,
-    "population_affected_pct": 50.93,
-    "classification_strength": "Strong",
-    "clinical_implication": "50.9pp higher rate of dose/therapy change vs CEU in YRI (primaquine / G6PD, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
-  },
-  {
-    "rank_position": 29,
+    "rank_position": 37,
     "drug_name": "pegloticase",
     "gene_symbol": "G6PD",
     "population_code": "YRI",
@@ -316,10 +404,21 @@
     "population_affected_pct": 50.93,
     "classification_strength": "Strong",
     "clinical_implication": "50.9pp higher rate of dose/therapy change vs CEU in YRI (pegloticase / G6PD, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 30,
+    "rank_position": 38,
+    "drug_name": "primaquine",
+    "gene_symbol": "G6PD",
+    "population_code": "YRI",
+    "delta_vs_baseline": 50.93,
+    "population_affected_pct": 50.93,
+    "classification_strength": "Strong",
+    "clinical_implication": "50.9pp higher rate of dose/therapy change vs CEU in YRI (primaquine / G6PD, CPIC Strong)",
+    "snapshot_date": "2026-09-05"
+  },
+  {
+    "rank_position": 39,
     "drug_name": "dapsone",
     "gene_symbol": "G6PD",
     "population_code": "YRI",
@@ -327,10 +426,10 @@
     "population_affected_pct": 50.93,
     "classification_strength": "Strong",
     "clinical_implication": "50.9pp higher rate of dose/therapy change vs CEU in YRI (dapsone / G6PD, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 31,
+    "rank_position": 40,
     "drug_name": "rasburicase",
     "gene_symbol": "G6PD",
     "population_code": "YRI",
@@ -338,10 +437,10 @@
     "population_affected_pct": 50.93,
     "classification_strength": "Strong",
     "clinical_implication": "50.9pp higher rate of dose/therapy change vs CEU in YRI (rasburicase / G6PD, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 32,
+    "rank_position": 41,
     "drug_name": "tafenoquine",
     "gene_symbol": "G6PD",
     "population_code": "YRI",
@@ -349,10 +448,10 @@
     "population_affected_pct": 50.93,
     "classification_strength": "Strong",
     "clinical_implication": "50.9pp higher rate of dose/therapy change vs CEU in YRI (tafenoquine / G6PD, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 33,
+    "rank_position": 42,
     "drug_name": "warfarin",
     "gene_symbol": "VKORC1+CYP2C9",
     "population_code": "PJL",
@@ -360,10 +459,10 @@
     "population_affected_pct": 58.33,
     "classification_strength": "Strong",
     "clinical_implication": "44.2pp higher rate of dose/therapy change vs CEU in PJL (warfarin / VKORC1+CYP2C9, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 34,
+    "rank_position": 43,
     "drug_name": "amitriptyline",
     "gene_symbol": "CYP2C19",
     "population_code": "CLM",
@@ -371,10 +470,10 @@
     "population_affected_pct": 75.53,
     "classification_strength": "Strong",
     "clinical_implication": "34.1pp higher rate of dose/therapy change vs CEU in CLM (amitriptyline / CYP2C19, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 35,
+    "rank_position": 44,
     "drug_name": "amitriptyline",
     "gene_symbol": "CYP2C19",
     "population_code": "KHV",
@@ -382,109 +481,21 @@
     "population_affected_pct": 87.88,
     "classification_strength": "Strong",
     "clinical_implication": "29.3pp higher rate of dose/therapy change vs CEU in KHV (amitriptyline / CYP2C19, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 36,
-    "drug_name": "peginterferon alfa-2b",
-    "gene_symbol": "IFNL3",
-    "population_code": "ASW",
-    "delta_vs_baseline": 45.64,
-    "population_affected_pct": 55.74,
-    "classification_strength": "Strong",
-    "clinical_implication": "45.6pp higher rate of dose/therapy change vs CEU in ASW (peginterferon alfa-2b / IFNL3, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
-  },
-  {
-    "rank_position": 37,
-    "drug_name": "peginterferon alfa-2a",
-    "gene_symbol": "IFNL3",
-    "population_code": "ASW",
-    "delta_vs_baseline": 45.64,
-    "population_affected_pct": 55.74,
-    "classification_strength": "Strong",
-    "clinical_implication": "45.6pp higher rate of dose/therapy change vs CEU in ASW (peginterferon alfa-2a / IFNL3, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
-  },
-  {
-    "rank_position": 38,
-    "drug_name": "amitriptyline",
-    "gene_symbol": "CYP2C19",
-    "population_code": "CHB",
-    "delta_vs_baseline": 28.79,
-    "population_affected_pct": 87.38,
-    "classification_strength": "Strong",
-    "clinical_implication": "28.8pp higher rate of dose/therapy change vs CEU in CHB (amitriptyline / CYP2C19, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
-  },
-  {
-    "rank_position": 39,
-    "drug_name": "amitriptyline",
-    "gene_symbol": "CYP2C19",
-    "population_code": "GIH",
-    "delta_vs_baseline": 32.38,
-    "population_affected_pct": 73.79,
-    "classification_strength": "Strong",
-    "clinical_implication": "32.4pp higher rate of dose/therapy change vs CEU in GIH (amitriptyline / CYP2C19, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
-  },
-  {
-    "rank_position": 40,
-    "drug_name": "amitriptyline",
-    "gene_symbol": "CYP2C19",
-    "population_code": "ITU",
-    "delta_vs_baseline": 32.12,
-    "population_affected_pct": 73.53,
-    "classification_strength": "Strong",
-    "clinical_implication": "32.1pp higher rate of dose/therapy change vs CEU in ITU (amitriptyline / CYP2C19, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
-  },
-  {
-    "rank_position": 41,
-    "drug_name": "amitriptyline",
-    "gene_symbol": "CYP2C19",
-    "population_code": "STU",
-    "delta_vs_baseline": 32.12,
-    "population_affected_pct": 73.53,
-    "classification_strength": "Strong",
-    "clinical_implication": "32.1pp higher rate of dose/therapy change vs CEU in STU (amitriptyline / CYP2C19, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
-  },
-  {
-    "rank_position": 42,
-    "drug_name": "primaquine",
-    "gene_symbol": "G6PD",
-    "population_code": "LWK",
-    "delta_vs_baseline": 48.48,
-    "population_affected_pct": 48.48,
-    "classification_strength": "Strong",
-    "clinical_implication": "48.5pp higher rate of dose/therapy change vs CEU in LWK (primaquine / G6PD, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
-  },
-  {
-    "rank_position": 43,
-    "drug_name": "dapsone",
-    "gene_symbol": "G6PD",
-    "population_code": "LWK",
-    "delta_vs_baseline": 48.48,
-    "population_affected_pct": 48.48,
-    "classification_strength": "Strong",
-    "clinical_implication": "48.5pp higher rate of dose/therapy change vs CEU in LWK (dapsone / G6PD, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
-  },
-  {
-    "rank_position": 44,
-    "drug_name": "capecitabine",
+    "rank_position": 45,
+    "drug_name": "fluorouracil",
     "gene_symbol": "DPYD",
     "population_code": "PEL",
     "delta_vs_baseline": 46.05,
     "population_affected_pct": 47.06,
     "classification_strength": "Moderate",
-    "clinical_implication": "46.0pp higher rate of dose/therapy change vs CEU in PEL (capecitabine / DPYD, CPIC Moderate)",
-    "snapshot_date": "2026-06-01"
+    "clinical_implication": "46.0pp higher rate of dose/therapy change vs CEU in PEL (fluorouracil / DPYD, CPIC Moderate)",
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 45,
+    "rank_position": 46,
     "drug_name": "thioguanine",
     "gene_symbol": "NUDT15",
     "population_code": "MXL",
@@ -492,10 +503,10 @@
     "population_affected_pct": 84.38,
     "classification_strength": "Strong",
     "clinical_implication": "15.6pp lower rate of dose/therapy change vs CEU in MXL (thioguanine / NUDT15, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 46,
+    "rank_position": 47,
     "drug_name": "simvastatin",
     "gene_symbol": "SLCO1B1",
     "population_code": "TSI",
@@ -503,10 +514,10 @@
     "population_affected_pct": 39.25,
     "classification_strength": "Strong",
     "clinical_implication": "11.0pp higher rate of dose/therapy change vs CEU in TSI (simvastatin / SLCO1B1, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 47,
+    "rank_position": 48,
     "drug_name": "thioguanine",
     "gene_symbol": "TPMT",
     "population_code": "GWD",
@@ -514,10 +525,10 @@
     "population_affected_pct": 97.35,
     "classification_strength": "Strong",
     "clinical_implication": "2.6pp lower rate of dose/therapy change vs CEU in GWD (thioguanine / TPMT, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
-    "rank_position": 48,
+    "rank_position": 49,
     "drug_name": "fluvastatin",
     "gene_symbol": "CYP2C9",
     "population_code": "GIH",
@@ -525,18 +536,7 @@
     "population_affected_pct": 24.27,
     "classification_strength": "Optional",
     "clinical_implication": "11.1pp higher rate of dose/therapy change vs CEU in GIH (fluvastatin / CYP2C9, CPIC Optional)",
-    "snapshot_date": "2026-06-01"
-  },
-  {
-    "rank_position": 49,
-    "drug_name": "tacrolimus",
-    "gene_symbol": "CYP3A5",
-    "population_code": "MSL",
-    "delta_vs_baseline": 5.03,
-    "population_affected_pct": 14.12,
-    "classification_strength": "Strong",
-    "clinical_implication": "5.0pp higher rate of dose/therapy change vs CEU in MSL (tacrolimus / CYP3A5, CPIC Strong)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   },
   {
     "rank_position": 50,
@@ -547,6 +547,6 @@
     "population_affected_pct": 2.13,
     "classification_strength": "Moderate",
     "clinical_implication": "2.1pp higher rate of dose/therapy change vs CEU in CLM (mycophenolate mofetil / UGT1A9, CPIC Moderate)",
-    "snapshot_date": "2026-06-01"
+    "snapshot_date": "2026-09-05"
   }
 ]
